@@ -1,0 +1,110 @@
+{
+  "id": "UG-07",
+  "campaignCaseId": "UG-001",
+  "act": 2,
+  "title": "Una cuenta que seguía viva",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 07 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-03",
+    "UG-06"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "POST /api/login; GET /api/me"
+    },
+    {
+      "skillId": "S06",
+      "introducedIn": "UG-06",
+      "observableUse": "buscar una palabra en un recurso JavaScript que la propia página ha cargado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/login; GET /api/me"
+    }
+  ],
+  "newSkill": {
+    "id": "S07",
+    "action": "iniciar sesión y reconocer la identidad con la que se trabaja."
+  },
+  "narrativeEntry": "Confirmo que demo.pera es una cuenta de pruebas nuestra. Puedes comprobar estas credenciales en la copia preparada; no las uses en ningún otro lugar. Al iniciar sesión, la tienda debería mostrar con qué identidad estás trabajando. Una bienvenida no basta: consulta también el perfil recibido del servidor y compáralo con la cuenta que introdujiste. No vamos a abrir pedidos ajenos todavía. Si una contraseña no funciona, el diagnóstico distinguirá un escenario sin preparar de una respuesta que deniega el acceso. Guarda la identidad y la referencia del recurso del que salieron los datos; el cuaderno mantendrá el secreto oculto cuando cierres el caso.",
+  "whyItMatters": "nadie sabe si las credenciales de la campaña siguen funcionando. Vera confirma que la cuenta es de pruebas.",
+  "learningObjective": "introducir las credenciales de laboratorio y comprobar el nombre y los datos mínimos de la cuenta autenticada.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-07/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Una pantalla que dice bienvenida basta para saber qué cuenta reconoce el servidor?",
+  "guidedSteps": [
+    "Una sesión válida debe corresponder a una identidad comprobable del servidor.",
+    "Usa el formulario de acceso de la tienda y después Mi cuenta.",
+    "Introduce solo las credenciales encontradas y compara la respuesta de perfil con demo.pera.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H07-1",
+    "H07-2",
+    "H07-3",
+    "H07-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-07",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/login; GET /api/me",
+    "observation": "el servidor establece una sesión de esa cuenta y el perfil corresponde a su identidad. Mostrar una pantalla de bienvenida falsa no cuenta."
+  },
+  "debrief": "unas credenciales expuestas importan si todavía conceden acceso. El cuaderno conserva la identidad, con la contraseña oculta por defecto.",
+  "understandingCheck": {
+    "question": "¿Qué añade esta prueba al hallazgo del archivo?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-07",
+    "label": "Identidad autenticada demo.pera",
+    "recipient": "UG-08"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-07/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-06"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-two-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

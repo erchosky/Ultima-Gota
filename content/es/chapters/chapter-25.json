@@ -1,0 +1,139 @@
+{
+  "id": "UG-25",
+  "campaignCaseId": "UG-001",
+  "act": 5,
+  "title": "Lo sabemos, lo suponemos",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 25 después de las 10:00 (sin duración impuesta)",
+  "sender": "Mara",
+  "prerequisites": [
+    "UG-05",
+    "UG-15",
+    "UG-20",
+    "UG-21",
+    "UG-22",
+    "UG-23",
+    "UG-24"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S05",
+      "introducedIn": "UG-05",
+      "observableUse": "registrar una evidencia reproducible separando esperado y observado durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    },
+    {
+      "skillId": "S20",
+      "introducedIn": "UG-20",
+      "observableUse": "comprobar si una entrada peligrosa se almacena y afecta a otra sesión de laboratorio durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    },
+    {
+      "skillId": "S21",
+      "introducedIn": "UG-21",
+      "observableUse": "leer una consulta SELECT sencilla como una selección de filas con una condición durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    },
+    {
+      "skillId": "S22",
+      "introducedIn": "UG-22",
+      "observableUse": "aislar un carácter de entrada que cambia el comportamiento de una consulta vulnerable durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    },
+    {
+      "skillId": "S23",
+      "introducedIn": "UG-23",
+      "observableUse": "contrastar una condición verdadera y una falsa dentro del escenario de inyección durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    },
+    {
+      "skillId": "S24",
+      "introducedIn": "UG-24",
+      "observableUse": "comprobar que una consulta parametrizada trata la entrada como un valor durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/timeline"
+    }
+  ],
+  "newSkill": {
+    "id": "S25",
+    "action": "ordenar evidencias por tiempo y separar hechos, hipótesis y preguntas abiertas."
+  },
+  "narrativeEntry": "Hemos encontrado varios problemas y necesito entender cuáles tienen relación demostrada con la queja inicial. No quiero que una lista de fallos se convierta en una historia que no podemos sostener. Lara ha preparado unos pocos registros históricos y tus pruebas de revisión. Colócalos por su tiempo y por su origen: una reproducción de hoy no es un registro de lo sucedido antes de las diez. Algunas frases describen hechos; otras son hipótesis o preguntas abiertas. Conserva al menos una incertidumbre explícita. El buscador vulnerable merece corrección, pero en los registros disponibles no aparece una prueba de su uso durante aquel incidente.",
+  "whyItMatters": "Mara pregunta si todos los fallos encontrados fueron utilizados durante el susto inicial.",
+  "learningObjective": "clasificar un conjunto pequeño de registros auténticos del escenario y conclusiones propuestas. Detectar una conclusión que no está respaldada.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-25/v1"
+  ],
+  "allowedAccounts": [
+    "reviewer"
+  ],
+  "predictionQuestion": "¿Encontrar una vulnerabilidad hoy demuestra que fue utilizada antes de las diez?",
+  "guidedSteps": [
+    "Distingue cuándo ocurrió algo de cuándo lo reprodujiste.",
+    "Mira las etiquetas de procedencia y reloj de cada evidencia.",
+    "Ordena registros históricos y separa tus experimentos de revisión.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H25-1",
+    "H25-2",
+    "H25-3",
+    "H25-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-25",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /classroom/timeline",
+    "observation": "construir una línea temporal parcial consistente, conservando explícitamente una incertidumbre."
+  },
+  "debrief": "el buscador vulnerable es un hallazgo; no aparece evidencia de su abuso histórico. Una petición de Vera abre la revisión de recuperación de cuentas.",
+  "understandingCheck": {
+    "question": "¿Qué falta para atribuir un hallazgo al incidente?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-25",
+    "label": "Línea temporal parcial y autorización de recuperación",
+    "recipient": "UG-26"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-25/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-24"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

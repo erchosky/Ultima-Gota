@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-32",
+  "solution": "Envía producto2, quantity2 y unitPriceCents=1. Lee total persistido: vulnerable2 frente a corregida420 céntimos. Repite compra normal a210.",
+  "expectedTechnicalResult": "Vulnerable persiste total2; corregida recalcula420 para misma identidad, producto y cantidad.",
+  "understandingAnswer": "El total persistido consultado después, manteniendo las demás condiciones.",
+  "feedbackOnIncorrect": "El total persistido consultado después, manteniendo las demás condiciones. Vuelve a comparar las fuentes y repite la observación: Conserva producto2 y cantidad2 al variar el precio.",
+  "patch": "Ignorar precios del cliente y calcular con catálogo autorizado en servidor.",
+  "positiveTest": "Compra normal de dos peras total420.",
+  "negativeTest": "Precio cliente de1 no reduce total corregido.",
+  "commonMistakes": [
+    "Editar solo el total visible o aplicar otro cupón.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

@@ -1,0 +1,42 @@
+npm notice run ultima-gota@0.3.0 npx
+npm notice run 'tsx' --test tests/scenario-validation/act-three.test.ts
+TAP version 13
+# Subtest: 11 exige dos solicitudes nuevas de la misma sesión, no dos capturas ni un marcador cliente
+ok 1 - 11 exige dos solicitudes nuevas de la misma sesión, no dos capturas ni un marcador cliente
+  ---
+  duration_ms: 1691.987167
+  type: 'test'
+  ...
+# Subtest: 12 persiste solo preferencia autorizada; formato incorrecto y capacidades no conceden logro
+ok 2 - 12 persiste solo preferencia autorizada; formato incorrecto y capacidades no conceden logro
+  ---
+  duration_ms: 1281.266709
+  type: 'test'
+  ...
+# Subtest: 13 demuestra capacidad real y comparación permite preferencia mientras bloquea asignación interna
+ok 3 - 13 demuestra capacidad real y comparación permite preferencia mientras bloquea asignación interna
+  ---
+  duration_ms: 1510.337125
+  type: 'test'
+  ...
+# Subtest: 14 conserva seis observaciones reales: dos200 distintos,401,403,400 y404
+ok 4 - 14 conserva seis observaciones reales: dos200 distintos,401,403,400 y404
+  ---
+  duration_ms: 1748.181166
+  type: 'test'
+  ...
+# Subtest: 15 separa práctica y propuesta, rechaza pestaña antigua, conserva controles y recupera versiones1/2/3
+ok 5 - 15 separa práctica y propuesta, rechaza pestaña antigua, conserva controles y recupera versiones1/2/3
+  ---
+  duration_ms: 2690.106375
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 9005.086958

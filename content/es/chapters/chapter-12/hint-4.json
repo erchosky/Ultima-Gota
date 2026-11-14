@@ -1,0 +1,6 @@
+{
+  "id": "H12-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Envía notificationPreference con valor daily en PATCH /api/profile y consulta GET /api/me. Compara el valor persistido con el enviado."
+}

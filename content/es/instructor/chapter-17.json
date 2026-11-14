@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-17",
+  "solution": "Usa <strong>PERA</strong> en los campos de prueba. Comprueba texto literal en uno y elemento strong en otro, contrastando el dato recibido con el inspector.",
+  "expectedTechnicalResult": "Entrada idéntica, respuesta confirmada y representación literal frente a elemento strong en navegador.",
+  "understandingAnswer": "Interpretación de HTML; aún no demuestra ejecución de JavaScript.",
+  "feedbackOnIncorrect": "Interpretación de HTML; aún no demuestra ejecución de JavaScript. Vuelve a comparar las fuentes y repite la observación: Envía el mismo marcador de formato a ambos.",
+  "patch": "Usar texto literal cuando no se necesita marcado; si se permite formato, una política explícita de saneamiento.",
+  "positiveTest": "Texto corriente se muestra correctamente.",
+  "negativeTest": "Etiqueta se conserva literal en campo de texto.",
+  "commonMistakes": [
+    "Acreditar XSS solo porque se muestra negrita.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-four"
+}

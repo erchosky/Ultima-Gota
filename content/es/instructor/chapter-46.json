@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-46",
+  "solution": "Relaciona hist-session-17 entre08:52,08:54,08:55 y09:05; conserva descarga08:50 vinculada por actor sintético. Separa retry09:15 op-mercurio-7 y deja09:10 sin relación demostrada con esa sesión.",
+  "expectedTechnicalResult": "Grafo de eventos respeta sessionRef/actorRef/operationId; excluye reintento y conserva incertidumbre de09:10.",
+  "understandingAnswer": "Relaciona actividad de esa sesión, sin identificar por sí solo a una persona física.",
+  "feedbackOnIncorrect": "Relaciona actividad de esa sesión, sin identificar por sí solo a una persona física. Vuelve a comparar las fuentes y repite la observación: Une acceso, perfil y pedido; contrasta Mercurio por separado.",
+  "patch": "Mejorar trazabilidad manteniendo minimización; sin inventar relaciones faltantes.",
+  "positiveTest": "Secuencia con identificadores coincidentes se reconstruye.",
+  "negativeTest": "Evento de operación distinta no se integra por proximidad temporal.",
+  "commonMistakes": [
+    "Unir por IP o por hora como prueba de identidad personal.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

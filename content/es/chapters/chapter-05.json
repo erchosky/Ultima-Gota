@@ -1,0 +1,124 @@
+{
+  "id": "UG-05",
+  "campaignCaseId": "UG-001",
+  "act": 1,
+  "title": "La primera prueba útil",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 05 después de las 10:00 (sin duración impuesta)",
+  "sender": "Mara",
+  "prerequisites": [
+    "UG-01",
+    "UG-02",
+    "UG-03",
+    "UG-04"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    },
+    {
+      "skillId": "S04",
+      "introducedIn": "UG-04",
+      "observableUse": "localizar un elemento de la página con el inspector de elementos durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    }
+  ],
+  "newSkill": {
+    "id": "S05",
+    "action": "registrar una evidencia reproducible separando esperado y observado."
+  },
+  "narrativeEntry": "Necesito un resumen que Nico pueda reproducir sin tener que preguntarte qué pantalla estabas mirando. Indica el producto, cómo llegaste a él y de dónde procede cada cifra. La hoja de Sam, la respuesta de datos y la ficha no son la misma fuente. Incluye también lo que ocurrió al editar el nombre localmente y recargar. Con esa prueba podremos cambiar la presentación y comprobar que otra ficha continúa funcionando. No necesito que busquemos un culpable: por ahora tenemos una discrepancia y un modo de reproducirla. Cuando cerremos esta revisión autorizo investigar la página antigua de verano que encontramos enlazada.",
+  "whyItMatters": "Mara necesita un resumen para corregir el precio y evitar que cada persona describa un problema diferente.",
+  "learningObjective": "completar una ficha con producto, pasos, valor esperado, valor recibido y prueba de que una edición local no altera los datos.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-05/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "Si corregimos solo la presentación, ¿debería cambiar el precio guardado del producto?",
+  "guidedSteps": [
+    "Una evidencia útil permite repetir el resultado y distingue esperado de observado.",
+    "Completa la ficha del cuaderno usando la hoja, la respuesta y la pantalla del producto 2.",
+    "Anota los pasos y los tres precios antes de probar la versión corregida.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H05-1",
+    "H05-2",
+    "H05-3",
+    "H05-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-05",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/products?id=2",
+    "observation": "otra ejecución controlada reproduce el resultado con esos datos. El alumno elige una conclusión respaldada por la evidencia."
+  },
+  "debrief": "todavía no se ha demostrado un ataque. Mara autoriza revisar la campaña antigua que quedó enlazada.",
+  "understandingCheck": {
+    "question": "¿Qué podemos concluir sobre un ataque con estas pruebas?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-05",
+    "label": "Autorización de Mara para revisar la campaña antigua",
+    "recipient": "UG-06"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-05/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-04"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

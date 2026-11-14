@@ -1,0 +1,53 @@
+{
+  "id": "chapter-28",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-28/v1",
+    "accounts": [
+      "Alba"
+    ],
+    "resource": "POST /api/recovery/complete",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Vulnerable registra dos cambios con mismo token; corregida solo uno y permite el primer acceso legítimo.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Usar dos tokens distintos o confundir expiración con consumo.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Marcar token consumido en la misma transacción que cambia la contraseña.",
+    "positive": "Primer uso funciona para su destinatario.",
+    "negative": "Segundo uso no vuelve a cambiar contraseña.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-28/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-27"
+    ]
+  }
+}

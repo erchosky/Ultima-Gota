@@ -1,0 +1,6 @@
+{
+  "id": "H42-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Como demo.pera abre formulario en4312 que envía a4311. Vulnerable cambia preferencia con cookie. Corregida exige token y Origin exacto; rechaza auxiliar y permite formulario legítimo de tienda."
+}

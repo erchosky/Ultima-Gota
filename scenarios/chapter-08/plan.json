@@ -1,0 +1,54 @@
+{
+  "id": "chapter-08",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-08/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "POST /api/login; GET /api/me",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Eventos de acceso y perfil en la misma sesión; alumno identifica ug_store, creación tras login y envío posterior. No se afirma observar directamente la pestaña.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-two.ts#validateActTwo"
+  },
+  "falsePositiveChecks": [
+    "Anotar ug_classroom o tratar el valor de cookie como contraseña.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Mantener cookie de sesión opaca y HttpOnly; demostrar que JavaScript de página no la lee.",
+    "positive": "Perfil autenticado devuelve demo.pera.",
+    "negative": "Sin cookie de tienda no se devuelve el perfil privado.",
+    "execution": "tested-correct-behaviour"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-08/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-07"
+    ]
+  }
+}

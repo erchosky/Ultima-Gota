@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-45",
+  "solution": "Envía muestras preparadas con firma válida, cuerpo modificado y firma ausente. Vulnerable acepta sin autenticar; corregida verifica HMAC del cuerpo exacto, rechaza alterado/ausente y permite legítimo.",
+  "expectedTechnicalResult": "Tres mensajes reales por versión con preestado preparado; resultado de autenticidad y transición persistida contrastados.",
+  "understandingAnswer": "No; autenticidad e integridad no sustituyen idempotencia ni control de repetición.",
+  "feedbackOnIncorrect": "No; autenticidad e integridad no sustituyen idempotencia ni control de repetición. Vuelve a comparar las fuentes y repite la observación: Compara mensaje firmado, alterado y sin firma sobre snapshots equivalentes.",
+  "patch": "HMAC-SHA256 servidor sobre bytes del cuerpo, comparación segura y control de operación separado.",
+  "positiveTest": "Mensaje firmado legítimo pasa a enviado.",
+  "negativeTest": "Alterado o sin firma no cambia el pedido corregido.",
+  "commonMistakes": [
+    "Rechazo causado solo por estado incompatible o fabricar firma en cliente.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

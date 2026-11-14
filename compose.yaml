@@ -1,0 +1,45 @@
+name: ultima-gota
+services:
+  store:
+    build:
+      context: .
+      target: store
+    ports:
+      - "127.0.0.1:4311:4311"
+    environment:
+      UG_BIND: 0.0.0.0
+      UG_STORE_DATA: /data/store/store.sqlite
+    env_file: [.runtime/compose.env]
+    volumes:
+      - store_data:/data/store
+    networks: [lab]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+  classroom:
+    build:
+      context: .
+      target: classroom
+    ports:
+      - "127.0.0.1:4310:4310"
+    environment:
+      UG_BIND: 0.0.0.0
+      UG_CLASSROOM_DATA: /data/classroom/progress.sqlite
+      UG_CONTROL_ORIGIN: http://store:4313
+      UG_EVALUATOR_STORE_ORIGIN: http://store:4311
+    env_file: [.runtime/compose.env]
+    volumes:
+      - classroom_data:/data/classroom
+    networks: [lab]
+    depends_on: [store]
+    read_only: true
+    tmpfs: [/tmp]
+    cap_drop: [ALL]
+    security_opt: ["no-new-privileges:true"]
+volumes:
+  classroom_data:
+  store_data:
+networks:
+  lab:
+    internal: true

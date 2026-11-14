@@ -1,0 +1,53 @@
+{
+  "id": "chapter-12",
+  "version": 1,
+  "kind": "implemented-scenario",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-12/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "PATCH /api/profile; GET /api/me",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "PATCH permitido de demo.pera y GET posterior devuelven notificationPreference=daily.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium"
+  },
+  "falsePositiveChecks": [
+    "Editar la interfaz sin persistencia o JSON inválido.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Lista de preferencias permitidas; conservar edición normal.",
+    "positive": "daily persiste en perfil.",
+    "negative": "Valor fuera del conjunto permitido no se guarda.",
+    "execution": "tested-integration-and-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-12/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-11"
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "UG-19",
+  "campaignCaseId": "UG-001",
+  "act": 4,
+  "title": "Una acción que la página no esperaba",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 19 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-05",
+    "UG-17",
+    "UG-18"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S05",
+      "introducedIn": "UG-05",
+      "observableUse": "registrar una evidencia reproducible separando esperado y observado durante la prueba de este expediente.",
+      "practiceContext": "GET /campanas/mensaje"
+    },
+    {
+      "skillId": "S17",
+      "introducedIn": "UG-17",
+      "observableUse": "distinguir texto mostrado literalmente de HTML interpretado durante la prueba de este expediente.",
+      "practiceContext": "GET /campanas/mensaje"
+    },
+    {
+      "skillId": "S18",
+      "introducedIn": "UG-18",
+      "observableUse": "seguir el recorrido de un dato controlable hasta el lugar donde se inserta en la página durante la prueba de este expediente.",
+      "practiceContext": "GET /campanas/mensaje"
+    }
+  ],
+  "newSkill": {
+    "id": "S19",
+    "action": "demostrar ejecución de JavaScript provocada por una entrada no confiable."
+  },
+  "narrativeEntry": "Ya has localizado el recorrido del mensaje y sabes que su destino interpreta contenido. Autorizo comprobar una consecuencia concreta en esta copia: que una entrada provoque una marca de demostración mediante JavaScript. La guía explicará cada fragmento de la muestra antes de pedir que lo uses. No buscamos enviar datos ni afectar a otras páginas. La mesa repetirá la prueba en un navegador aislado, empezando desde la entrada que guardes. Escribir una marca con el inspector o la consola no demostraría este recorrido. Después compararemos con el destino corregido y conservaremos la diferencia, junto con el límite de que solo hemos probado esta página de laboratorio.",
+  "whyItMatters": "Lara autoriza comprobar si el recorrido anterior puede ejecutar una acción inocua en el navegador del laboratorio.",
+  "learningObjective": "construir o completar progresivamente una carga de demostración que muestre una marca local. Explica cada fragmento antes de exigir su uso.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-19/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Una marca escrita manualmente demostraría que el mensaje ejecuta instrucciones?",
+  "guidedSteps": [
+    "La ejecución debe proceder de la entrada no confiable.",
+    "Usa la página y destino que seguiste en el 18.",
+    "Completa la muestra inocua explicada y conserva su URL de entrada.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H19-1",
+    "H19-2",
+    "H19-3",
+    "H19-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-19",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /campanas/mensaje",
+    "observation": "un navegador de validación aislado reproduce la ejecución desde la entrada vulnerable. Escribir la marca manualmente en consola no resuelve el caso."
+  },
+  "debrief": "introducir XSS basado en DOM en relación con el recorrido observado. Una reseña de producto plantea si el dato puede persistir.",
+  "understandingCheck": {
+    "question": "¿Qué diferencia esta prueba de la negrita del 17?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-19",
+    "label": "Prueba local de ejecución y encargo de reseña",
+    "recipient": "UG-20"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-19/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-18"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "supportResources": [
+    "LESSON-19"
+  ],
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-four-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

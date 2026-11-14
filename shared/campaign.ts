@@ -1,0 +1,3 @@
+export const IMPLEMENTED_CHAPTERS=20;
+export const CONTENT_VERSION=4;
+export const PATCH_CHAPTERS=[5,6,7,10,13,14,15,16,17,18,19,20];

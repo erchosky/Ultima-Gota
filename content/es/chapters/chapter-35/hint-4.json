@@ -1,0 +1,6 @@
+{
+  "id": "H35-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Restablece stock1 entre corridas. Ejecuta secuencial y concurrente con barrera didáctica: vulnerable acepta dos; corregida acepta una mediante actualización atómica condicionada a stock positivo."
+}

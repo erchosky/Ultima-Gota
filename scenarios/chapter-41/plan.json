@@ -1,0 +1,53 @@
+{
+  "id": "chapter-41",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-41/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "GET /api/provider-view desde auxiliar",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Eventos de servidor y navegador limpio distinguen solicitud recibida de cuerpo legible en dos políticas; permisos privados se mantienen.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Acreditar lectura solo por ver status200 en servidor.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Lista exacta de orígenes permitidos y autorización independiente.",
+    "positive": "Origen autorizado lee recurso para su cuenta.",
+    "negative": "Origen denegado no lee cuerpo y cuenta sin permiso sigue denegada.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-41/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-40"
+    ]
+  }
+}

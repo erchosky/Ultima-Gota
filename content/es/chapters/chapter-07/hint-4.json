@@ -1,0 +1,6 @@
+{
+  "id": "H07-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Inicia sesión con demo.pera y la clave de su objeto recuperado del 06. Consulta /api/me y registra userId y nombre devueltos. No cambies de cuenta durante la comprobación."
+}

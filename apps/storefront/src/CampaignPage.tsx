@@ -1,0 +1,5 @@
+import { useEffect } from 'react';
+export function CampaignPage({chapter}:{chapter:number}){
+  useEffect(()=>{if(chapter!==6)return;const script=document.createElement('script');script.src='/assets/verano-demo.js';script.dataset.campaign='summer';document.body.append(script);return()=>{script.remove();};},[chapter]);
+  return <section className="summer-page"><p className="eyebrow">ARCHIVO DE TEMPORADA · PRODUCTO06</p><h1>Verano sin colas</h1><p className="lead">Una promoción de barrio que dejó algunas piezas en la web.</p><div className="summer-card"><div className="summer-sun" aria-hidden="true">◒</div><h2>Una pausa, una mezcla de verano.</h2><p>Esta página se distribuyó con un archivo JavaScript para la demostración. Ese archivo llega al navegador igual que las imágenes o los estilos.</p><p data-summer-status>Recurso de la campaña preparado para observarlo en Red.</p></div><p>Estamos revisando una copia autorizada, no una campaña comercial activa.</p><a href="/producto?id=2">Volver a la ficha que referencia esta campaña</a></section>;
+}

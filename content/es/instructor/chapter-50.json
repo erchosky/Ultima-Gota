@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-50",
+  "solution": "Con Alba303 y Bruno304 revisa acceso propio/ajeno, precio y cupón del catálogo nuevo. Aplica correcciones, ejecuta suite y completa hechos históricos, hallazgos actuales, límites y medidas en ambas plantillas.",
+  "expectedTechnicalResult": "Investigación nueva con productos11/12 y pedidos303/304 mantiene propietarios; privacidad, ventas y regresión comprobadas; informes estructurados citan fuentes y límites.",
+  "understandingAnswer": "Declara pruebas realizadas, alcance de cada conclusión y riesgos pendientes que todavía no se han descartado.",
+  "feedbackOnIncorrect": "Declara pruebas realizadas, alcance de cada conclusión y riesgos pendientes que todavía no se han descartado. Vuelve a comparar las fuentes y repite la observación: Comprueba cuentas, propietarios, reglas y regresión con los identificadores entregados.",
+  "patch": "Aplicar conjunto de controles del escenario nuevo y conservar lista de pendientes revisable.",
+  "positiveTest": "Alba303, Bruno304 y compra válida funcionan.",
+  "negativeTest": "Acceso cruzado, precio manipulado y cupón repetido quedan bloqueados.",
+  "commonMistakes": [
+    "Copiar IDs203/204, culpar a Ivo o afirmar seguridad absoluta.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

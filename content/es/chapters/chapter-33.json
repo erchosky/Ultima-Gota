@@ -1,0 +1,119 @@
+{
+  "id": "UG-33",
+  "campaignCaseId": "UG-001",
+  "act": 7,
+  "title": "El descuento que volvió",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 33 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-11",
+    "UG-28",
+    "UG-31",
+    "UG-32"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/apply"
+    },
+    {
+      "skillId": "S28",
+      "introducedIn": "UG-28",
+      "observableUse": "comprobar que una autorización de recuperación deja de servir tras usarse durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/apply"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/apply"
+    },
+    {
+      "skillId": "S32",
+      "introducedIn": "UG-32",
+      "observableUse": "comprobar que el servidor calcula el precio a partir de sus datos autorizados durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/apply"
+    }
+  ],
+  "newSkill": {
+    "id": "S33",
+    "action": "verificar que un reintento de una operación no aplica dos veces el mismo efecto."
+  },
+  "narrativeEntry": "Aparece dos veces el descuento en un pedido de pruebas. Mercurio reenvía una operación cuando no sabe si llegó la respuesta anterior; ese reintento puede ser legítimo. Queremos que volver a recibir el mismo identificador no aplique otra vez su efecto. Esa propiedad se llama idempotencia. Usaremos una operación ya aceptada y conservaremos su identificador al reenviarla. Anota total y número de aplicaciones antes y después. Un registro histórico de las 09:15 muestra un reintento de Mercurio; no lo mezcles con una acusación contra visitante-17 solo porque ambos aparecen durante la misma mañana. Primero demuestra el comportamiento del descuento.",
+  "whyItMatters": "hay pedidos con un cupón que debía utilizarse una sola vez.",
+  "learningObjective": "reenviar una operación ya aceptada con el mismo identificador de operación, dentro de un pedido ficticio.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-33/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera",
+    "proveedor.mercurio"
+  ],
+  "predictionQuestion": "¿Debería un reintento con el mismo operationId descontar otra vez?",
+  "guidedSteps": [
+    "Repetir la recepción no debe repetir un efecto ya confirmado.",
+    "Compara operationId, aplicaciones y total del pedido205 de práctica.",
+    "Reenvía exactamente la operación de cupón aceptada.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H33-1",
+    "H33-2",
+    "H33-3",
+    "H33-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-33",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/coupon/apply",
+    "observation": "medir número de aplicaciones y total real del pedido antes y después. La corrección conserva un único efecto pese al reintento."
+  },
+  "debrief": "introducir idempotencia con un ejemplo sencillo. Un registro identifica el reintento legítimo de Mercurio, sin demostrar intención maliciosa.",
+  "understandingCheck": {
+    "question": "¿Por qué el reintento no demuestra intención maliciosa?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-33",
+    "label": "Registro del reintento legítimo de las 09:15",
+    "recipient": "UG-34"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-33/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-32"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

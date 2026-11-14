@@ -1,0 +1,124 @@
+{
+  "id": "UG-09",
+  "campaignCaseId": "UG-001",
+  "act": 2,
+  "title": "Cerrar la puerta",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 09 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-02",
+    "UG-03",
+    "UG-07",
+    "UG-08"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/logout"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/logout"
+    },
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/logout"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/logout"
+    }
+  ],
+  "newSkill": {
+    "id": "S09",
+    "action": "comparar el acceso a un mismo recurso antes y después de cerrar sesión."
+  },
+  "narrativeEntry": "En soporte compartimos un equipo de pruebas y necesitamos saber qué deja de estar accesible al salir. Ya has visto cómo la sesión mantiene una identidad entre páginas. Ahora consulta el perfil, cierra sesión con el botón de la tienda y vuelve a pedir el mismo perfil desde la interfaz. No hace falta editar ni reenviar nada manualmente. Observa una petición nueva en Red, porque una pantalla que quedó abierta puede conservar texto antiguo. En este caso esperamos que el cierre funcione. Encontrar un comportamiento correcto también es una conclusión útil, siempre que conservemos la identidad anterior y la respuesta posterior.",
+  "whyItMatters": "Vera comparte un equipo de atención y quiere saber qué ocurre al cerrar sesión.",
+  "learningObjective": "consultar el perfil autenticado, cerrar sesión y volver a abrir el mismo recurso desde la interfaz, observando la nueva petición en Red. Todavía no exijas editar ni reenviar peticiones manualmente.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-09/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Una página antigua con tu nombre significa que el servidor sigue aceptando la sesión?",
+  "guidedSteps": [
+    "Contrasta acceso privado mediante una petición nueva, no con una pantalla antigua.",
+    "Usa Mi cuenta antes de salir y vuelve a ella después del botón Cerrar sesión.",
+    "Compara las dos peticiones de perfil y la identidad de la primera.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H09-1",
+    "H09-2",
+    "H09-3",
+    "H09-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-09",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/me; POST /api/logout",
+    "observation": "registrar identidad válida antes del cierre y ausencia de acceso privado después. Clasificar todavía con lenguaje sencillo: acceso permitido o denegado."
+  },
+  "debrief": "el escenario base de cierre funciona; no lo declares vulnerable por obligación. Lara prepara dos cuentas para la queja original.",
+  "understandingCheck": {
+    "question": "¿Tenemos que encontrar una vulnerabilidad en este cierre?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-09",
+    "label": "Comparación antes/después y cuentas autorizadas Alba/Bruno",
+    "recipient": "UG-10"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-09/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-08"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-two-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

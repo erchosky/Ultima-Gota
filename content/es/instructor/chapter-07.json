@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-07",
+  "solution": "Inicia sesión con demo.pera y la clave de su objeto recuperado del 06. Consulta /api/me y registra userId y nombre devueltos. No cambies de cuenta durante la comprobación.",
+  "expectedTechnicalResult": "Sesión creada realmente para user-demo-pera y consulta /api/me con ese mismo identificador de sesión.",
+  "understandingAnswer": "Confirma que las credenciales expuestas conceden acceso a la cuenta de pruebas en esta copia.",
+  "feedbackOnIncorrect": "Confirma que las credenciales expuestas conceden acceso a la cuenta de pruebas en esta copia. Vuelve a comparar las fuentes y repite la observación: Introduce solo las credenciales encontradas y compara la respuesta de perfil con demo.pera.",
+  "patch": "Desactivar la cuenta expuesta en el mundo principal; conservar una copia autorizada para las lecciones de sesión.",
+  "positiveTest": "Una cuenta ficticia activa autorizada puede entrar.",
+  "negativeTest": "La credencial revocada no permite crear sesión en el mundo corregido.",
+  "commonMistakes": [
+    "Una bienvenida editada o un perfil de Alba en otra sesión.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-two"
+}

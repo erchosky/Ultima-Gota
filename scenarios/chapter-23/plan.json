@@ -1,0 +1,53 @@
+{
+  "id": "chapter-23",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-23/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /api/search?q=",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Consulta vulnerable SQLite ejecutada realmente; pareja verdadera devuelve seis productos y falsa ninguno, con eventos del run.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Un error de sintaxis, respuesta de otra ejecución o solo una condición.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Sustituir interpolación por parámetro SQL; la entrada ocupa un valor.",
+    "positive": "Búsqueda pera sigue encontrando producto 2.",
+    "negative": "Pareja de entradas no altera condiciones en versión parametrizada.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-23/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-22"
+    ]
+  }
+}

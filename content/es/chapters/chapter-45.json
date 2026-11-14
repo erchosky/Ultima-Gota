@@ -1,0 +1,119 @@
+{
+  "id": "UG-45",
+  "campaignCaseId": "UG-001",
+  "act": 9,
+  "title": "El mensaje sin firma",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 45 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-12",
+    "UG-15",
+    "UG-33",
+    "UG-34",
+    "UG-44"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/logistics/webhook"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/logistics/webhook"
+    },
+    {
+      "skillId": "S33",
+      "introducedIn": "UG-33",
+      "observableUse": "verificar que un reintento de una operación no aplica dos veces el mismo efecto durante la prueba de este expediente.",
+      "practiceContext": "POST /api/logistics/webhook"
+    },
+    {
+      "skillId": "S34",
+      "introducedIn": "UG-34",
+      "observableUse": "verificar que una transición entre estados de un pedido está permitida durante la prueba de este expediente.",
+      "practiceContext": "POST /api/logistics/webhook"
+    }
+  ],
+  "newSkill": {
+    "id": "S45",
+    "action": "comprobar autenticidad e integridad de un mensaje firmado por el servicio ficticio."
+  },
+  "narrativeEntry": "Una notificación logística cambió el estado de un pedido y necesitamos comprobar si el servicio verificó su procedencia. Mercurio puede firmar mensajes: un valor calculado con un secreto compartido permite detectar modificaciones y comprobar que el emisor conoce ese secreto. No tienes que implementar criptografía ni conocer el secreto del servicio. La mesa prepara un mensaje legítimo, uno alterado y otro sin firma. Usa un pedido en estado preparado y compara qué acepta cada versión. La transición de estados ya está corregida, así que no confundiremos este problema con saltarse un paso. La firma tampoco resolverá por sí sola la repetición de un mensaje válido.",
+  "whyItMatters": "una notificación logística hizo avanzar un pedido; hay que saber si provenía realmente del proveedor.",
+  "learningObjective": "comparar un mensaje legítimo, uno modificado y otro sin firma. Explica la finalidad de una firma de mensaje sin exigir implementar criptografía.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-45/v1"
+  ],
+  "allowedAccounts": [
+    "proveedor.mercurio"
+  ],
+  "predictionQuestion": "¿Un mensaje con formato correcto demuestra que lo envió Mercurio?",
+  "guidedSteps": [
+    "Formato válido, autenticidad y repetición son controles separados.",
+    "Mira cuerpo exacto y resultado de verificación en el receptor logístico.",
+    "Compara mensaje firmado, alterado y sin firma sobre snapshots equivalentes.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H45-1",
+    "H45-2",
+    "H45-3",
+    "H45-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-45",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/logistics/webhook",
+    "observation": "la versión vulnerable acepta un mensaje no autenticado; la corregida verifica correctamente la firma y conserva el flujo legítimo."
+  },
+  "debrief": "autenticidad no resuelve por sí sola repeticiones; relaciona ese límite con el capítulo 33. Los registros de este caso abren la investigación final.",
+  "understandingCheck": {
+    "question": "¿Una firma válida evita recibir dos veces el mismo mensaje?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-45",
+    "label": "Registro no autenticado de las 09:10, sin atribución personal",
+    "recipient": "UG-46"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-45/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-44"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

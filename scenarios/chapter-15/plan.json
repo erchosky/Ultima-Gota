@@ -1,0 +1,55 @@
+{
+  "id": "chapter-15",
+  "version": 1,
+  "kind": "implemented-scenario",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-15/v1",
+    "accounts": [
+      "Alba",
+      "Bruno",
+      "demo.pera"
+    ],
+    "resource": "GET /api/orders; PATCH /api/profile",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Cuatro pruebas corregidas y comparación vulnerable; propietario y capacidades persistidas correctos.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium"
+  },
+  "falsePositiveChecks": [
+    "Solo comprobar rechazo o confiar en una insignia de corregido.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Consolidar controles de propiedad y lista de campos permitidos en mundo principal.",
+    "positive": "Alba203 y preferencia daily funcionan.",
+    "negative": "Alba204 y escalado de capacidades quedan denegados.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-15/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-14"
+    ]
+  }
+}

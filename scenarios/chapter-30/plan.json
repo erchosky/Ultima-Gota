@@ -1,0 +1,53 @@
+{
+  "id": "chapter-30",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-30/v1",
+    "accounts": [
+      "Alba"
+    ],
+    "resource": "GET /api/me; POST /api/recovery/complete",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Sesión antigua sigue válida en vulnerable; corregida invalida A/B y nuevo login legítimo funciona.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Cerrar a mano la sesión antigua antes de comprobarla.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Incrementar versión de sesiones de cuenta al completar recuperación de seguridad.",
+    "positive": "Login nuevo con clave actual funciona.",
+    "negative": "Sesión anterior no obtiene perfil privado.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-30/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-29"
+    ]
+  }
+}

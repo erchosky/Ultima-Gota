@@ -1,0 +1,47 @@
+{
+  "story": "Transición05→06; archivo público→cuenta→cookie→logout→pedido ajeno; correcciones y recuperación.",
+  "checks": [
+    "Campaña del ActoI abre la transición05→06 sin perder la corrección del precio",
+    "Recurso público real contiene el dato de práctica; la corrección de precio del05 permanece",
+    "Corrección6 contrastada con prueba legítima y negativa en copia aislada",
+    "Expediente6 completa evidencia y comprensión",
+    "Cuenta real reconocida por /api/me y credencial recuperada oculta por defecto",
+    "Corrección7 contrastada con prueba legítima y negativa en copia aislada",
+    "Expediente7 completa evidencia y comprensión",
+    "ug_store aparece tras entrar, es HttpOnly y conserva identidad al navegar",
+    "Expediente8 completa evidencia y comprensión",
+    "Cierre elimina la cookie y una nueva petición pierde acceso privado",
+    "Expediente9 completa evidencia y comprensión",
+    "IDOR reproducido: Alba recibe204 de Bruno, que conserva propietario; control Bruno confirmado",
+    "Corrección10 contrastada con prueba legítima y negativa en copia aislada",
+    "Expediente10 completa evidencia y comprensión",
+    "Reinicio real conserva diez expedientes y permite recuperar el objeto de credenciales",
+    "Archivo y recuperación de los diez capítulos sin contraseñas ni logros nuevos en exportación",
+    "Lectura móvil sin desbordamiento horizontal"
+  ],
+  "errors": [],
+  "expectedDenials": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "screenshots": [
+    "reports/browser-act-two/06-campana-publica.png",
+    "reports/browser-act-two/07-perfil-autenticado.png",
+    "reports/browser-act-two/09-cierre-verificado.png",
+    "reports/browser-act-two/10-acceso-cruzado.png",
+    "reports/browser-act-two/10-cierre-acto.png",
+    "reports/browser-act-two/cuaderno-actos-I-II.png",
+    "reports/browser-act-two/movil-actos-I-II.png"
+  ],
+  "passed": true,
+  "limitations": [
+    "Recorrido automatizado de desarrollador; pendiente prueba con persona principiante.",
+    "No detectamos DevTools: contrastamos peticiones y observaciones.",
+    "Docker, Kali y Firefox siguen sin verificación en este entorno."
+  ],
+  "engine": "Chromium",
+  "browserVersion": "156.0.8078.4"
+}

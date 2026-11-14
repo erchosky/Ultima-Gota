@@ -1,0 +1,53 @@
+{
+  "id": "chapter-44",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-44/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "GET /tracking?returnTo=",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Location vulnerable navega al auxiliar local no autorizado; corregida rechaza ese origen y conserva retorno tienda.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Elegir un sitio externo o juzgar el destino solo por texto del enlace.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Analizador URL con base fija y lista exacta de orígenes y rutas de retorno previstas.",
+    "positive": "Retorno a tienda autorizada funciona.",
+    "negative": "Retorno al auxiliar se rechaza aunque contenga tienda.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-44/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-43"
+    ]
+  }
+}

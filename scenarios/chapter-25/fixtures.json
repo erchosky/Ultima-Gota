@@ -1,0 +1,15 @@
+{
+  "id": "chapter-25/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "historicalSubset": [
+      "HIST-01",
+      "HIST-02",
+      "HIST-03"
+    ],
+    "includeReviewEvidence": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

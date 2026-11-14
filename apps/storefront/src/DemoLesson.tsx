@@ -1,0 +1,5 @@
+import { useState } from 'react';
+export function DemoLesson({copyId,onUse}:{copyId:string;onUse:(sample:string)=>void}){
+ const [lesson,setLesson]=useState<any>(null),[step,setStep]=useState(1),[error,setError]=useState('');
+ return <section className="panel"><h2>Una muestra, fragmento a fragmento</h2>{!lesson?<><p>La muestra provoca únicamente una marca local. Lee su recorrido antes de utilizarla.</p><button className="secondary" onClick={async()=>{try{const r=await fetch('/api/practice/demonstration',{headers:{'X-UG-Copy':copyId}}),data=await r.json();if(!r.ok)throw new Error(data.error);setLesson(data);}catch(e){setError((e as Error).message);}}}>Pedir muestra explicada</button></>:<><ol>{lesson.explanation.slice(0,step).map((p:string)=><li key={p}>{p}</li>)}</ol>{step<lesson.explanation.length?<button className="secondary" onClick={()=>setStep(s=>s+1)}>Leer siguiente fragmento</button>:<><pre className="practice-code">{lesson.sample}</pre><p>{lesson.limits}</p><button className="secondary" onClick={()=>onUse(lesson.sample)}>Usar muestra explicada</button></>}</>}{error&&<p role="alert">{error}</p>}</section>;
+}

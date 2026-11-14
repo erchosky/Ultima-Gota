@@ -1,0 +1,81 @@
+npm notice run ultima-gota@0.5.0 test:browser:all
+npm notice run npm run test:browser && npm run test:browser:act-two && npm run test:browser:act-three && npm run test:browser:act-four
+npm notice run ultima-gota@0.5.0 test:browser
+npm notice run tsx tests/learning-flows/act-one.ts
+✓ Inicio legible y análisis axe sin infracciones
+✓ Enlace de salto accesible por teclado
+✓ Cookies de escritorio y tienda separadas por host real
+✓ Expediente1: petición→evidencia→comprensión→logro
+✓ Pista solicitada explícitamente y sin penalizar
+✓ Expediente2: petición→evidencia→comprensión→logro
+✓ Expediente3: petición→evidencia→comprensión→logro
+✓ Edición local revierte al recargar sin cambiar datos del servidor
+✓ Expediente4: petición→evidencia→comprensión→logro
+✓ Corrección real contrastada por evaluador y sesión independiente de alumno
+✓ Expediente5: petición→evidencia→comprensión→logro
+✓ Reinicio real de ambos servicios conserva cinco logros y notas
+✓ Diálogo nativo: foco interior, Escape y retorno de foco
+✓ Campaña nueva y recuperación histórica desde la interfaz sin notificaciones duplicadas
+✓ Lectura móvil390px sin desbordamiento horizontal
+✓ Inicio también renderiza en Chromium
+npm notice run ultima-gota@0.5.0 test:browser:act-two
+npm notice run tsx tests/learning-flows/act-two.ts
+✓ Campaña del ActoI abre la transición05→06 sin perder la corrección del precio
+✓ Recurso público real contiene el dato de práctica; la corrección de precio del05 permanece
+✓ Corrección6 contrastada con prueba legítima y negativa en copia aislada
+✓ Expediente6 completa evidencia y comprensión
+✓ Cuenta real reconocida por /api/me y credencial recuperada oculta por defecto
+✓ Corrección7 contrastada con prueba legítima y negativa en copia aislada
+✓ Expediente7 completa evidencia y comprensión
+✓ ug_store aparece tras entrar, es HttpOnly y conserva identidad al navegar
+✓ Expediente8 completa evidencia y comprensión
+✓ Cierre elimina la cookie y una nueva petición pierde acceso privado
+✓ Expediente9 completa evidencia y comprensión
+✓ IDOR reproducido: Alba recibe204 de Bruno, que conserva propietario; control Bruno confirmado
+✓ Corrección10 contrastada con prueba legítima y negativa en copia aislada
+✓ Expediente10 completa evidencia y comprensión
+✓ Reinicio real conserva diez expedientes y permite recuperar el objeto de credenciales
+✓ Archivo y recuperación de los diez capítulos sin contraseñas ni logros nuevos en exportación
+✓ Lectura móvil sin desbordamiento horizontal
+npm notice run ultima-gota@0.5.0 test:browser:act-three
+npm notice run tsx tests/learning-flows/act-three.ts
+✓ Transición10→11 conserva diez expedientes y precio corregido
+✓ ReplayXHR nativo de Chromium (CDP) genera referencia nueva y conserva sesión Alba; menú visual no acreditado
+✓ Mesa envía y reenvía solicitudes XHR reales; referencias distintas, misma cuenta y sin fallos axe detectados
+✓ Expediente11 completa evidencia y comprensión
+✓ Edición JSON conserva estructura y daily reaparece en una consulta posterior
+✓ Expediente12 completa evidencia y comprensión
+✓ Campo interno cambia capacidad persistida y acceso real al recurso restringido
+✓ Corrección13 comprobada por navegador independiente
+✓ Expediente13 completa evidencia y comprensión
+✓ Seis casos reales distinguen cinco estados y200 permitido de200 denegado
+✓ Corrección14 comprobada por navegador independiente
+✓ Expediente14 completa evidencia y comprensión
+✓ Comparación manual separa copias; propio/preferencia permitidos, ajeno/capacidad denegados; mesa móvil sin desbordamiento
+✓ Corrección15 comprobada por navegador independiente
+✓ Expediente15 completa evidencia y comprensión
+✓ Reinicio conserva15 expedientes y controles; exportación3 no contiene contraseñas
+✓ Cuaderno conserva informes de las correcciones y permite lectura móvil
+npm notice run ultima-gota@0.5.0 test:browser:act-four
+npm notice run tsx tests/learning-flows/act-four.ts
+✓ Transición15→16 conserva quince expedientes y controles principales
+✓ Formulario limita cero; petición modificada lo guarda y una consulta nueva confirma901 sin cobro
+✓ Corrección16 repite uso legítimo y caso negativo en contexto separado
+✓ Expediente16 completa evidencia y comprensión
+✓ Mismo dato persiste: texto literal frente a strong, sin marca; comprobación axe sin violaciones detectadas
+✓ Corrección17 repite uso legítimo y caso negativo en contexto separado
+✓ Expediente17 completa evidencia y comprensión
+✓ Marca única viaja desde parámetro decodificado hasta #mensaje; fragmento público coincide con ejecución
+✓ Cliente original de la skill ejecutado sobre la página y el marco del18
+✓ Corrección18 repite uso legítimo y caso negativo en contexto separado
+✓ Expediente18 completa evidencia y comprensión
+✓ Marca manual en el DOM no acredita el recorrido ni completa evidencia
+✓ Muestra explicada ejecuta manejador local; marco opaco impide leer cookies y documento padre
+✓ Corrección19 repite uso legítimo y caso negativo en contexto separado
+✓ Expediente19 completa evidencia y comprensión
+✓ Reseña persistida por Alba se recibe y ejecuta como Bruno con otra cookie de sesión
+✓ Marco y muestras legibles en móvil sin desbordamiento horizontal
+✓ Corrección20 repite uso legítimo y caso negativo en contexto separado
+✓ Expediente20 completa evidencia y comprensión
+✓ Reinicio conserva veinte expedientes e informes y exporta contenido4
+✓ Recuperación por interfaz conserva evidencia histórica y correcciones sin nuevos logros

@@ -1,0 +1,120 @@
+{
+  "id": "UG-36",
+  "campaignCaseId": "UG-001",
+  "act": 8,
+  "title": "Seguir la ruta del albarán",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 36 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-01",
+    "UG-02",
+    "UG-03",
+    "UG-10",
+    "UG-35"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/documents?path="
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/documents?path="
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/documents?path="
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "GET /api/documents?path="
+    }
+  ],
+  "newSkill": {
+    "id": "S36",
+    "action": "distinguir un identificador de negocio de una ruta de archivo utilizada por un servicio."
+  },
+  "narrativeEntry": "El enlace de un albarán abre un documento que no esperaba. Hasta ahora has cambiado identificadores de productos y pedidos, pero este servicio también recibe una ruta de archivo. Una ruta describe una posición dentro de carpetas; no es lo mismo que el número comercial del pedido. La mesa mostrará un árbol pequeño y completamente ficticio. Localiza qué documento solicita el enlace y a quién pertenece. Compara también quién puede descargarlo. No intentes salir de la carpeta todavía: encontrar una ruta no demuestra que el servicio permita atravesar sus límites. Necesitamos distinguir primero selección de documento, propiedad y ubicación.",
+  "whyItMatters": "Sam envía un enlace de descarga que apunta al albarán equivocado.",
+  "learningObjective": "observar la descarga y reconocer sus partes con un pequeño árbol de carpetas ficticias. Verificar también quién debería poder descargar el documento.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-36/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno"
+  ],
+  "predictionQuestion": "¿Un nombre de archivo demuestra quién tiene permiso para descargarlo?",
+  "guidedSteps": [
+    "Identidad comercial, ubicación y autorización son datos distintos.",
+    "Mira el enlace del albarán y el árbol virtual del almacén.",
+    "Relaciona pedido203, propietarioAlba y ruta de su albarán.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H36-1",
+    "H36-2",
+    "H36-3",
+    "H36-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-36",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/documents?path=",
+    "observation": "identificar el documento y la comprobación de acceso necesaria. Encontrar una ruta no implica que pueda atravesarse."
+  },
+  "debrief": "un parámetro de archivo merece reglas diferentes de un número de producto. Lara propone comprobar el límite de la carpeta.",
+  "understandingCheck": {
+    "question": "¿Qué diferencia una ruta de un identificador de pedido?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-36",
+    "label": "Mapa del almacén virtual",
+    "recipient": "UG-37"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-36/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-35"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-10",
+  "solution": "Entra como Alba, comprueba /api/me, abre /pedido?id=203 y cambia a 204. Conserva la respuesta con ownerId de Bruno y repite 204 como Bruno en otra sesión autorizada.",
+  "expectedTechnicalResult": "Sesión Alba recibe pedido204 propietario Bruno; control Alba203 y Bruno204 válidos, todos del run activo.",
+  "understandingAnswer": "El servidor debe comprobar autorización de esa cuenta sobre el pedido solicitado: conocer el ID no basta.",
+  "feedbackOnIncorrect": "El servidor debe comprobar autorización de esa cuenta sobre el pedido solicitado: conocer el ID no basta. Vuelve a comparar las fuentes y repite la observación: Mantén sesión de Alba y cambia el identificador de 203 a 204 en la consulta.",
+  "patch": "Comprobar ownerId o capacidad explícita antes de serializar el pedido. Se consolidará en el 15.",
+  "positiveTest": "Alba consulta 203 y Bruno consulta 204.",
+  "negativeTest": "Alba no obtiene datos de 204 en la versión corregida.",
+  "commonMistakes": [
+    "Acceso a 204 solo como Bruno, números adivinados o cambio del texto del propietario.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-two"
+}

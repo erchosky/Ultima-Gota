@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-42",
+  "solution": "Como demo.pera abre formulario en4312 que envía a4311. Vulnerable cambia preferencia con cookie. Corregida exige token y Origin exacto; rechaza auxiliar y permite formulario legítimo de tienda.",
+  "expectedTechnicalResult": "Navegador real envía cookie desde auxiliar y cambia estado vulnerable; corregida bloquea por autenticidad y permite operación propia.",
+  "understandingAnswer": "Porque hay que comprobar la autenticidad de una operación sensible además de la cuenta que la recibe.",
+  "feedbackOnIncorrect": "Porque hay que comprobar la autenticidad de una operación sensible además de la cuenta que la recibe. Vuelve a comparar las fuentes y repite la observación: Prueba un cambio inocuo de preferencia con y sin control de autenticidad.",
+  "patch": "Token CSRF ligado a sesión y comprobación exacta de Origin para operaciones mutables.",
+  "positiveTest": "Formulario de tienda con token cambia preferencia.",
+  "negativeTest": "Formulario auxiliar sin autenticidad no cambia estado.",
+  "commonMistakes": [
+    "Suponer envío de cookie, usar fetch como sustituto del formulario o desactivar seguridad global.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

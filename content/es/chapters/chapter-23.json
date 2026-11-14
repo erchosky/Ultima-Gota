@@ -1,0 +1,111 @@
+{
+  "id": "UG-23",
+  "campaignCaseId": "UG-001",
+  "act": 5,
+  "title": "Dos preguntas, dos respuestas",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 23 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-05",
+    "UG-21",
+    "UG-22"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S05",
+      "introducedIn": "UG-05",
+      "observableUse": "registrar una evidencia reproducible separando esperado y observado durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    },
+    {
+      "skillId": "S21",
+      "introducedIn": "UG-21",
+      "observableUse": "leer una consulta SELECT sencilla como una selección de filas con una condición durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    },
+    {
+      "skillId": "S22",
+      "introducedIn": "UG-22",
+      "observableUse": "aislar un carácter de entrada que cambia el comportamiento de una consulta vulnerable durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    }
+  ],
+  "newSkill": {
+    "id": "S23",
+    "action": "contrastar una condición verdadera y una falsa dentro del escenario de inyección."
+  },
+  "narrativeEntry": "La diferencia con la comilla se repite. Ahora necesitamos una prueba más precisa: dos entradas que solo cambien una condición explicada, una verdadera y otra falsa. Te mostraré cómo se construye la consulta de esta copia y qué significan los operadores usados. Trabajamos únicamente con los productos ficticios de la tabla conocida. Si el resultado sigue la condición introducida como instrucción, tendremos una demostración de que el buscador mezcla datos y lógica. Guarda ambas respuestas, no solo la más llamativa. No hace falta buscar otras bases ni recopilar información adicional para responder a la pregunta de este expediente.",
+  "whyItMatters": "hay que comprobar si el buscador mezcla datos introducidos con instrucciones de consulta.",
+  "learningObjective": "completar una pareja de entradas explicadas que produzcan resultados distintos sobre productos ficticios. La guía enseña los operadores necesarios antes del intento.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-23/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Qué diferencia esperarías entre una condición verdadera y otra falsa si alteran la consulta?",
+  "guidedSteps": [
+    "Dos condiciones opuestas permiten contrastar una hipótesis concreta.",
+    "Usa la consulta de productos y la pareja explicada en la mesa.",
+    "Mantén la estructura y cambia solo 1=1 por 1=2.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H23-1",
+    "H23-2",
+    "H23-3",
+    "H23-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-23",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/search?q=",
+    "observation": "el resultado cambia de forma consistente con la condición y el servidor confirma el recorrido vulnerable."
+  },
+  "debrief": "distinguir un fallo demostrado de una sospecha. No se requiere enumerar otras bases ni extraer todos sus datos.",
+  "understandingCheck": {
+    "question": "¿Qué demuestra que el resultado siga la condición enviada?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-23",
+    "label": "Prueba contrastada de alteración de lógica",
+    "recipient": "UG-24"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-23/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-22"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

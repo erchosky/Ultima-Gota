@@ -1,0 +1,117 @@
+{
+  "id": "UG-16",
+  "campaignCaseId": "UG-001",
+  "act": 4,
+  "title": "El botón no es la regla",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 16 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-11",
+    "UG-12",
+    "UG-15"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/practice/orders"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/practice/orders"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/practice/orders"
+    }
+  ],
+  "newSkill": {
+    "id": "S16",
+    "action": "comprobar si una regla de entrada se valida también en el servidor."
+  },
+  "narrativeEntry": "El formulario de pedido no me deja bajar de una unidad. Pensé que eso garantizaba la regla, pero ahora sé que el navegador envía una petición que puede modificarse. Necesito comprobar dónde se decide de verdad. Usaremos un pedido de práctica sin cobros y una cantidad que el formulario no admite. Después consultaremos lo guardado en el servidor. No cambies precio, producto ni cuenta; así podremos atribuir la diferencia al único campo que estamos investigando. Compara también una cantidad válida en la versión corregida. La regla que hemos acordado es sencilla: cantidades enteras entre una y veinte unidades.",
+  "whyItMatters": "Sam cree que la cantidad mínima está protegida porque el formulario no permite ciertos valores.",
+  "learningObjective": "enviar en un pedido ficticio un valor que el formulario limita y verificar el resultado persistido. El escenario no realiza cobros.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-16/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿El mínimo del formulario obliga por sí solo al servidor a rechazar cero?",
+  "guidedSteps": [
+    "Un control de pantalla puede evitarse reenviando la petición.",
+    "Mira quantity en el cuerpo del pedido de práctica.",
+    "Conserva producto y cuenta; varía únicamente la cantidad.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H16-1",
+    "H16-2",
+    "H16-3",
+    "H16-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-16",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/practice/orders",
+    "observation": "identificar aceptación indebida en la versión vulnerable y rechazo en la corregida, preservando una cantidad válida."
+  },
+  "debrief": "los controles del formulario ayudan al usuario; la regla de negocio debe verificarse al recibir la petición. Un campo de descripción presenta un comportamiento distinto.",
+  "understandingCheck": {
+    "question": "¿Dónde debe aplicarse la regla de cantidad?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-16",
+    "label": "Comparación de reglas y campo de descripción",
+    "recipient": "UG-17"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-16/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-15"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-four-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

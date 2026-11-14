@@ -1,0 +1,112 @@
+{
+  "id": "UG-21",
+  "campaignCaseId": "UG-001",
+  "act": 5,
+  "title": "La libreta del almacén",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 21 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-01",
+    "UG-02",
+    "UG-03",
+    "UG-20"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/lesson/products?query=first-two"
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/lesson/products?query=first-two"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/lesson/products?query=first-two"
+    }
+  ],
+  "newSkill": {
+    "id": "S21",
+    "action": "leer una consulta SELECT sencilla como una selección de filas con una condición."
+  },
+  "narrativeEntry": "Mi libreta tiene una fila por producto y varias columnas, como identificador, nombre y precio. La base de datos organiza información de una forma parecida. En la mesa veremos una tabla de seis productos y una consulta SELECT sencilla: pide algunas columnas de las filas que cumplen una condición. Primero predecirás qué productos coinciden y después lo comprobarás en el buscador preparado. Esta vista es una lección autorizada, no una entrada oculta al servidor. No necesitas programar consultas nuevas ni conocer otras tablas. Quiero que puedas relacionar una condición concreta con las filas que realmente devuelve la aplicación.",
+  "whyItMatters": "Sam necesita entender cómo el buscador selecciona productos de su inventario.",
+  "learningObjective": "comparar una tabla de productos ficticios con el resultado del buscador en una vista didáctica. Presenta tabla, fila, columna y condición con ejemplos pequeños.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-21/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Qué filas cumplirán la condición id <= 2 en la tabla de seis productos?",
+  "guidedSteps": [
+    "Una condición selecciona filas; las columnas indican qué datos se muestran.",
+    "Mira la tabla didáctica y su consulta SELECT.",
+    "Predice los identificadores antes de ejecutar la consulta preparada.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H21-1",
+    "H21-2",
+    "H21-3",
+    "H21-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-21",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/lesson/products?query=first-two",
+    "observation": "predecir qué filas devuelve una consulta sencilla y comprobarlas en la aplicación."
+  },
+  "debrief": "esta vista es una lección explícita, no un acceso secreto a soluciones futuras. Una búsqueda con un carácter especial se comporta de forma inesperada.",
+  "understandingCheck": {
+    "question": "¿Qué hace la condición de esta consulta?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-21",
+    "label": "Tabla del catálogo y búsqueda con comilla",
+    "recipient": "UG-22"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-21/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-20"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

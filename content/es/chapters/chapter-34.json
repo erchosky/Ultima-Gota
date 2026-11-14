@@ -1,0 +1,140 @@
+{
+  "id": "UG-34",
+  "campaignCaseId": "UG-001",
+  "act": 7,
+  "title": "Un pedido que saltó un paso",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 34 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-10",
+    "UG-11",
+    "UG-12",
+    "UG-13",
+    "UG-14",
+    "UG-15",
+    "UG-31",
+    "UG-33"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    },
+    {
+      "skillId": "S13",
+      "introducedIn": "UG-13",
+      "observableUse": "comprobar si el servidor acepta un campo interno que el cliente no debe controlar durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    },
+    {
+      "skillId": "S14",
+      "introducedIn": "UG-14",
+      "observableUse": "interpretar una tabla pequeña de estados HTTP y distinguir un error útil de una filtración interna durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "POST /api/warehouse/orders/205/transition"
+    }
+  ],
+  "newSkill": {
+    "id": "S34",
+    "action": "verificar que una transición entre estados de un pedido está permitida."
+  },
+  "narrativeEntry": "Un pedido de práctica figura enviado, pero no pasó por preparado. Hemos dibujado sus estados válidos: creado, pagado, preparado y enviado. No hay cobro real; pagado es un estado ficticio del laboratorio. El servicio de almacén solo debe pasar de preparado a enviado con la cuenta autorizada. Como ya corregimos la propiedad de lectura, no vamos a volver a romperla: el nuevo caso trata de una transición distinta. Prueba el salto y una transición legítima con la misma cuenta de almacén. Mira el estado persistido y no el texto del botón, porque el botón visible no define las reglas del servidor.",
+  "whyItMatters": "un pedido aparece enviado sin haber completado las comprobaciones necesarias.",
+  "learningObjective": "representar los estados del pedido y probar una transición válida y otra que salta una condición necesaria.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-34/v1"
+  ],
+  "allowedAccounts": [
+    "almacen.sam"
+  ],
+  "predictionQuestion": "¿Puede saltarse creado→enviado porque el cliente mande el estado final?",
+  "guidedSteps": [
+    "Una transición necesita estado anterior y autorización apropiados.",
+    "Mira el diagrama y el endpoint de transiciones de almacén.",
+    "Compara salto con el paso preparado→enviado.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H34-1",
+    "H34-2",
+    "H34-3",
+    "H34-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-34",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/warehouse/orders/205/transition",
+    "observation": "la versión vulnerable acepta el salto y la corregida lo rechaza en el servidor, aunque el cliente envíe el estado deseado."
+  },
+  "debrief": "el botón visible no define por sí solo las transiciones válidas. Almacén pregunta qué sucede con la última unidad disponible.",
+  "understandingCheck": {
+    "question": "¿Qué debe comprobar el servidor además del estado pedido?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-34",
+    "label": "Diagrama de estados y aviso de última unidad",
+    "recipient": "UG-35"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-34/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-33"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-37",
+  "solution": "En vulnerable solicita ../reservado/nota-mercurio.txt desde public. En corregida verifica rechazo y descarga pública legítima. Ninguna ruta se resolverá sobre el sistema real.",
+  "expectedTechnicalResult": "Lectura virtual cruza public hacia reservado en vulnerable; corregida bloquea; guardián de árbol impide cualquier archivo real.",
+  "understandingAnswer": "Puede haber representaciones equivalentes; importa el destino normalizado y su pertenencia a la raíz.",
+  "feedbackOnIncorrect": "Puede haber representaciones equivalentes; importa el destino normalizado y su pertenencia a la raíz. Vuelve a comparar las fuentes y repite la observación: Construye una ruta que suba un nivel dentro del árbol de pruebas.",
+  "patch": "Resolver sobre árbol virtual y exigir contención en public tras normalización; permisos por documento.",
+  "positiveTest": "Documento público autorizado sigue accesible.",
+  "negativeTest": "Rutas relativas equivalentes y absolutas fuera de public no lo son.",
+  "commonMistakes": [
+    "Un error de ruta o lectura del host para demostrar el caso.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

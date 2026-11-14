@@ -1,0 +1,133 @@
+{
+  "id": "UG-27",
+  "campaignCaseId": "UG-001",
+  "act": 6,
+  "title": "Un enlace con destinatario",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 27 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-01",
+    "UG-07",
+    "UG-08",
+    "UG-09",
+    "UG-10",
+    "UG-26"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S09",
+      "introducedIn": "UG-09",
+      "observableUse": "comparar el acceso a un mismo recurso antes y después de cerrar sesión durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S26",
+      "introducedIn": "UG-26",
+      "observableUse": "comprobar si una respuesta revela la existencia de una cuenta durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    }
+  ],
+  "newSkill": {
+    "id": "S27",
+    "action": "comprobar que un token de recuperación está vinculado a una cuenta concreta."
+  },
+  "narrativeEntry": "Un enlace de recuperación lleva un token: un valor que autoriza una acción limitada. No es la contraseña y no debería permitir actuar sobre cualquier cuenta. He preparado buzones ficticios de Alba y Bruno para que podamos comparar destinatarios con permiso. Solicita ambos enlaces, conserva sus referencias ocultando los valores y comprueba qué cuenta cambia realmente al usarlos. La guía explica dónde aparece el destinatario y cómo contrastarlo con el token. Usaremos contraseñas claramente de demostración. La prueba debe verificar un acceso posterior, porque un mensaje de cambio correcto no garantiza por sí solo que se modificara la cuenta esperada.",
+  "whyItMatters": "los enlaces de recuperación de dos cuentas deben cambiar únicamente la contraseña de su destinatario.",
+  "learningObjective": "solicitar enlaces para las dos cuentas del escenario y comprobar el vínculo entre token, destinatario y cambio autorizado. Todos los secretos son ficticios.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-27/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno"
+  ],
+  "predictionQuestion": "¿Un token de Alba debería autorizar cambiar la contraseña de Bruno?",
+  "guidedSteps": [
+    "La autorización limitada debe quedar vinculada a su destinatario.",
+    "Compara token y accountId en el flujo de recuperación.",
+    "Mantén el token y cambia solo el destinatario en la copia.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H27-1",
+    "H27-2",
+    "H27-3",
+    "H27-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-27",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/recovery/complete",
+    "observation": "demostrar el defecto de vinculación previsto en la versión vulnerable y su ausencia en la corregida."
+  },
+  "debrief": "un token es una autorización limitada, no una contraseña universal. La mentora pide comprobar cuánto dura esa autorización.",
+  "understandingCheck": {
+    "question": "¿Qué debe determinar la cuenta autorizada?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-27",
+    "label": "Ficha de autorización token-destinatario",
+    "recipient": "UG-28"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-27/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-26"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

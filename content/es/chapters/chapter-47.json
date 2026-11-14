@@ -1,0 +1,160 @@
+{
+  "id": "UG-47",
+  "campaignCaseId": "UG-001",
+  "act": 10,
+  "title": "Cómo pudo encadenarse",
+  "location": "Copia histórica aislada",
+  "narrativeTime": "día 0 · hito 47 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-06",
+    "UG-07",
+    "UG-08",
+    "UG-09",
+    "UG-10",
+    "UG-11",
+    "UG-12",
+    "UG-13",
+    "UG-40",
+    "UG-46"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S06",
+      "introducedIn": "UG-06",
+      "observableUse": "buscar una palabra en un recurso JavaScript que la propia página ha cargado durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S09",
+      "introducedIn": "UG-09",
+      "observableUse": "comparar el acceso a un mismo recurso antes y después de cerrar sesión durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S13",
+      "introducedIn": "UG-13",
+      "observableUse": "comprobar si el servidor acepta un campo interno que el cliente no debe controlar durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S40",
+      "introducedIn": "UG-40",
+      "observableUse": "verificar que un recurso interno no se distribuye en la publicación pública durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    },
+    {
+      "skillId": "S46",
+      "introducedIn": "UG-46",
+      "observableUse": "correlacionar eventos con identificadores de petición, sesión y operación, reconociendo sus límites durante la prueba de este expediente.",
+      "practiceContext": "Copia histórica: campaña, login, perfil, pedidos y soporte"
+    }
+  ],
+  "newSkill": {
+    "id": "S47",
+    "action": "construir y verificar un recorrido de ataque con sus dependencias y posibles ramas."
+  },
+  "narrativeEntry": "Abrimos una copia histórica etiquetada. Las correcciones principales siguen guardadas y este escenario no las deshace. Reproduce el acceso con las credenciales expuestas y documenta dos ramas. Una llega a un pedido ajeno por falta de comprobación de propiedad; la otra añade una capacidad interna y después accede a la exportación de soporte. Comprueba sus dependencias en lugar de dibujar una única cadena obligatoria. La ampliación de permisos no era necesaria para el fallo de pedidos. Diferencia lo que reproduces ahora de los registros que respaldan el uso histórico. Nos detendremos en los objetos ficticios previstos, con su alcance mínimo demostrado.",
+  "whyItMatters": "el equipo necesita demostrar un recorrido completo desde la promoción antigua hasta el acceso indebido de la cuenta de pruebas.",
+  "learningObjective": "trabajar en una copia histórica etiquetada, conservando las correcciones del mundo principal. Reproducir las credenciales expuestas y la sesión resultante; comprobar la rama de pedidos ajenos y la de ampliación de permisos seguida de acceso a la exportación. Registrar los límites de lo demostrado.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-47/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Es necesario concederse soporte para aprovechar un IDOR que afecta a cualquier cliente?",
+  "guidedSteps": [
+    "Un recorrido puede tener ramas con requisitos distintos.",
+    "Mira la copia histórica y el grafo del46.",
+    "Comprueba recurso de soporte antes y después del cambio de capacidades.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H47-1",
+    "H47-2",
+    "H47-3",
+    "H47-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-47",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "Copia histórica: campaña, login, perfil, pedidos y soporte",
+    "observation": "todos los eslabones tienen evidencia y las dependencias declaradas son reales. No afirmes que ampliar permisos era necesario para un IDOR que ya podía aprovechar cualquier cliente. La reproducción muestra posibilidad técnica; los registros históricos determinan el uso demostrado."
+  },
+  "debrief": "la cadena se detiene en los datos ficticios previstos. Mara necesita decidir qué corregir primero.",
+  "understandingCheck": {
+    "question": "¿La reproducción actual demuestra por sí sola qué ocurrió a las08:55?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-47",
+    "label": "Grafo de dependencias e impactos demostrados",
+    "recipient": "UG-48"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-47/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-46"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

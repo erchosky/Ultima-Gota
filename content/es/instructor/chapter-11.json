@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-11",
+  "solution": "Entra como Alba, abre Mesa de peticiones, selecciona GET /api/orders?id=204 y envía. Reenvía la última sin cambios; conserva método y dirección, misma sesión y dos X-Lab-Request distintos. Comprueba también las filas XHR en Red.",
+  "expectedTechnicalResult": "Dos eventos distintos con mismo método, objeto y sesión Alba, dentro del run actual.",
+  "understandingAnswer": "Demuestran dos solicitudes recibidas, aunque su contenido coincida.",
+  "feedbackOnIncorrect": "Demuestran dos solicitudes recibidas, aunque su contenido coincida. Vuelve a comparar las fuentes y repite la observación: Busca Reenviar en el menú contextual, sin editar campos.",
+  "patch": "No hay fallo nuevo; mantener el reenvío como herramienta de reproducción.",
+  "positiveTest": "Reenvío equivalente genera evento nuevo.",
+  "negativeTest": "Un evento antiguo no acredita repetición.",
+  "commonMistakes": [
+    "Contar dos capturas de la misma respuesta.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-three"
+}

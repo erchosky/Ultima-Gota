@@ -1,0 +1,6 @@
+{
+  "id": "H44-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Prueba retorno legítimo a4311/tienda y retorno a4312/tienda. El filtro vulnerable por palabra acepta ambos; el analizador corregido permite solo origen4311 y rechaza el auxiliar."
+}

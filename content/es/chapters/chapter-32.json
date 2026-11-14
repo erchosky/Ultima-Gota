@@ -1,0 +1,111 @@
+{
+  "id": "UG-32",
+  "campaignCaseId": "UG-001",
+  "act": 7,
+  "title": "¿Quién decide el precio?",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 32 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-12",
+    "UG-16",
+    "UG-31"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/practice/checkout"
+    },
+    {
+      "skillId": "S16",
+      "introducedIn": "UG-16",
+      "observableUse": "comprobar si una regla de entrada se valida también en el servidor durante la prueba de este expediente.",
+      "practiceContext": "POST /api/practice/checkout"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "POST /api/practice/checkout"
+    }
+  ],
+  "newSkill": {
+    "id": "S32",
+    "action": "comprobar que el servidor calcula el precio a partir de sus datos autorizados."
+  },
+  "narrativeEntry": "En el carrito viajan producto, cantidad y un dato de precio. Quiero comprobar si el servidor usa su catálogo o confía en lo que manda la página. Trabajaremos con una factura de práctica sin pago real. Mantén el producto y la cantidad; cambia solo el precio del cuerpo y consulta después el total que quedó guardado. Si editas una cifra de la pantalla no sabremos nada sobre la factura. Usa como referencia la ficha del producto y las reglas que acabamos de escribir. Después comprobaremos una compra normal en la copia corregida para asegurarnos de que recalcular no rompe la venta legítima.",
+  "whyItMatters": "un carrito envía datos de precio junto a las cantidades, y una factura de pruebas parece incorrecta.",
+  "learningObjective": "variar el precio enviado manteniendo producto y cantidad, y consultar el total persistido del pedido ficticio.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-32/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Debe decidir el total el precio enviado por el navegador o el catálogo del servidor?",
+  "guidedSteps": [
+    "El cliente puede proponer datos, pero el servidor decide el precio autorizado.",
+    "Mira unitPriceCents en el pedido de práctica.",
+    "Conserva producto2 y cantidad2 al variar el precio.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H32-1",
+    "H32-2",
+    "H32-3",
+    "H32-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-32",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/practice/checkout",
+    "observation": "la copia vulnerable confía en el precio recibido; la corregida lo recalcula y conserva una compra normal. No hay cobros reales."
+  },
+  "debrief": "un total cambiado solo en pantalla no demuestra fraude. Sam aporta dos usos del mismo cupón.",
+  "understandingCheck": {
+    "question": "¿Qué prueba que el precio enviado afectó al negocio?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-32",
+    "label": "Factura de prueba y referencia de operación",
+    "recipient": "UG-33"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-32/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-31"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

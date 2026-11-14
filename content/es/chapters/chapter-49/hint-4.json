@@ -1,0 +1,6 @@
+{
+  "id": "H49-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Construye casos de pedido propio/ajeno, capacidad, búsqueda, cupón y transición. Ejecuta en corregida y regresión de propiedad sembrada: debe señalar acceso ajeno indebido y conservar resultados legítimos. Exporta suite declarativa."
+}

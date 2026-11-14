@@ -1,0 +1,117 @@
+{
+  "id": "UG-06",
+  "campaignCaseId": "UG-001",
+  "act": 2,
+  "title": "La promoción retirada",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 06 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-01",
+    "UG-04",
+    "UG-05"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /assets/verano-demo.js"
+    },
+    {
+      "skillId": "S04",
+      "introducedIn": "UG-04",
+      "observableUse": "localizar un elemento de la página con el inspector de elementos durante la prueba de este expediente.",
+      "practiceContext": "GET /assets/verano-demo.js"
+    },
+    {
+      "skillId": "S05",
+      "introducedIn": "UG-05",
+      "observableUse": "registrar una evidencia reproducible separando esperado y observado durante la prueba de este expediente.",
+      "practiceContext": "GET /assets/verano-demo.js"
+    }
+  ],
+  "newSkill": {
+    "id": "S06",
+    "action": "buscar una palabra en un recurso JavaScript que la propia página ha cargado."
+  },
+  "narrativeEntry": "La revisión del precio queda guardada. Mara ha autorizado mirar la campaña Verano sin colas porque todavía está enlazada desde una ficha pública. Una página puede cargar archivos JavaScript: instrucciones que recibe el navegador para hacer funcionar partes de la interfaz. Esos archivos pueden leerse, aunque no tengan un botón propio. Vamos a abrir únicamente el recurso que carga esta página y buscar una palabra de pruebas indicada en el encargo. Si encontramos datos de acceso, aún no sabremos si sirven. Conservaremos el lugar exacto del hallazgo y pediremos la comprobación de la cuenta ficticia correspondiente antes de sacar conclusiones.",
+  "whyItMatters": "la página de la campaña ya no está en el catálogo, pero su referencia sigue en la ficha revisada.",
+  "learningObjective": "abrir el recurso público indicado por la página y buscar un término de pruebas. Enseña qué es JavaScript solo en la medida necesaria para reconocer el dato.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-06/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Retirar un enlace del catálogo borra también los archivos que sigue sirviendo su página?",
+  "guidedSteps": [
+    "Lo que se distribuye al navegador deja de ser secreto para quien recibe el recurso.",
+    "Abre el enlace de verano y mira el recurso JavaScript que carga en Red.",
+    "En el recurso público, usa buscar y escribe demo; conserva dirección y fragmento mínimo.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H06-1",
+    "H06-2",
+    "H06-3",
+    "H06-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-06",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /assets/verano-demo.js",
+    "observation": "encontrar el usuario y la contraseña ficticios de una cuenta de demostración y registrar el recurso que los contiene."
+  },
+  "debrief": "un archivo enviado al navegador puede leerse aunque no tenga un botón en pantalla. Lara autoriza comprobar exclusivamente esa cuenta.",
+  "understandingCheck": {
+    "question": "¿Qué demuestra encontrar una contraseña en ese archivo público?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-06",
+    "label": "Credenciales ficticias de demo.pera con procedencia",
+    "recipient": "UG-07"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-06/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-05"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-two-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

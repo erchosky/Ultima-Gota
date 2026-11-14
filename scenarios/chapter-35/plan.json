@@ -1,0 +1,54 @@
+{
+  "id": "chapter-35",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-35/v1",
+    "accounts": [
+      "Alba",
+      "Bruno"
+    ],
+    "resource": "POST /api/reservations",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Eventos de dos solicitudes reales con barrera: secuencial1, concurrente vulnerable2, corregida1 y stock0.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Lanzar una solicitud o inferir carrera de un error genérico.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Transacción o actualización condicionada atómica con comprobación de filas afectadas.",
+    "positive": "Una reserva con stock1 se confirma.",
+    "negative": "Segunda reserva concurrente se rechaza y nunca hay sobreventa.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-35/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-34"
+    ]
+  }
+}

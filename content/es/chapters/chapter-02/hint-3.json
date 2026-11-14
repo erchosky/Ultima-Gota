@@ -1,0 +1,6 @@
+{
+  "id": "H02-3",
+  "level": 3,
+  "type": "action",
+  "text": "Busca la fila cuya dirección incluye /api/products e id=2; no el archivo de imagen."
+}

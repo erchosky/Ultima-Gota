@@ -1,0 +1,46 @@
+{
+  "wrong": [
+    [
+      "Sí; cambiar cualquier identificador demuestra un ataque.",
+      "Sí; todos los productos deberían exigir una cuenta."
+    ],
+    [
+      "Todas las filas son copias de una misma petición.",
+      "El navegador solo pide la imagen y no los datos."
+    ],
+    [
+      "El servidor envió240 céntimos y la pantalla lo corrigió.",
+      "Cualquier diferencia demuestra que alguien atacó la tienda."
+    ],
+    [
+      "El inspector guardó el texto en la base de datos.",
+      "La cookie cambió el nombre del producto guardado."
+    ],
+    [
+      "Está demostrado que visitante-17 manipuló ese precio.",
+      "Cambiar la pantalla prueba que se modificó el servidor."
+    ]
+  ],
+  "support": [
+    [
+      "Una dirección es el texto de la barra superior del navegador. Conserva http://127.0.0.1:4311/producto?id= y cambia solo el número conocido.",
+      "Un parámetro es un dato con nombre en esa dirección: id=1 pide el producto 1. Para escribir en la barra pulsa Ctrl+L (Cmd+L en macOS), cambia el número y pulsa Intro."
+    ],
+    [
+      "Abre Red antes de recargar: en Firefox, menú → Más herramientas → Herramientas de desarrollo → Red. Atajo Ctrl+Mayús+E; en macOS Cmd+Opción+E. En Chromium abre el menú ⋮ → Más herramientas → Herramientas para desarrolladores y elige Red (Ctrl+Mayús+I, o Cmd+Opción+I en macOS).",
+      "Recarga la ficha. La fila /api/products?id=2 contiene datos; imágenes, estilos y scripts son otras piezas. Selecciona esa fila y busca el método en Cabeceras. Evaluamos los datos que encuentras, no si abriste una pestaña de DevTools."
+    ],
+    [
+      "JSON organiza datos en nombres y valores. En {\"id\":2,\"priceCents\":210}, id es2 y el precio son 210 céntimos, equivalentes a 2,10 €.",
+      "En Red selecciona la petición de producto 2 y abre Respuesta. Compara id, name y priceCents con la ficha y la hoja de Sam, que indica2,10 €."
+    ],
+    [
+      "Sobre el nombre de la ficha pulsa botón derecho → Inspeccionar. Localiza su texto, haz doble clic y escribe una marca local como Pera de prueba.",
+      "Anota la marca, recarga y consulta la respuesta de datos otra vez. No detectamos tu uso del inspector: registramos tu observación y comprobamos las nuevas respuestas del servidor."
+    ],
+    [
+      "Escribe pasos que otra persona pueda repetir: abrir ficha, localizar petición, leer respuesta y comparar con la pantalla y la hoja. Indica de dónde sale cada cifra.",
+      "Tras contrastar la evidencia, la mesa puede repetir el problema en un navegador aislado, aplicar la corrección y probar también un producto que ya funcionaba."
+    ]
+  ]
+}

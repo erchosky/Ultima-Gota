@@ -1,0 +1,6 @@
+{
+  "id": "H40-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Solicita /exports/muestra-publicada.csv sin sesión. En corregida debe estar ausente; soporte.vera conserva /api/support/exports/muestra-soporte.csv y cliente recibe denegación. Guarda solo muestra mínima."
+}

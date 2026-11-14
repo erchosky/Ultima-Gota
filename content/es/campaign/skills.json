@@ -1,0 +1,673 @@
+[
+  {
+    "id": "S01",
+    "introducedIn": "UG-01",
+    "action": "reconocer y modificar un parámetro `id` en una dirección.",
+    "guidedPractice": [
+      "UG-02",
+      "UG-03",
+      "UG-04",
+      "UG-05",
+      "UG-06"
+    ],
+    "independentApplication": [
+      "UG-10",
+      "UG-18",
+      "UG-21",
+      "UG-27",
+      "UG-36",
+      "UG-44",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S02",
+    "introducedIn": "UG-02",
+    "action": "localizar una petición concreta en la pestaña Red del navegador.",
+    "guidedPractice": [
+      "UG-03",
+      "UG-04",
+      "UG-05"
+    ],
+    "independentApplication": [
+      "UG-08",
+      "UG-09",
+      "UG-10",
+      "UG-11",
+      "UG-12",
+      "UG-21",
+      "UG-31",
+      "UG-36",
+      "UG-41",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S03",
+    "introducedIn": "UG-03",
+    "action": "localizar un campo concreto dentro de una respuesta JSON.",
+    "guidedPractice": [
+      "UG-04",
+      "UG-05",
+      "UG-07"
+    ],
+    "independentApplication": [
+      "UG-09",
+      "UG-10",
+      "UG-12",
+      "UG-13",
+      "UG-14",
+      "UG-21",
+      "UG-31",
+      "UG-36",
+      "UG-41",
+      "UG-43",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S04",
+    "introducedIn": "UG-04",
+    "action": "localizar un elemento de la página con el inspector de elementos.",
+    "guidedPractice": [
+      "UG-05",
+      "UG-06"
+    ],
+    "independentApplication": [
+      "UG-17",
+      "UG-18",
+      "UG-31"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S05",
+    "introducedIn": "UG-05",
+    "action": "registrar una evidencia reproducible separando esperado y observado.",
+    "guidedPractice": [
+      "UG-06"
+    ],
+    "independentApplication": [
+      "UG-19",
+      "UG-23",
+      "UG-25",
+      "UG-31",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S06",
+    "introducedIn": "UG-06",
+    "action": "buscar una palabra en un recurso JavaScript que la propia página ha cargado.",
+    "guidedPractice": [
+      "UG-07"
+    ],
+    "independentApplication": [
+      "UG-40",
+      "UG-47"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S07",
+    "introducedIn": "UG-07",
+    "action": "iniciar sesión y reconocer la identidad con la que se trabaja.",
+    "guidedPractice": [
+      "UG-08",
+      "UG-09",
+      "UG-10"
+    ],
+    "independentApplication": [
+      "UG-27",
+      "UG-46",
+      "UG-47",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S08",
+    "introducedIn": "UG-08",
+    "action": "localizar la cookie o mecanismo de sesión que usa esta implementación.",
+    "guidedPractice": [
+      "UG-09",
+      "UG-10"
+    ],
+    "independentApplication": [
+      "UG-27",
+      "UG-30",
+      "UG-41",
+      "UG-42",
+      "UG-46",
+      "UG-47",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S09",
+    "introducedIn": "UG-09",
+    "action": "comparar el acceso a un mismo recurso antes y después de cerrar sesión.",
+    "guidedPractice": [
+      "UG-10"
+    ],
+    "independentApplication": [
+      "UG-27",
+      "UG-30",
+      "UG-46",
+      "UG-47"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S10",
+    "introducedIn": "UG-10",
+    "action": "comprobar autorización por objeto entre dos cuentas.",
+    "guidedPractice": [
+      "UG-11",
+      "UG-13",
+      "UG-15"
+    ],
+    "independentApplication": [
+      "UG-27",
+      "UG-34",
+      "UG-36",
+      "UG-40",
+      "UG-46",
+      "UG-47",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S11",
+    "introducedIn": "UG-11",
+    "action": "reenviar una petición desde las herramientas del navegador.",
+    "guidedPractice": [
+      "UG-12",
+      "UG-14",
+      "UG-16"
+    ],
+    "independentApplication": [
+      "UG-22",
+      "UG-28",
+      "UG-30",
+      "UG-33",
+      "UG-34",
+      "UG-35",
+      "UG-38",
+      "UG-42",
+      "UG-44",
+      "UG-47",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S12",
+    "introducedIn": "UG-12",
+    "action": "modificar un campo permitido en el cuerpo JSON de una petición.",
+    "guidedPractice": [
+      "UG-13",
+      "UG-14",
+      "UG-16",
+      "UG-17"
+    ],
+    "independentApplication": [
+      "UG-20",
+      "UG-22",
+      "UG-26",
+      "UG-32",
+      "UG-34",
+      "UG-38",
+      "UG-42",
+      "UG-43",
+      "UG-45",
+      "UG-47",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S13",
+    "introducedIn": "UG-13",
+    "action": "comprobar si el servidor acepta un campo interno que el cliente no debe controlar.",
+    "guidedPractice": [
+      "UG-15"
+    ],
+    "independentApplication": [
+      "UG-34",
+      "UG-42",
+      "UG-47"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S14",
+    "introducedIn": "UG-14",
+    "action": "interpretar una tabla pequeña de estados HTTP y distinguir un error útil de una filtración interna.",
+    "guidedPractice": [
+      "UG-15"
+    ],
+    "independentApplication": [
+      "UG-22",
+      "UG-26",
+      "UG-34",
+      "UG-42"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S15",
+    "introducedIn": "UG-15",
+    "action": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado.",
+    "guidedPractice": [
+      "UG-16"
+    ],
+    "independentApplication": [
+      "UG-24",
+      "UG-25",
+      "UG-29",
+      "UG-31",
+      "UG-34",
+      "UG-37",
+      "UG-42",
+      "UG-45",
+      "UG-48",
+      "UG-49",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S16",
+    "introducedIn": "UG-16",
+    "action": "comprobar si una regla de entrada se valida también en el servidor.",
+    "guidedPractice": [
+      "UG-17"
+    ],
+    "independentApplication": [
+      "UG-32",
+      "UG-38"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S17",
+    "introducedIn": "UG-17",
+    "action": "distinguir texto mostrado literalmente de HTML interpretado.",
+    "guidedPractice": [
+      "UG-18",
+      "UG-19",
+      "UG-20"
+    ],
+    "independentApplication": [
+      "UG-39"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S18",
+    "introducedIn": "UG-18",
+    "action": "seguir el recorrido de un dato controlable hasta el lugar donde se inserta en la página.",
+    "guidedPractice": [
+      "UG-19",
+      "UG-20"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S19",
+    "introducedIn": "UG-19",
+    "action": "demostrar ejecución de JavaScript provocada por una entrada no confiable.",
+    "guidedPractice": [
+      "UG-20"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S20",
+    "introducedIn": "UG-20",
+    "action": "comprobar si una entrada peligrosa se almacena y afecta a otra sesión de laboratorio.",
+    "guidedPractice": [
+      "UG-25"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S21",
+    "introducedIn": "UG-21",
+    "action": "leer una consulta SELECT sencilla como una selección de filas con una condición.",
+    "guidedPractice": [
+      "UG-22",
+      "UG-23",
+      "UG-25"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S22",
+    "introducedIn": "UG-22",
+    "action": "aislar un carácter de entrada que cambia el comportamiento de una consulta vulnerable.",
+    "guidedPractice": [
+      "UG-23",
+      "UG-25",
+      "UG-26"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S23",
+    "introducedIn": "UG-23",
+    "action": "contrastar una condición verdadera y una falsa dentro del escenario de inyección.",
+    "guidedPractice": [
+      "UG-24",
+      "UG-25"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S24",
+    "introducedIn": "UG-24",
+    "action": "comprobar que una consulta parametrizada trata la entrada como un valor.",
+    "guidedPractice": [
+      "UG-25"
+    ],
+    "independentApplication": [
+      "UG-49"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S25",
+    "introducedIn": "UG-25",
+    "action": "ordenar evidencias por tiempo y separar hechos, hipótesis y preguntas abiertas.",
+    "guidedPractice": [],
+    "independentApplication": [
+      "UG-46",
+      "UG-48",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S26",
+    "introducedIn": "UG-26",
+    "action": "comprobar si una respuesta revela la existencia de una cuenta.",
+    "guidedPractice": [
+      "UG-27"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S27",
+    "introducedIn": "UG-27",
+    "action": "comprobar que un token de recuperación está vinculado a una cuenta concreta.",
+    "guidedPractice": [
+      "UG-28",
+      "UG-29",
+      "UG-30"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S28",
+    "introducedIn": "UG-28",
+    "action": "comprobar que una autorización de recuperación deja de servir tras usarse.",
+    "guidedPractice": [
+      "UG-29",
+      "UG-30",
+      "UG-33"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S29",
+    "introducedIn": "UG-29",
+    "action": "verificar la caducidad de un token con un reloj virtual del escenario.",
+    "guidedPractice": [
+      "UG-30"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S30",
+    "introducedIn": "UG-30",
+    "action": "comprobar la revocación de sesiones previas después de una recuperación de seguridad.",
+    "guidedPractice": [],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S31",
+    "introducedIn": "UG-31",
+    "action": "convertir una regla de negocio escrita en condiciones comprobables.",
+    "guidedPractice": [
+      "UG-32",
+      "UG-33",
+      "UG-34",
+      "UG-35"
+    ],
+    "independentApplication": [
+      "UG-48",
+      "UG-49",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S32",
+    "introducedIn": "UG-32",
+    "action": "comprobar que el servidor calcula el precio a partir de sus datos autorizados.",
+    "guidedPractice": [
+      "UG-33"
+    ],
+    "independentApplication": [
+      "UG-49",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S33",
+    "introducedIn": "UG-33",
+    "action": "verificar que un reintento de una operación no aplica dos veces el mismo efecto.",
+    "guidedPractice": [],
+    "independentApplication": [
+      "UG-45",
+      "UG-46",
+      "UG-49",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S34",
+    "introducedIn": "UG-34",
+    "action": "verificar que una transición entre estados de un pedido está permitida.",
+    "guidedPractice": [
+      "UG-35"
+    ],
+    "independentApplication": [
+      "UG-45",
+      "UG-49",
+      "UG-50"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S35",
+    "introducedIn": "UG-35",
+    "action": "comparar solicitudes secuenciales y dos solicitudes concurrentes.",
+    "guidedPractice": [],
+    "independentApplication": [
+      "UG-49"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S36",
+    "introducedIn": "UG-36",
+    "action": "distinguir un identificador de negocio de una ruta de archivo utilizada por un servicio.",
+    "guidedPractice": [
+      "UG-37",
+      "UG-39",
+      "UG-40"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S37",
+    "introducedIn": "UG-37",
+    "action": "comprobar la normalización de rutas y el límite de un directorio autorizado.",
+    "guidedPractice": [
+      "UG-40"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S38",
+    "introducedIn": "UG-38",
+    "action": "contrastar extensión, tipo declarado y contenido de un archivo inocuo.",
+    "guidedPractice": [
+      "UG-39",
+      "UG-40"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S39",
+    "introducedIn": "UG-39",
+    "action": "interpretar las cabeceras de tipo de contenido y disposición de una descarga.",
+    "guidedPractice": [
+      "UG-40"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S40",
+    "introducedIn": "UG-40",
+    "action": "verificar que un recurso interno no se distribuye en la publicación pública.",
+    "guidedPractice": [],
+    "independentApplication": [
+      "UG-47"
+    ],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S41",
+    "introducedIn": "UG-41",
+    "action": "reconocer un origen como combinación de esquema, nombre y puerto y comprobar una política CORS concreta.",
+    "guidedPractice": [
+      "UG-42",
+      "UG-43",
+      "UG-44"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S42",
+    "introducedIn": "UG-42",
+    "action": "verificar la autenticidad de una operación iniciada desde otro origen en un escenario CSRF.",
+    "guidedPractice": [],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S43",
+    "introducedIn": "UG-43",
+    "action": "comprobar desde qué componente se realiza una petición y qué servicios puede alcanzar.",
+    "guidedPractice": [],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S44",
+    "introducedIn": "UG-44",
+    "action": "comprobar el destino efectivo de una URL frente a una regla de confianza.",
+    "guidedPractice": [],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S45",
+    "introducedIn": "UG-45",
+    "action": "comprobar autenticidad e integridad de un mensaje firmado por el servicio ficticio.",
+    "guidedPractice": [
+      "UG-46"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S46",
+    "introducedIn": "UG-46",
+    "action": "correlacionar eventos con identificadores de petición, sesión y operación, reconociendo sus límites.",
+    "guidedPractice": [
+      "UG-47",
+      "UG-50"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S47",
+    "introducedIn": "UG-47",
+    "action": "construir y verificar un recorrido de ataque con sus dependencias y posibles ramas.",
+    "guidedPractice": [
+      "UG-48",
+      "UG-49",
+      "UG-50"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S48",
+    "introducedIn": "UG-48",
+    "action": "priorizar una corrección justificando impacto, condiciones de explotación y efecto sobre la cadena.",
+    "guidedPractice": [
+      "UG-49",
+      "UG-50"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S49",
+    "introducedIn": "UG-49",
+    "action": "convertir pruebas manuales conocidas en una comprobación de regresión repetible.",
+    "guidedPractice": [
+      "UG-50"
+    ],
+    "independentApplication": [],
+    "terminalIntegration": false
+  },
+  {
+    "id": "S50",
+    "introducedIn": "UG-50",
+    "action": "comunicar una conclusión final con alcance, evidencias, correcciones verificadas y riesgo pendiente.",
+    "guidedPractice": [],
+    "independentApplication": [],
+    "terminalIntegration": true
+  }
+]

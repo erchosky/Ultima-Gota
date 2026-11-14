@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-18",
+  "solution": "Usa mensaje=MARCA-PERA, encuentra #mensaje y relaciona URLSearchParams con la asignación a innerHTML en el fragmento didáctico. Registra entrada, transformación y destino.",
+  "expectedTechnicalResult": "Consulta con marcador único del run; mapa correcto parámetro mensaje→decodificación→#mensaje/innerHTML reproducido en navegador.",
+  "understandingAnswer": "El destino que inserta el valor mediante innerHTML.",
+  "feedbackOnIncorrect": "El destino que inserta el valor mediante innerHTML. Vuelve a comparar las fuentes y repite la observación: Cambia la marca y localiza el elemento cuyo contenido varía.",
+  "patch": "Cambiar a textContent para este mensaje que solo necesita texto.",
+  "positiveTest": "Mensaje normal conserva su contenido legible.",
+  "negativeTest": "Marcado se muestra como texto y no crea elementos.",
+  "commonMistakes": [
+    "Nombrar cualquier función sin vincular el marcador observado.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-four"
+}

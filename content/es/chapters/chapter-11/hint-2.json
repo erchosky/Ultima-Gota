@@ -1,0 +1,6 @@
+{
+  "id": "H11-2",
+  "level": 2,
+  "type": "zone",
+  "text": "Abre Mesa de peticiones como Alba; selecciona GET /api/orders?id=204."
+}

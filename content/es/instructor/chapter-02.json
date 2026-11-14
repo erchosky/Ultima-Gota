@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-02",
+  "solution": "Pulsa Ctrl+Mayús+E (Cmd+Opción+E en macOS), recarga /producto?id=2 y selecciona /api/products?id=2. Copia URL y método de Cabeceras.",
+  "expectedTechnicalResult": "Consulta reciente de producto 2 y anotación de URL exacta, método GET e ID 2 contrastados con el evento del servidor.",
+  "understandingAnswer": "El navegador solicita datos, imágenes y otros recursos por separado.",
+  "feedbackOnIncorrect": "El navegador solicita datos, imágenes y otros recursos por separado. Vuelve a comparar las fuentes y repite la observación: Busca la fila cuya dirección incluye /api/products e id=2; no el archivo de imagen.",
+  "patch": "No se diagnostica todavía la causa del precio. Se conserva la petición correcta para leerla.",
+  "positiveTest": "El evento de datos corresponde al producto 2.",
+  "negativeTest": "La URL de una imagen no se acredita como consulta de producto.",
+  "commonMistakes": [
+    "Anotar una petición de imagen o usar un registro de una ejecución anterior.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-one"
+}

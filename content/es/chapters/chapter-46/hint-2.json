@@ -1,0 +1,6 @@
+{
+  "id": "H46-2",
+  "level": 2,
+  "type": "zone",
+  "text": "Filtra registros por sessionRef, requestId y operationId."
+}

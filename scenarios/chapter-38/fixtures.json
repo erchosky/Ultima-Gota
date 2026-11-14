@@ -1,0 +1,16 @@
+{
+  "id": "chapter-38/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "samples": [
+      "valid-png",
+      "renamed-text",
+      "mismatched-type"
+    ],
+    "extensionOnly": true,
+    "maxBytes": 1048576
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

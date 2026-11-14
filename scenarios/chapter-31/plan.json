@@ -1,0 +1,53 @@
+{
+  "id": "chapter-31",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-31/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "POST /api/coupon/preview",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Tabla cubre mínimo1999/2000, uso previo, expiración exacta y redondeo con resultados esperados correctos.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Inventar una condición o probar solo el caso válido.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Centralizar regla y reutilizarla en correo, interfaz, servidor y pruebas.",
+    "positive": "Cuenta sin uso con subtotal2000 antes del vencimiento obtiene200.",
+    "negative": "1999, uso previo o plazo vencido deniegan cupón.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-31/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-30"
+    ]
+  }
+}

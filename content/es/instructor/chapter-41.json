@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-41",
+  "solution": "Con sesión de tienda, ejecuta lectura desde auxiliar4312 a tienda4311. Contrasta Allow-Origin exacto y credenciales con ausencia de permiso. Registra recepción y resultado de lectura en navegador.",
+  "expectedTechnicalResult": "Eventos de servidor y navegador limpio distinguen solicitud recibida de cuerpo legible en dos políticas; permisos privados se mantienen.",
+  "understandingAnswer": "No; controla lectura entre orígenes en navegador y no reemplaza autorización del recurso.",
+  "feedbackOnIncorrect": "No; controla lectura entre orígenes en navegador y no reemplaza autorización del recurso. Vuelve a comparar las fuentes y repite la observación: Usa la lectura preparada desde el auxiliar con origen permitido y denegado.",
+  "patch": "Lista exacta de orígenes permitidos y autorización independiente.",
+  "positiveTest": "Origen autorizado lee recurso para su cuenta.",
+  "negativeTest": "Origen denegado no lee cuerpo y cuenta sin permiso sigue denegada.",
+  "commonMistakes": [
+    "Acreditar lectura solo por ver status200 en servidor.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

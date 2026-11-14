@@ -1,0 +1,168 @@
+npm notice run ultima-gota@0.5.0 test:integration
+npm notice run tsx --test tests/scenario-validation/*.test.ts
+TAP version 13
+# Subtest: 16 hereda controles del15, persiste cero y corrige límites sin cambiar pedido rechazado
+ok 1 - 16 hereda controles del15, persiste cero y corrige límites sin cambiar pedido rechazado
+  ---
+  duration_ms: 4572.44125
+  type: 'test'
+  ...
+# Subtest: 17 exige dato persistido y comprueba HTML/literal en navegador independiente
+ok 2 - 17 exige dato persistido y comprueba HTML/literal en navegador independiente
+  ---
+  duration_ms: 4108.822458
+  type: 'test'
+  ...
+# Subtest: 18 exige marcador único delrun y fragmento público; no acredita copiar nombres sin cargarlo
+ok 3 - 18 exige marcador único delrun y fragmento público; no acredita copiar nombres sin cargarlo
+  ---
+  duration_ms: 4010.602833
+  type: 'test'
+  ...
+# Subtest: 19 reproduce ejecución real, mantiene recinto opaco y rechaza entradas/nonce ajenos
+ok 4 - 19 reproduce ejecución real, mantiene recinto opaco y rechaza entradas/nonce ajenos
+  ---
+  duration_ms: 4482.828041
+  type: 'test'
+  ...
+# Subtest: 20 distingue autora/lector, carga reseña exacta en limpio y recupera contenido3/4 tras reinicio
+ok 5 - 20 distingue autora/lector, carga reseña exacta en limpio y recupera contenido3/4 tras reinicio
+  ---
+  duration_ms: 5655.071542
+  type: 'test'
+  ...
+# Subtest: Alumno recibe solo contenido desbloqueado y ninguna solución privada
+ok 6 - Alumno recibe solo contenido desbloqueado y ninguna solución privada
+  ---
+  duration_ms: 494.952709
+  type: 'test'
+  ...
+# Subtest: Origin, CSRF y canal de control rechazan escrituras ajenas
+ok 7 - Origin, CSRF y canal de control rechazan escrituras ajenas
+  ---
+  duration_ms: 12.244875
+  type: 'test'
+  ...
+# Subtest: Identificador, nombre y peticiones reales; un botón y una pantalla editada no bastan
+ok 8 - Identificador, nombre y peticiones reales; un botón y una pantalla editada no bastan
+  ---
+  duration_ms: 62.147
+  type: 'test'
+  ...
+# Subtest: Recorrido técnico01–05 verifica datos y corrección real en navegador
+ok 9 - Recorrido técnico01–05 verifica datos y corrección real en navegador
+  ---
+  duration_ms: 1360.879167
+  type: 'test'
+  ...
+# Subtest: Reintentar invalida eventos anteriores y conserva notas y logros
+ok 10 - Reintentar invalida eventos anteriores y conserva notas y logros
+  ---
+  duration_ms: 112.937083
+  type: 'test'
+  ...
+# Subtest: Restablecer requiere confirmación y una importación antigua solo crea archivo
+ok 11 - Restablecer requiere confirmación y una importación antigua solo crea archivo
+  ---
+  duration_ms: 33.958833
+  type: 'test'
+  ...
+# Subtest: Nueva campaña archiva la anterior y el modo profesor exige entrada explícita
+ok 12 - Nueva campaña archiva la anterior y el modo profesor exige entrada explícita
+  ---
+  duration_ms: 21.747084
+  type: 'test'
+  ...
+# Subtest: Bundles públicos excluyen contenido de profesor y capítulos futuros
+ok 13 - Bundles públicos excluyen contenido de profesor y capítulos futuros
+  ---
+  duration_ms: 1.942625
+  type: 'test'
+  ...
+# Subtest: 11 exige dos solicitudes nuevas de la misma sesión, no dos capturas ni un marcador cliente
+ok 14 - 11 exige dos solicitudes nuevas de la misma sesión, no dos capturas ni un marcador cliente
+  ---
+  duration_ms: 2743.098375
+  type: 'test'
+  ...
+# Subtest: 12 persiste solo preferencia autorizada; formato incorrecto y capacidades no conceden logro
+ok 15 - 12 persiste solo preferencia autorizada; formato incorrecto y capacidades no conceden logro
+  ---
+  duration_ms: 1575.206208
+  type: 'test'
+  ...
+# Subtest: 13 demuestra capacidad real y comparación permite preferencia mientras bloquea asignación interna
+ok 16 - 13 demuestra capacidad real y comparación permite preferencia mientras bloquea asignación interna
+  ---
+  duration_ms: 1969.161333
+  type: 'test'
+  ...
+# Subtest: 14 conserva seis observaciones reales: dos200 distintos,401,403,400 y404
+ok 17 - 14 conserva seis observaciones reales: dos200 distintos,401,403,400 y404
+  ---
+  duration_ms: 2010.401584
+  type: 'test'
+  ...
+# Subtest: 15 separa práctica y propuesta, rechaza pestaña antigua, conserva controles y recupera versiones1/2/3
+ok 18 - 15 separa práctica y propuesta, rechaza pestaña antigua, conserva controles y recupera versiones1/2/3
+  ---
+  duration_ms: 3114.454
+  type: 'test'
+  ...
+# Subtest: Capítulos bloqueados y contenidos futuros no entregan credenciales
+ok 19 - Capítulos bloqueados y contenidos futuros no entregan credenciales
+  ---
+  duration_ms: 487.626
+  type: 'test'
+  ...
+# Subtest: 06 exige recurso real y credencial correcta; conserva evidencia sin contraseña
+ok 20 - 06 exige recurso real y credencial correcta; conserva evidencia sin contraseña
+  ---
+  duration_ms: 1107.54575
+  type: 'test'
+  ...
+# Subtest: 07 requiere sesión y perfil del servidor; revocación se comprueba en copia separada
+ok 21 - 07 requiere sesión y perfil del servidor; revocación se comprueba en copia separada
+  ---
+  duration_ms: 1013.260917
+  type: 'test'
+  ...
+# Subtest: 08 cookie de cuenta aparece al entrar y no se confunde con la copia
+ok 22 - 08 cookie de cuenta aparece al entrar y no se confunde con la copia
+  ---
+  duration_ms: 912.388833
+  type: 'test'
+  ...
+# Subtest: Cancelar una comparación no permite que sobrescriba una nota posterior
+ok 23 - Cancelar una comparación no permite que sobrescriba una nota posterior
+  ---
+  duration_ms: 808.341917
+  type: 'test'
+  ...
+# Subtest: 09 revoca sesión real: cookie antigua no recupera acceso y nuevo acceso legítimo funciona
+ok 24 - 09 revoca sesión real: cookie antigua no recupera acceso y nuevo acceso legítimo funciona
+  ---
+  duration_ms: 1055.829958
+  type: 'test'
+  ...
+# Subtest: 10 verifica Alba203→204, control Bruno y corrección sin cambiar propietarios
+ok 25 - 10 verifica Alba203→204, control Bruno y corrección sin cambiar propietarios
+  ---
+  duration_ms: 1489.5665
+  type: 'test'
+  ...
+# Subtest: Se recuperan checkpoint06 y exportación1 sin revelar secretos en el progreso
+ok 26 - Se recuperan checkpoint06 y exportación1 sin revelar secretos en el progreso
+  ---
+  duration_ms: 925.924208
+  type: 'test'
+  ...
+1..26
+# tests 26
+# suites 0
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 23246.32575

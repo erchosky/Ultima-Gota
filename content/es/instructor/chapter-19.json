@@ -1,0 +1,29 @@
+{
+  "chapterId": "UG-19",
+  "solution": "En la copia vulnerable usa la muestra de imagen con onerror que establece data-demo en #marca. Pide reproducción aislada desde la URL; compara con textContent corregido. La muestra exacta y su explicación están en demonstrationPayload y payloadExplanation; sustituir el nonce por el del run.",
+  "expectedTechnicalResult": "Evaluador limpio carga la entrada del run, observa ejecución de la marca ligada al nonce y la bloquea en corregida.",
+  "understandingAnswer": "Aquí una entrada provoca ejecución de JavaScript y el navegador aislado reproduce ese recorrido.",
+  "feedbackOnIncorrect": "Aquí una entrada provoca ejecución de JavaScript y el navegador aislado reproduce ese recorrido. Vuelve a comparar las fuentes y repite la observación: Completa la muestra inocua explicada y conserva su URL de entrada.",
+  "patch": "Destino textContent para mensaje; mantener entrada como texto.",
+  "positiveTest": "Mensaje inocuo legible.",
+  "negativeTest": "Muestra de ejecución no produce marca en corregida.",
+  "commonMistakes": [
+    "HTML interpretado sin ejecución o marca escrita manualmente.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-four",
+  "demonstrationPayload": "<img src=\"/demo/imagen-inexistente\" onerror=\"document.getElementById('marca').dataset.demo='DEMO-NONCE-DE-LA-EJECUCION'\">",
+  "payloadExplanation": [
+    "img intenta cargar una imagen del propio laboratorio que no existe.",
+    "onerror ejecuta el manejador al fallar esa carga.",
+    "El manejador escribe una marca local en el elemento de demostración.",
+    "El nonce es ficticio y pertenece al run actual; no sale información a otra red."
+  ],
+  "validationLimitation": "Reproducir desde la entrada en contexto limpio; la marca declarada por el alumno no acredita ejecución."
+}

@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-27",
+  "solution": "Solicita enlaces de Alba y Bruno. En vulnerable combina token de Alba con accountId de Bruno y verifica el cambio mediante login. En corregida recházalo y permite el token de Bruno para Bruno.",
+  "expectedTechnicalResult": "Contraseña de Bruno cambia con token de Alba en vulnerable; combinación rechazada en corregida y destinatario legítimo funciona.",
+  "understandingAnswer": "El vínculo servidor entre token y cuenta, no un accountId libre enviado por el cliente.",
+  "feedbackOnIncorrect": "El vínculo servidor entre token y cuenta, no un accountId libre enviado por el cliente. Vuelve a comparar las fuentes y repite la observación: Mantén el token y cambia solo el destinatario en la copia.",
+  "patch": "Resolver destinatario desde el token y contrastar cualquier identificador recibido.",
+  "positiveTest": "Token de Bruno cambia solo Bruno.",
+  "negativeTest": "Token de Alba no cambia Bruno.",
+  "commonMistakes": [
+    "Ver un éxito de formulario sin comprobar cuenta afectada.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

@@ -1,0 +1,104 @@
+{
+  "id": "UG-24",
+  "campaignCaseId": "UG-001",
+  "act": 5,
+  "title": "Datos que vuelven a ser datos",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 24 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-15",
+    "UG-23"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    },
+    {
+      "skillId": "S23",
+      "introducedIn": "UG-23",
+      "observableUse": "contrastar una condición verdadera y una falsa dentro del escenario de inyección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    }
+  ],
+  "newSkill": {
+    "id": "S24",
+    "action": "comprobar que una consulta parametrizada trata la entrada como un valor."
+  },
+  "narrativeEntry": "He cambiado el buscador para enviar tu entrada como un valor separado de la instrucción de consulta. Eso se llama parametrizar. No vamos a darlo por bueno por el nombre del cambio. Repite la pareja del expediente anterior y una búsqueda normal en las dos versiones. La vista didáctica mostrará dónde queda el valor sin pedirte editar el servidor. Una corrección útil debe impedir que la entrada cambie la lógica y conservar búsquedas válidas, incluidos caracteres que puedan formar parte de un nombre. Guarda resultados y expectativas; estas pruebas servirán luego para comprobar que una promoción nueva no devuelve el mismo fallo.",
+  "whyItMatters": "Nico sustituye la construcción de la consulta por parámetros.",
+  "learningObjective": "repetir búsquedas legítimas y entradas del ejercicio anterior en ambas versiones.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-24/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Una entrada con palabras de consulta debería cambiar la lógica al tratarse como valor?",
+  "guidedSteps": [
+    "Separar instrucción y valor evita interpretar el valor como SQL.",
+    "Compara las versiones del buscador en la mesa.",
+    "Repite la pareja del 23 y después busca pera normalmente.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H24-1",
+    "H24-2",
+    "H24-3",
+    "H24-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-24",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/search?q=",
+    "observation": "las búsquedas válidas siguen funcionando y las entradas ya no alteran la lógica. Una vista didáctica explica la separación sin exigir editar el servidor."
+  },
+  "debrief": "validar entrada y parametrizar resuelven problemas distintos. La revisión genera evidencias que deben ordenarse temporalmente.",
+  "understandingCheck": {
+    "question": "¿Parametrizar equivale a prohibir toda comilla?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-24",
+    "label": "Resultados de corrección del buscador",
+    "recipient": "UG-25"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-24/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-23"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

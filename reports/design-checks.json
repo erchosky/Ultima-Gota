@@ -1,0 +1,60 @@
+{
+  "reportVersion": 1,
+  "editorialDate": "2026-10-26",
+  "stage": "design-integrity-and-first-four-acts-status",
+  "command": "python3 scripts/check_design.py",
+  "testsRun": 20,
+  "failures": 0,
+  "errors": 0,
+  "passed": true,
+  "contentInventory": {
+    "chapters": 50,
+    "acts": 10,
+    "hints": 200,
+    "narrativeWordRange": [
+      96,
+      107
+    ]
+  },
+  "scope": [
+    "Estructura documental y referencias",
+    "Coherencia declarada de fixtures",
+    "Sonda SQLite en memoria para la pareja SQL propuesta"
+  ],
+  "notTestedByThisCommand": [
+    "Servicios HTTP (se prueban con test:integration)",
+    "Persistencia real (test:integration)",
+    "Docker y aislamiento de red",
+    "Cookies y topología en navegador",
+    "XSS/CSRF/SSRF ejecutables",
+    "Accesibilidad de interfaz",
+    "Recorrido con principiante"
+  ],
+  "details": [
+    "test_accounts_and_order_owners_never_change (test_campaign.CampaignDesignTests.test_accounts_and_order_owners_never_change) ... ok",
+    "test_complete_design_fields_and_scenario_contracts (test_campaign.CampaignDesignTests.test_complete_design_fields_and_scenario_contracts) ... ok",
+    "test_dependencies_are_existing_and_strictly_earlier (test_campaign.CampaignDesignTests.test_dependencies_are_existing_and_strictly_earlier) ... ok",
+    "test_exactly_fifty_without_gaps_or_duplicates (test_campaign.CampaignDesignTests.test_exactly_fifty_without_gaps_or_duplicates) ... ok",
+    "test_export_branches_are_distinct (test_campaign.CampaignDesignTests.test_export_branches_are_distinct) ... ok",
+    "test_foundational_skills_reappear_in_distinct_acts (test_campaign.CampaignDesignTests.test_foundational_skills_reappear_in_distinct_acts) ... ok",
+    "test_four_unique_ordered_hints_and_separate_answer (test_campaign.CampaignDesignTests.test_four_unique_ordered_hints_and_separate_answer) ... ok",
+    "test_glossary_introduction_references_exist (test_campaign.CampaignDesignTests.test_glossary_introduction_references_exist) ... ok",
+    "test_local_markdown_links_resolve (test_campaign.CampaignDesignTests.test_local_markdown_links_resolve) ... ok",
+    "test_narrative_entry_word_targets (test_campaign.CampaignDesignTests.test_narrative_entry_word_targets) ... ok",
+    "test_objects_and_checkpoints_reference_only_previous_awards (test_campaign.CampaignDesignTests.test_objects_and_checkpoints_reference_only_previous_awards) ... ok",
+    "test_original_order_and_titles_preserved (test_campaign.CampaignDesignTests.test_original_order_and_titles_preserved) ... ok",
+    "test_prices_campaign_and_coupon_have_single_source (test_campaign.CampaignDesignTests.test_prices_campaign_and_coupon_have_single_source) ... ok",
+    "test_proposed_hosts_separate_classroom_cookie (test_campaign.CampaignDesignTests.test_proposed_hosts_separate_classroom_cookie) ... ok",
+    "test_recovery_frontier_isolated_from_consumption (test_campaign.CampaignDesignTests.test_recovery_frontier_isolated_from_consumption) ... ok",
+    "test_runtime_status_is_limited_to_first_four_acts_and_has_evidence (test_campaign.CampaignDesignTests.test_runtime_status_is_limited_to_first_four_acts_and_has_evidence) ... ok",
+    "test_skills_introduced_once_and_reuse_resolves (test_campaign.CampaignDesignTests.test_skills_introduced_once_and_reuse_resolves) ... ok",
+    "test_ten_acts_with_five_chapters (test_campaign.CampaignDesignTests.test_ten_acts_with_five_chapters) ... ok",
+    "test_timeline_has_distinct_actors_and_no_invented_attribution (test_campaign.CampaignDesignTests.test_timeline_has_distinct_actors_and_no_invented_attribution) ... ok",
+    "test_sql_pair_matches_planned_results_and_parameterization_preserves_lookup (test_campaign.DesignMechanismProbes.test_sql_pair_matches_planned_results_and_parameterization_preserves_lookup) ... ok",
+    "",
+    "----------------------------------------------------------------------",
+    "Ran 20 tests in 0.046s",
+    "",
+    "OK"
+  ]
+}

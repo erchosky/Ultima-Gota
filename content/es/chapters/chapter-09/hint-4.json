@@ -1,0 +1,6 @@
+{
+  "id": "H09-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Con demo.pera consulta /api/me, pulsa Cerrar sesión y vuelve a Mi cuenta. Registra perfil permitido antes y respuesta denegada en la consulta nueva posterior."
+}

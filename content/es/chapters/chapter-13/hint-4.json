@@ -1,0 +1,6 @@
+{
+  "id": "H13-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "En la copia vulnerable, registra soporte denegado a demo.pera. Añade supportAccess:true a PATCH /api/profile y vuelve a /api/support/summary. Comprueba permiso persistido y acceso real."
+}

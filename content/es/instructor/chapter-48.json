@@ -1,0 +1,44 @@
+{
+  "chapterId": "UG-48",
+  "solution": "Selecciona al menos contención de credencial y controles de propiedad/capacidades/exportación. Justifica cada una con evidencia y prueba legítima. El motor acepta órdenes que cumplan estas restricciones, sin puntuar la prosa libre.",
+  "expectedTechnicalResult": "Plan estructurado cubre ramas críticas, contención inmediata, correcciones de raíz y pruebas legítimas; acepta órdenes alternativos válidos.",
+  "understandingAnswer": "Su relación explícita con impactos, requisitos de la cadena y conservación del uso legítimo.",
+  "feedbackOnIncorrect": "Su relación explícita con impactos, requisitos de la cadena y conservación del uso legítimo. Vuelve a comparar las fuentes y repite la observación: Ordena y asigna evidencia, tipo de medida y dependencia a cada decisión.",
+  "patch": "Aplicar medidas seleccionadas a copia de revisión como conjunto versionado.",
+  "positiveTest": "Plan mantiene venta y acceso propio.",
+  "negativeTest": "Ninguna rama crítica queda cubierta solo por ocultación de enlace.",
+  "commonMistakes": [
+    "Una lista editorial exacta como única respuesta o prosa supuestamente evaluada con IA.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented",
+  "acceptableExamples": [
+    [
+      "credential-containment",
+      "ownership",
+      "profile-allowlist",
+      "export-authorization"
+    ],
+    [
+      "ownership",
+      "credential-containment",
+      "export-authorization",
+      "profile-allowlist"
+    ]
+  ],
+  "acceptanceRubric": {
+    "allRequiredMeasuresPresent": true,
+    "everyMeasureHasEvidence": true,
+    "containmentInFirstTwoActions": true,
+    "rootCorrectionsCoverBothBranches": true,
+    "legitimateTestsDefined": true,
+    "freeTextSemanticallyGraded": false
+  },
+  "frequentInvalidMeasure": "Ocultar el enlace de exportación sin retirar publicación ni aplicar permisos."
+}

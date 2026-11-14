@@ -1,0 +1,6 @@
+{
+  "id": "H45-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Envía muestras preparadas con firma válida, cuerpo modificado y firma ausente. Vulnerable acepta sin autenticar; corregida verifica HMAC del cuerpo exacto, rechaza alterado/ausente y permite legítimo."
+}

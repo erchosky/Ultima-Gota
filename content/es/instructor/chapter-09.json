@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-09",
+  "solution": "Con demo.pera consulta /api/me, pulsa Cerrar sesión y vuelve a Mi cuenta. Registra perfil permitido antes y respuesta denegada en la consulta nueva posterior.",
+  "expectedTechnicalResult": "GET /api/me autenticado, logout que invalida sesión y GET nuevo denegado con la sesión anterior sin datos privados.",
+  "understandingAnswer": "No. Las pruebas muestran que el cierre invalida el acceso privado de esa sesión.",
+  "feedbackOnIncorrect": "No. Las pruebas muestran que el cierre invalida el acceso privado de esa sesión. Vuelve a comparar las fuentes y repite la observación: Compara las dos peticiones de perfil y la identidad de la primera.",
+  "patch": "Conservar invalidación del servidor y eliminación de cookie; no introducir un fallo artificial.",
+  "positiveTest": "Una sesión nueva legítima vuelve a consultar su propio perfil.",
+  "negativeTest": "La sesión cerrada no vuelve a obtener perfil.",
+  "commonMistakes": [
+    "Ver el nombre antiguo en una pestaña sin enviar otra petición.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-two"
+}

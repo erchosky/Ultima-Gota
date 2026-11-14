@@ -1,0 +1,6 @@
+{
+  "id": "H24-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "En corregida envía las entradas verdadera y falsa del 23: ambas son datos sin coincidencia. Busca pera y confirma producto2. Contrasta con vulnerable y guarda las tres pruebas."
+}

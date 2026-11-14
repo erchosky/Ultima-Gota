@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-16",
+  "solution": "Envía quantity=0 en la copia vulnerable y consulta el pedido. En corregida verifica rechazo de 0 y aceptación de 1, sin cobro real.",
+  "expectedTechnicalResult": "Cantidad 0 persiste en vulnerable; corregida la rechaza y conserva pedido legítimo quantity=1.",
+  "understandingAnswer": "En el servidor, además de ayudar al usuario desde el formulario.",
+  "feedbackOnIncorrect": "En el servidor, además de ayudar al usuario desde el formulario. Vuelve a comparar las fuentes y repite la observación: Conserva producto y cuenta; varía únicamente la cantidad.",
+  "patch": "Validar entero entre 1 y 20 antes de crear el pedido.",
+  "positiveTest": "quantity=1 produce una línea válida.",
+  "negativeTest": "0, negativos, fracciones y 21 no se guardan.",
+  "commonMistakes": [
+    "Que el formulario impida escribir cero sin probar el servidor.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-four"
+}

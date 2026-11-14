@@ -1,0 +1,112 @@
+{
+  "id": "UG-44",
+  "campaignCaseId": "UG-001",
+  "act": 9,
+  "title": "Un destino con dos lecturas",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 44 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-01",
+    "UG-11",
+    "UG-41",
+    "UG-43"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /tracking?returnTo="
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /tracking?returnTo="
+    },
+    {
+      "skillId": "S41",
+      "introducedIn": "UG-41",
+      "observableUse": "reconocer un origen como combinación de esquema, nombre y puerto y comprobar una política CORS concreta durante la prueba de este expediente.",
+      "practiceContext": "GET /tracking?returnTo="
+    }
+  ],
+  "newSkill": {
+    "id": "S44",
+    "action": "comprobar el destino efectivo de una URL frente a una regla de confianza."
+  },
+  "narrativeEntry": "Un enlace de seguimiento decide adónde volver después de una consulta. Su comprobación antigua busca una palabra conocida dentro de la dirección, pero una URL tiene partes con funciones distintas. Vamos a separar esquema, credenciales si existieran, host, puerto y ruta antes de comparar el destino real. Solo usaremos los dos orígenes locales del caso. La guía mostrará cómo una palabra puede estar en la ruta sin determinar el host. Observa la cabecera Location y la navegación final. La corrección debe analizar la URL y comprobar su origen completo, conservando el retorno legítimo a la tienda.",
+  "whyItMatters": "un enlace de seguimiento acepta una dirección de retorno que parece de la tienda, pero se interpreta de otra manera.",
+  "learningObjective": "comparar direcciones de laboratorio parecidas y observar su destino final. La guía enseña antes las partes necesarias de la URL.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-44/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Que una dirección contenga la palabra tienda garantiza su origen?",
+  "guidedSteps": [
+    "La confianza depende del origen efectivo, no de una subcadena.",
+    "Compara destino analizado y cabecera Location del seguimiento.",
+    "Usa los dos ejemplos locales entregados, variando origen y ruta.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H44-1",
+    "H44-2",
+    "H44-3",
+    "H44-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-44",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /tracking?returnTo=",
+    "observation": "demostrar una redirección a un origen local no autorizado por una validación incorrecta y su rechazo tras analizar la URL correctamente."
+  },
+  "debrief": "ver una palabra confiable dentro de una dirección no determina su origen. El enlace pertenece a las notificaciones de Mercurio.",
+  "understandingCheck": {
+    "question": "¿Qué dato debe compararse con la lista de confianza?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-44",
+    "label": "Destino real y aviso logístico",
+    "recipient": "UG-45"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-44/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-43"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

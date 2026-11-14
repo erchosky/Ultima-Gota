@@ -1,0 +1,6 @@
+{
+  "id": "H14-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Ejecuta seis casos: soporte con Vera200; sin sesión401; cliente403; referencia numérica400; producto999404; legado200 con allowed:false. Anota los cinco códigos y la ruta ficticia mercurio/catalog del error."
+}

@@ -1,0 +1,6 @@
+{
+  "id": "H04-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Cambia el texto del nombre a Pera de prueba en el inspector. Recarga: el nombre original vuelve y la respuesta conserva id=2. Localiza el enlace de campaña en la ficha."
+}

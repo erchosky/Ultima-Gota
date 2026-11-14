@@ -1,0 +1,6 @@
+{
+  "id": "H38-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Sube png válido, texto con nombre png e imagen con tipo declarado incongruente. En vulnerable documenta criterio por nombre; en corregida acepta solo formato decodificable y tamaño permitido."
+}

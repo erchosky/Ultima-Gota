@@ -1,0 +1,14 @@
+{
+  "id": "chapter-17/v1",
+  "inherits": "campaign-v1",
+  "status": "seeded-and-tested-integration-and-chromium",
+  "settings": {
+    "fields": [
+      "literalText",
+      "interpretedMarkup"
+    ],
+    "marker": "<strong>PERA</strong>"
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

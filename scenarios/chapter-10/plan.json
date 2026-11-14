@@ -1,0 +1,55 @@
+{
+  "id": "chapter-10",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-10/v1",
+    "accounts": [
+      "Alba",
+      "Bruno"
+    ],
+    "resource": "GET /api/orders?id=204",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Sesión Alba recibe pedido204 propietario Bruno; control Alba203 y Bruno204 válidos, todos del run activo.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-two.ts#validateActTwo"
+  },
+  "falsePositiveChecks": [
+    "Acceso a 204 solo como Bruno, números adivinados o cambio del texto del propietario.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Comprobar ownerId o capacidad explícita antes de serializar el pedido. Se consolidará en el 15.",
+    "positive": "Alba consulta 203 y Bruno consulta 204.",
+    "negative": "Alba no obtiene datos de 204 en la versión corregida.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-10/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-09"
+    ]
+  }
+}

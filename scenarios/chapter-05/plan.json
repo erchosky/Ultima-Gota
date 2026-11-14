@@ -1,0 +1,54 @@
+{
+  "id": "chapter-05",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-05/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /api/products?id=2",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Reproducción nueva del precio; evidencia estructurada completa; versión corregida muestra 210 y producto 1 conserva 180; comprensión excluye ataque no probado.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-one.ts#validate"
+  },
+  "falsePositiveChecks": [
+    "Pulsar completar con un texto genérico o atribuir manipulación histórica sin registro.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Mostrar el precio recibido con conversión monetaria consistente y retirar el valor de promoción incrustado.",
+    "positive": "Productos 1 y 2 muestran 180 y 210 céntimos respectivamente.",
+    "negative": "Cambiar el DOM no altera los valores persistidos.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-05/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-04"
+    ]
+  }
+}

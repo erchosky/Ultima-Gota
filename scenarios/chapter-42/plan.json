@@ -1,0 +1,53 @@
+{
+  "id": "chapter-42",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-42/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "POST /api/preferences desde auxiliar",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Navegador real envía cookie desde auxiliar y cambia estado vulnerable; corregida bloquea por autenticidad y permite operación propia.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Suponer envío de cookie, usar fetch como sustituto del formulario o desactivar seguridad global.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Token CSRF ligado a sesión y comprobación exacta de Origin para operaciones mutables.",
+    "positive": "Formulario de tienda con token cambia preferencia.",
+    "negative": "Formulario auxiliar sin autenticidad no cambia estado.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-42/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-41"
+    ]
+  }
+}

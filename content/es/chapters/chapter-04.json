@@ -1,0 +1,117 @@
+{
+  "id": "UG-04",
+  "campaignCaseId": "UG-001",
+  "act": 1,
+  "title": "Una página, dos capas",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 04 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-01",
+    "UG-02",
+    "UG-03"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    }
+  ],
+  "newSkill": {
+    "id": "S04",
+    "action": "localizar un elemento de la página con el inspector de elementos."
+  },
+  "narrativeEntry": "Ya tenemos una diferencia concreta. Antes de pedir una corrección vamos a conocer la otra capa: los elementos que forman la página. El inspector permite seleccionar un texto y ver el elemento que lo presenta. Una edición allí cambia tu vista local, como corregir una etiqueta de papel sobre una fotografía. No guarda automáticamente nada en la tienda. Selecciona el nombre del producto y prueba una marca que puedas reconocer. Después recarga y vuelve a consultar los datos. En la misma ficha hay una referencia discreta a la campaña de verano; observa su enlace sin adelantarte todavía a investigar su contenido.",
+  "whyItMatters": "la referencia de la campaña aparece entre los datos recibidos, pero apenas se ve en la ficha.",
+  "learningObjective": "seleccionar el nombre del producto y reconocer el elemento que lo presenta. Probar una edición local inocua de su texto.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-04/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Seguirá tu nombre editado al recargar y pedir los datos otra vez?",
+  "guidedSteps": [
+    "El inspector modifica la representación local; una petición nueva permite contrastarla.",
+    "Haz clic derecho sobre Pera del huerto y elige Inspeccionar. Busca el elemento del nombre.",
+    "Edita solo su texto con una marca inocua, anótala y recarga.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H04-1",
+    "H04-2",
+    "H04-3",
+    "H04-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-04",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/products?id=2",
+    "observation": "observar que la edición cambia la pantalla, pero no el producto devuelto por el servidor; recargar restaura el texto."
+  },
+  "debrief": "editar la pantalla no modifica automáticamente el servidor. En el elemento de la campaña aparece una referencia pública a su página antigua.",
+  "understandingCheck": {
+    "question": "¿Por qué vuelve el nombre original aunque editases el elemento?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-04",
+    "label": "Enlace público a /campanas/verano-sin-colas",
+    "recipient": "UG-05"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-04/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-03"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

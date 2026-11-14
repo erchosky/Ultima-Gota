@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-24",
+  "solution": "En corregida envía las entradas verdadera y falsa del 23: ambas son datos sin coincidencia. Busca pera y confirma producto2. Contrasta con vulnerable y guarda las tres pruebas.",
+  "expectedTechnicalResult": "Tres pruebas en ambas versiones; corregida conserva búsqueda y no cambia lógica con la pareja.",
+  "understandingAnswer": "No; separa datos e instrucción sin depender de prohibir un carácter concreto.",
+  "feedbackOnIncorrect": "No; separa datos e instrucción sin depender de prohibir un carácter concreto. Vuelve a comparar las fuentes y repite la observación: Repite la pareja del 23 y después busca pera normalmente.",
+  "patch": "Consulta parametrizada, sin concatenación del valor a SQL.",
+  "positiveTest": "Pera devuelve id2 y texto con comilla se maneja como dato.",
+  "negativeTest": "Entradas de lógica no amplían resultados.",
+  "commonMistakes": [
+    "Bloquear toda búsqueda o filtrar solo una palabra.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

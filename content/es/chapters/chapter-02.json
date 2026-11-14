@@ -1,0 +1,103 @@
+{
+  "id": "UG-02",
+  "campaignCaseId": "UG-001",
+  "act": 1,
+  "title": "El precio fantasma",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 02 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-01"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    }
+  ],
+  "newSkill": {
+    "id": "S02",
+    "action": "localizar una petición concreta en la pestaña Red del navegador."
+  },
+  "narrativeEntry": "La ficha de pera ya abre donde queríamos. Sam conserva una hoja que indica 2,10 euros, pero en la página aparecen 2,40. Aún no sabemos dónde nace la diferencia. El navegador pide datos a la tienda y luego los presenta; esas peticiones se pueden observar en una herramienta llamada Red. Te mostraré cómo abrirla antes de recargar. Habrá varias filas porque la página también pide imágenes y estilos. Hoy solo necesitamos encontrar la petición del producto 2 y copiar su dirección y su método, la palabra que indica el tipo de petición. Leeremos su contenido en el próximo caso.",
+  "whyItMatters": "la ficha de un producto y la hoja de almacén muestran precios diferentes. Lara pide comprobar qué está consultando el navegador.",
+  "learningObjective": "abrir Red, cargar la ficha por su identificador y seleccionar la petición de datos correspondiente. Explica cómo distinguirla de imágenes y estilos sin exigir conocerlos de antemano.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-02/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Verás una sola petición al recargar una ficha con imagen y datos?",
+  "guidedSteps": [
+    "Una página puede pedir varias piezas; necesitamos la de datos del producto.",
+    "Abre Red en las herramientas de Firefox antes de recargar la ficha.",
+    "Busca la fila cuya dirección incluye /api/products e id=2; no el archivo de imagen.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H02-1",
+    "H02-2",
+    "H02-3",
+    "H02-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-02",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/products?id=2",
+    "observation": "registrar la dirección, el método visible y el producto solicitado. El método se observa; todavía no se modifica."
+  },
+  "debrief": "la página provoca peticiones. El cuaderno conserva la petición para investigar su respuesta.",
+  "understandingCheck": {
+    "question": "¿Por qué hay varias filas en Red al abrir una ficha?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-02",
+    "label": "Referencia de petición de producto 2",
+    "recipient": "UG-03"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-02/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-01"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

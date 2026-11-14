@@ -1,0 +1,14 @@
+{
+  "id": "chapter-42/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "sourceOrigin": "http://127.0.0.1:4312",
+    "targetOrigin": "http://127.0.0.1:4311",
+    "sameSite": "Lax",
+    "csrfVerification": false,
+    "effect": "notificationPreference"
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

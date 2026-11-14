@@ -1,0 +1,112 @@
+{
+  "id": "UG-26",
+  "campaignCaseId": "UG-001",
+  "act": 6,
+  "title": "Un correo que revela demasiado",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 26 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-12",
+    "UG-14",
+    "UG-22",
+    "UG-25"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/request"
+    },
+    {
+      "skillId": "S14",
+      "introducedIn": "UG-14",
+      "observableUse": "interpretar una tabla pequeña de estados HTTP y distinguir un error útil de una filtración interna durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/request"
+    },
+    {
+      "skillId": "S22",
+      "introducedIn": "UG-22",
+      "observableUse": "aislar un carácter de entrada que cambia el comportamiento de una consulta vulnerable durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/request"
+    }
+  ],
+  "newSkill": {
+    "id": "S26",
+    "action": "comprobar si una respuesta revela la existencia de una cuenta."
+  },
+  "narrativeEntry": "El formulario de recuperación contesta de manera distinta a dos direcciones de prueba. Una pertenece a una cuenta y la otra no existe. Ambas están preparadas dentro del laboratorio y no enviarán correo fuera de él. Vamos a mantener todo igual salvo la dirección y comparar contenido y estado. No necesitamos medir diferencias diminutas de tiempo ni probar listas de personas. Si podemos distinguir la cuenta existente, habremos demostrado una filtración concreta. Eso no significa conocer su contraseña ni poder entrar en ella. Después habilitaré el buzón ficticio necesario para revisar qué autorización contienen los enlaces de recuperación.",
+  "whyItMatters": "Vera observa que el formulario de recuperación responde de manera diferente según la dirección introducida.",
+  "learningObjective": "usar dos direcciones ficticias proporcionadas, una registrada y otra inexistente, manteniendo las demás condiciones.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-26/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Una respuesta distinta puede revelar que una cuenta existe sin conceder acceso?",
+  "guidedSteps": [
+    "Existencia de cuenta y control de cuenta son conclusiones diferentes.",
+    "Compara respuestas del formulario de recuperación.",
+    "Usa las dos direcciones ficticias entregadas por Vera.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H26-1",
+    "H26-2",
+    "H26-3",
+    "H26-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-26",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/recovery/request",
+    "observation": "identificar la diferencia de contenido o estado diseñada para el ejercicio. No uses diferencias temporales minúsculas ni conclusiones estadísticas sin base."
+  },
+  "debrief": "conocer que una cuenta existe es una filtración concreta, distinta de tomar su control. Vera habilita el buzón de esa cuenta de pruebas.",
+  "understandingCheck": {
+    "question": "¿Qué información se ha filtrado?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-26",
+    "label": "Acceso autorizado al buzón ficticio",
+    "recipient": "UG-27"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-26/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-25"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

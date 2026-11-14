@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-05",
+  "solution": "Registra producto 2, esperado 210, recibido 210 y visible 240 céntimos; repite la carga. Prueba el renderizado corregido y verifica también producto 1. Concluye fallo de presentación.",
+  "expectedTechnicalResult": "Reproducción nueva del precio; evidencia estructurada completa; versión corregida muestra 210 y producto 1 conserva 180; comprensión excluye ataque no probado.",
+  "understandingAnswer": "Solo demuestran un fallo reproducible de presentación. No tenemos evidencia de que alguien lo provocara durante el incidente.",
+  "feedbackOnIncorrect": "Solo demuestran un fallo reproducible de presentación. No tenemos evidencia de que alguien lo provocara durante el incidente. Vuelve a comparar las fuentes y repite la observación: Anota los pasos y los tres precios antes de probar la versión corregida.",
+  "patch": "Mostrar el precio recibido con conversión monetaria consistente y retirar el valor de promoción incrustado.",
+  "positiveTest": "Productos 1 y 2 muestran 180 y 210 céntimos respectivamente.",
+  "negativeTest": "Cambiar el DOM no altera los valores persistidos.",
+  "commonMistakes": [
+    "Pulsar completar con un texto genérico o atribuir manipulación histórica sin registro.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-one"
+}

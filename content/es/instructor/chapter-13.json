@@ -1,0 +1,29 @@
+{
+  "chapterId": "UG-13",
+  "solution": "En la copia vulnerable, registra soporte denegado a demo.pera. Añade supportAccess:true a PATCH /api/profile y vuelve a /api/support/summary. Comprueba permiso persistido y acceso real.",
+  "expectedTechnicalResult": "Capacidad inicial false, PATCH la cambia a true y recurso soporte antes denegado resulta accesible en la misma sesión.",
+  "understandingAnswer": "Impide que una actualización de preferencias asigne capacidades internas.",
+  "feedbackOnIncorrect": "Impide que una actualización de preferencias asigne capacidades internas. Vuelve a comparar las fuentes y repite la observación: Prueba el campo de capacidad explicado por Nico y vuelve al recurso restringido.",
+  "patch": "Aceptar únicamente campos editables y autorizar capacidades en flujo administrativo separado.",
+  "positiveTest": "Preferencia daily sigue guardándose.",
+  "negativeTest": "supportAccess enviado por cliente no cambia permisos.",
+  "commonMistakes": [
+    "Cambiar solo el alias a soporte o obtener un error.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-three",
+  "exampleRequest": {
+    "method": "PATCH",
+    "path": "/api/profile",
+    "body": {
+      "notificationPreference": "daily",
+      "supportAccess": true
+    }
+  }
+}

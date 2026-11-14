@@ -1,0 +1,53 @@
+{
+  "id": "chapter-34",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-34/v1",
+    "accounts": [
+      "almacen.sam"
+    ],
+    "resource": "POST /api/warehouse/orders/205/transition",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Salto persiste en vulnerable; corregida bloquea y permite preparado→enviado con almacén autorizado.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Leer el botón deshabilitado sin probar la ruta.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Máquina de estados con control de rol y precondiciones por transición.",
+    "positive": "Almacén envía pedido preparado.",
+    "negative": "Pedido creado no puede pasar directamente a enviado.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-34/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-33"
+    ]
+  }
+}

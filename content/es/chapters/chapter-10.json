@@ -1,0 +1,139 @@
+{
+  "id": "UG-10",
+  "campaignCaseId": "UG-001",
+  "act": 2,
+  "title": "Ese pedido no es mío",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 10 después de las 10:00 (sin duración impuesta)",
+  "sender": "Alba",
+  "prerequisites": [
+    "UG-01",
+    "UG-02",
+    "UG-03",
+    "UG-07",
+    "UG-08",
+    "UG-09"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    },
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    },
+    {
+      "skillId": "S09",
+      "introducedIn": "UG-09",
+      "observableUse": "comparar el acceso a un mismo recurso antes y después de cerrar sesión durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    }
+  ],
+  "newSkill": {
+    "id": "S10",
+    "action": "comprobar autorización por objeto entre dos cuentas."
+  },
+  "narrativeEntry": "Soy Alba. Al consultar mi pedido apareció información que no reconocía y envié una captura a Mara. Vera ha preparado dos cuentas ficticias para repetir la comprobación con permiso. Mi pedido es el 203; el 204 pertenece a Bruno. Primero comprueba quién reconoce el servidor y consulta el pedido propio. Después cambia únicamente el identificador del pedido manteniendo mi sesión. Contrasta por separado el acceso del propietario. No necesitas adivinar números ni buscar más clientes. Quiero saber si la tienda comprueba quién puede ver cada pedido, con una prueba mínima que no convierta mi queja en una explicación inventada de todo el incidente.",
+  "whyItMatters": "Alba afirma haber visto el pedido de Bruno. Vera proporciona dos cuentas y dos pedidos ficticios con propietarios conocidos.",
+  "learningObjective": "consultar el pedido propio de Alba y cambiar únicamente el identificador por el de Bruno, manteniendo la sesión de Alba. Después contrastar con la sesión del propietario.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-10/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno"
+  ],
+  "predictionQuestion": "¿Estar autenticada como Alba debería permitir leer el pedido 204 de Bruno?",
+  "guidedSteps": [
+    "Conocer el número de un objeto no concede permiso sobre él.",
+    "Compara la identidad de Mi cuenta con el propietario de los pedidos 203 y 204.",
+    "Mantén sesión de Alba y cambia el identificador de 203 a 204 en la consulta.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H10-1",
+    "H10-2",
+    "H10-3",
+    "H10-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-10",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/orders?id=204",
+    "observation": "la cuenta equivocada recibe datos del pedido ajeno y el cuaderno demuestra propietario, sesión y recurso. No basta con adivinar un número."
+  },
+  "debrief": "presenta IDOR tras explicar el fallo en lenguaje sencillo. Los pedidos incluyen una referencia al conector Mercurio.",
+  "understandingCheck": {
+    "question": "¿Qué comprobación falta aunque la cuenta haya iniciado sesión?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-10",
+    "label": "Muestra mínima del acceso cruzado y referencia Mercurio",
+    "recipient": "UG-11"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-10/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-09"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-two-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

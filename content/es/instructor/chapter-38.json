@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-38",
+  "solution": "Sube png válido, texto con nombre png e imagen con tipo declarado incongruente. En vulnerable documenta criterio por nombre; en corregida acepta solo formato decodificable y tamaño permitido.",
+  "expectedTechnicalResult": "Matriz de tres muestras con hashes conocidos y estados persistidos; corregida valida formato, tamaño y nombre generado.",
+  "understandingAnswer": "El formato real permitido, límites y almacenamiento seguro; un tipo declarado tampoco basta.",
+  "feedbackOnIncorrect": "El formato real permitido, límites y almacenamiento seguro; un tipo declarado tampoco basta. Vuelve a comparar las fuentes y repite la observación: Compara combinaciones conocidas sin ejecutar contenido.",
+  "patch": "Decodificar y recodificar imagen de muestra, límite1MiB y nombre generado fuera del directorio público.",
+  "positiveTest": "PNG válido pequeño se guarda como etiqueta.",
+  "negativeTest": "Texto renombrado, discrepancia no admitida o exceso de tamaño se rechazan.",
+  "commonMistakes": [
+    "Cambiar solo extensión en pantalla o subir archivos ajenos.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

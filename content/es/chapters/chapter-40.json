@@ -1,0 +1,134 @@
+{
+  "id": "UG-40",
+  "campaignCaseId": "UG-001",
+  "act": 8,
+  "title": "La caja de exportaciones",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 40 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-06",
+    "UG-10",
+    "UG-36",
+    "UG-37",
+    "UG-38",
+    "UG-39"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S06",
+      "introducedIn": "UG-06",
+      "observableUse": "buscar una palabra en un recurso JavaScript que la propia página ha cargado durante la prueba de este expediente.",
+      "practiceContext": "GET /exports/muestra-publicada.csv"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "GET /exports/muestra-publicada.csv"
+    },
+    {
+      "skillId": "S36",
+      "introducedIn": "UG-36",
+      "observableUse": "distinguir un identificador de negocio de una ruta de archivo utilizada por un servicio durante la prueba de este expediente.",
+      "practiceContext": "GET /exports/muestra-publicada.csv"
+    },
+    {
+      "skillId": "S37",
+      "introducedIn": "UG-37",
+      "observableUse": "comprobar la normalización de rutas y el límite de un directorio autorizado durante la prueba de este expediente.",
+      "practiceContext": "GET /exports/muestra-publicada.csv"
+    },
+    {
+      "skillId": "S38",
+      "introducedIn": "UG-38",
+      "observableUse": "contrastar extensión, tipo declarado y contenido de un archivo inocuo durante la prueba de este expediente.",
+      "practiceContext": "GET /exports/muestra-publicada.csv"
+    },
+    {
+      "skillId": "S39",
+      "introducedIn": "UG-39",
+      "observableUse": "interpretar las cabeceras de tipo de contenido y disposición de una descarga durante la prueba de este expediente.",
+      "practiceContext": "GET /exports/muestra-publicada.csv"
+    }
+  ],
+  "newSkill": {
+    "id": "S40",
+    "action": "verificar que un recurso interno no se distribuye en la publicación pública."
+  },
+  "narrativeEntry": "Una referencia del documento anterior apunta a una muestra de exportación. Debería estar restringida, pero quizá se copió a la publicación pública cuando se preparó una demostración. Buscaremos únicamente el recurso citado y conservaremos una muestra mínima que permita demostrar el acceso. No hace falta descargar más archivos. Existe también una exportación de soporte con control propio; no son la misma ruta. La corrección debe retirar la copia pública y conservar la descarga autorizada donde corresponda. Encontrar un archivo concreto no demuestra que se extrajera toda la base ni que este acceso ocurriera durante el incidente histórico.",
+  "whyItMatters": "una carpeta de exportaciones contiene datos ficticios que no deben ser públicos y un recurso conserva una referencia a ella.",
+  "learningObjective": "localizar una exportación concreta siguiendo la referencia del caso y comprobar su acceso sin permisos; después verificar la configuración corregida.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-40/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous",
+    "soporte.vera",
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Ocultar el enlace impediría abrir una ruta pública que ya conocemos?",
+  "guidedSteps": [
+    "La publicación debe excluir recursos internos; ocultar enlaces no controla acceso.",
+    "Sigue la referencia de la etiqueta al recurso concreto.",
+    "Prueba sin sesión y compara con la descarga autorizada de soporte.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H40-1",
+    "H40-2",
+    "H40-3",
+    "H40-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-40",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /exports/muestra-publicada.csv",
+    "observation": "el alumno conserva la mínima muestra necesaria del acceso indebido. La versión corregida restringe el recurso y mantiene una descarga autorizada cuando corresponde."
+  },
+  "debrief": "ocultar el enlace no protege el archivo. Una referencia de integración conecta la exportación con servicios internos de Mercurio.",
+  "understandingCheck": {
+    "question": "¿Qué alcance demuestra el archivo accesible?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-40",
+    "label": "Muestra mínima y mapa de servicios de Mercurio",
+    "recipient": "UG-41"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-40/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-39"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

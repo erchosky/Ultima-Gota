@@ -1,0 +1,102 @@
+npm notice run ultima-gota@0.2.0 test:integration
+npm notice run tsx --test tests/scenario-validation/*.test.ts
+TAP version 13
+# Subtest: Alumno recibe solo contenido desbloqueado y ninguna solución privada
+ok 1 - Alumno recibe solo contenido desbloqueado y ninguna solución privada
+  ---
+  duration_ms: 369.161917
+  type: 'test'
+  ...
+# Subtest: Origin, CSRF y canal de control rechazan escrituras ajenas
+ok 2 - Origin, CSRF y canal de control rechazan escrituras ajenas
+  ---
+  duration_ms: 9.643625
+  type: 'test'
+  ...
+# Subtest: Identificador, nombre y peticiones reales; un botón y una pantalla editada no bastan
+ok 3 - Identificador, nombre y peticiones reales; un botón y una pantalla editada no bastan
+  ---
+  duration_ms: 46.453708
+  type: 'test'
+  ...
+# Subtest: Recorrido técnico01–05 verifica datos y corrección real en navegador
+ok 4 - Recorrido técnico01–05 verifica datos y corrección real en navegador
+  ---
+  duration_ms: 987.347292
+  type: 'test'
+  ...
+# Subtest: Reintentar invalida eventos anteriores y conserva notas y logros
+ok 5 - Reintentar invalida eventos anteriores y conserva notas y logros
+  ---
+  duration_ms: 69.6765
+  type: 'test'
+  ...
+# Subtest: Restablecer requiere confirmación y una importación antigua solo crea archivo
+ok 6 - Restablecer requiere confirmación y una importación antigua solo crea archivo
+  ---
+  duration_ms: 24.3765
+  type: 'test'
+  ...
+# Subtest: Nueva campaña archiva la anterior y el modo profesor exige entrada explícita
+ok 7 - Nueva campaña archiva la anterior y el modo profesor exige entrada explícita
+  ---
+  duration_ms: 18.598625
+  type: 'test'
+  ...
+# Subtest: Bundles públicos excluyen contenido de profesor y capítulos futuros
+ok 8 - Bundles públicos excluyen contenido de profesor y capítulos futuros
+  ---
+  duration_ms: 1.538958
+  type: 'test'
+  ...
+# Subtest: Capítulos bloqueados y contenidos futuros no entregan credenciales
+ok 9 - Capítulos bloqueados y contenidos futuros no entregan credenciales
+  ---
+  duration_ms: 354.270709
+  type: 'test'
+  ...
+# Subtest: 06 exige recurso real y credencial correcta; conserva evidencia sin contraseña
+ok 10 - 06 exige recurso real y credencial correcta; conserva evidencia sin contraseña
+  ---
+  duration_ms: 848.502542
+  type: 'test'
+  ...
+# Subtest: 07 requiere sesión y perfil del servidor; revocación se comprueba en copia separada
+ok 11 - 07 requiere sesión y perfil del servidor; revocación se comprueba en copia separada
+  ---
+  duration_ms: 723.382167
+  type: 'test'
+  ...
+# Subtest: 08 cookie de cuenta aparece al entrar y no se confunde con la copia
+ok 12 - 08 cookie de cuenta aparece al entrar y no se confunde con la copia
+  ---
+  duration_ms: 734.906167
+  type: 'test'
+  ...
+# Subtest: 09 revoca sesión real: cookie antigua no recupera acceso y nuevo acceso legítimo funciona
+ok 13 - 09 revoca sesión real: cookie antigua no recupera acceso y nuevo acceso legítimo funciona
+  ---
+  duration_ms: 834.094583
+  type: 'test'
+  ...
+# Subtest: 10 verifica Alba203→204, control Bruno y corrección sin cambiar propietarios
+ok 14 - 10 verifica Alba203→204, control Bruno y corrección sin cambiar propietarios
+  ---
+  duration_ms: 1184.316125
+  type: 'test'
+  ...
+# Subtest: Se recuperan checkpoint06 y exportación1 sin revelar secretos en el progreso
+ok 15 - Se recuperan checkpoint06 y exportación1 sin revelar secretos en el progreso
+  ---
+  duration_ms: 770.481292
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5591.932167

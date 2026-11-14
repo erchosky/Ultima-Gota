@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-14",
+  "solution": "Ejecuta seis casos reales desde la mesa: Vera/soporte200; sin sesión401; demo/soporte403; integración con reference:7 produce400; producto999 produce404; legado devuelve200 y allowed:false. El400 revela mercurio/catalog. Hay seis respuestas y cinco códigos diferentes.",
+  "expectedTechnicalResult": "Cinco eventos preparados clasificados por código y cuerpo; identificación del detalle innecesario y del 200 con denegación.",
+  "understandingAnswer": "Una filtración concreta de información interna, sin demostrar acceso a ese servicio.",
+  "feedbackOnIncorrect": "Una filtración concreta de información interna, sin demostrar acceso a ese servicio. Vuelve a comparar las fuentes y repite la observación: Compara estado, mensaje y presencia de detalles internos ficticios.",
+  "patch": "Errores públicos mínimos con referencia de diagnóstico y detalles solo en registro interno ficticio.",
+  "positiveTest": "Entrada válida devuelve resultado útil.",
+  "negativeTest": "Entrada mal formada no filtra ruta ni traza.",
+  "commonMistakes": [
+    "Clasificar cualquier 500 como inyección.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-three"
+}

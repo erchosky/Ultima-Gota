@@ -1,0 +1,15 @@
+{
+  "id": "chapter-39/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "sampleContent": "<strong>ETIQUETA DEMO</strong>",
+    "javascript": false,
+    "responses": [
+      "inline-text-html",
+      "attachment-download"
+    ]
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

@@ -1,0 +1,6 @@
+{
+  "id": "H39-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Carga la muestra HTML inocua inline como text/html y después como attachment con tipo fijo de descarga en origen auxiliar. Compara cabeceras y comportamiento en contexto limpio."
+}

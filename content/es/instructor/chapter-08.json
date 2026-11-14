@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-08",
+  "solution": "En una sesión limpia comprueba ausencia de ug_store, entra con demo.pera y consulta /api/me. Localiza ug_store en Almacenamiento y su envío en Red; anota HttpOnly y la identidad, no el valor.",
+  "expectedTechnicalResult": "Eventos de acceso y perfil en la misma sesión; alumno identifica ug_store, creación tras login y envío posterior. No se afirma observar directamente la pestaña.",
+  "understandingAnswer": "Permite al servidor enlazar peticiones con la sesión creada al autenticar; no contiene necesariamente la contraseña.",
+  "feedbackOnIncorrect": "Permite al servidor enlazar peticiones con la sesión creada al autenticar; no contiene necesariamente la contraseña. Vuelve a comparar las fuentes y repite la observación: Anota nombre y atributos de la cookie y vincula la petición al usuario devuelto.",
+  "patch": "Mantener cookie de sesión opaca y HttpOnly; demostrar que JavaScript de página no la lee.",
+  "positiveTest": "Perfil autenticado devuelve demo.pera.",
+  "negativeTest": "Sin cookie de tienda no se devuelve el perfil privado.",
+  "commonMistakes": [
+    "Anotar ug_classroom o tratar el valor de cookie como contraseña.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-two"
+}

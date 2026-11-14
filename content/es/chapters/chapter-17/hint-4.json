@@ -1,0 +1,6 @@
+{
+  "id": "H17-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Usa <strong>PERA</strong> en los campos de prueba. Comprueba texto literal en uno y elemento strong en otro, contrastando el dato recibido con el inspector."
+}

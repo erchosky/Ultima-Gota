@@ -1,0 +1,112 @@
+{
+  "id": "UG-43",
+  "campaignCaseId": "UG-001",
+  "act": 9,
+  "title": "La tienda visita por ti",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 43 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-03",
+    "UG-12",
+    "UG-41",
+    "UG-42"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preview"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preview"
+    },
+    {
+      "skillId": "S41",
+      "introducedIn": "UG-41",
+      "observableUse": "reconocer un origen como combinación de esquema, nombre y puerto y comprobar una política CORS concreta durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preview"
+    }
+  ],
+  "newSkill": {
+    "id": "S43",
+    "action": "comprobar desde qué componente se realiza una petición y qué servicios puede alcanzar."
+  },
+  "narrativeEntry": "La previsualización de imágenes de proveedores acepta una dirección y la consulta por nosotros. Hasta ahora muchas peticiones salían del navegador; esta función hace una desde el servidor. El mapa del laboratorio contiene un catálogo autorizado y un servicio interno ficticio que no debería mostrarse en esa función. Solo esos destinos están disponibles para el ejercicio. Cambia la selección al servicio interno y observa tanto la respuesta como el registro de recepción. No escribas direcciones de otros equipos ni servicios externos. Si aparece información interna, tendremos que comprobar qué componente la pidió y qué control de negocio debía limitar su destino.",
+  "whyItMatters": "la función de previsualizar imágenes de proveedores hace que el servidor consulte una dirección recibida del usuario.",
+  "learningObjective": "dirigir la previsualización a un servicio ficticio de intranet permitido únicamente dentro de la red del ejercicio.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-43/v1"
+  ],
+  "allowedAccounts": [
+    "proveedor.mercurio"
+  ],
+  "predictionQuestion": "¿Qué equipo hace la consulta de previsualización: tu navegador o el servicio de tienda?",
+  "guidedSteps": [
+    "Sigue el flujo completo y separa origen de la petición de su destino.",
+    "Consulta el diagrama y los dos destinos sintéticos del selector.",
+    "Selecciona intranet y contrasta el registro de recepción.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H43-1",
+    "H43-2",
+    "H43-3",
+    "H43-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-43",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/preview",
+    "observation": "los registros muestran una petición real del servidor al servicio de laboratorio y una respuesta interna expuesta. La corrección impide ese destino y conserva una imagen autorizada."
+  },
+  "debrief": "introducir SSRF tras observar el flujo. El entorno bloquea destinos externos, metadatos de nube reales y el anfitrión.",
+  "understandingCheck": {
+    "question": "¿Por qué este comportamiento se llama SSRF?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-43",
+    "label": "Traza servidor→intranet y enlace de seguimiento",
+    "recipient": "UG-44"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-43/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-42"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

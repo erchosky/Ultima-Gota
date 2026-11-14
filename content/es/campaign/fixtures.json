@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "id": "campaign-v1",
+  "note": "Datos ficticios de diseño; no cargados en servicios.",
+  "products": [
+    {
+      "id": 1,
+      "name": "Naranja de barrio",
+      "searchKey": "naranja",
+      "priceCents": 180,
+      "stock": 12
+    },
+    {
+      "id": 2,
+      "name": "Pera del huerto",
+      "searchKey": "pera",
+      "priceCents": 210,
+      "stock": 12,
+      "publicCampaignRef": "/campanas/verano-sin-colas"
+    },
+    {
+      "id": 3,
+      "name": "Manzana fresca",
+      "searchKey": "manzana",
+      "priceCents": 200,
+      "stock": 12
+    },
+    {
+      "id": 4,
+      "name": "Mango del puerto",
+      "searchKey": "mango",
+      "priceCents": 290,
+      "stock": 1
+    },
+    {
+      "id": 5,
+      "name": "Limón con jengibre",
+      "searchKey": "limon",
+      "priceCents": 250,
+      "stock": 12
+    },
+    {
+      "id": 6,
+      "name": "Mezcla de verano",
+      "searchKey": "verano",
+      "priceCents": 260,
+      "stock": 12,
+      "campaign": "Verano sin colas"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "user-alba",
+      "name": "Alba",
+      "email": "alba@ug.invalid",
+      "password": "DEMO-Alba-203!",
+      "role": "customer",
+      "supportAccess": false
+    },
+    {
+      "id": "user-bruno",
+      "name": "Bruno",
+      "email": "bruno@ug.invalid",
+      "password": "DEMO-Bruno-204!",
+      "role": "customer",
+      "supportAccess": false
+    },
+    {
+      "id": "user-demo-pera",
+      "name": "demo.pera",
+      "email": "demo.pera@ug.invalid",
+      "password": "DEMO-Pera-Verano!",
+      "role": "customer",
+      "supportAccess": false
+    },
+    {
+      "id": "user-vera",
+      "name": "soporte.vera",
+      "email": "soporte@ug.invalid",
+      "password": "DEMO-Soporte-Vera!",
+      "role": "support",
+      "supportAccess": true
+    },
+    {
+      "id": "user-sam",
+      "name": "almacen.sam",
+      "email": "almacen@ug.invalid",
+      "password": "DEMO-Almacen-Sam!",
+      "role": "warehouse",
+      "supportAccess": false
+    },
+    {
+      "id": "service-mercurio",
+      "name": "proveedor.mercurio",
+      "email": "proveedor@ug.invalid",
+      "password": "DEMO-Proveedor-Mercurio!",
+      "role": "supplier",
+      "supportAccess": false
+    }
+  ],
+  "orders": [
+    {
+      "id": 203,
+      "ownerId": "user-alba",
+      "state": "created",
+      "subtotalCents": 2000
+    },
+    {
+      "id": 204,
+      "ownerId": "user-bruno",
+      "state": "created",
+      "subtotalCents": 2000
+    },
+    {
+      "id": 205,
+      "ownerId": "user-demo-pera",
+      "state": "created",
+      "subtotalCents": 2000
+    }
+  ],
+  "coupon": {
+    "code": "PRIMERBRINDIS",
+    "minimumSubtotalCents": 2000,
+    "discountBasisPoints": 1000,
+    "rounding": "floor",
+    "maximumUsesPerAccount": 1,
+    "expiresAt": "day-1T00:00:00",
+    "appliesTo": "product-subtotal-before-discounts",
+    "shippingIncluded": false
+  },
+  "recovery": {
+    "ttlSeconds": 600,
+    "validWhen": "now < expiresAt",
+    "securityRecoveryRevokesAllPriorSessions": true
+  },
+  "quantity": {
+    "min": 1,
+    "max": 20,
+    "integerOnly": true
+  },
+  "priceDiscrepancy": {
+    "productId": 2,
+    "expectedCents": 210,
+    "responseCents": 210,
+    "legacyRenderedCents": 240,
+    "correctedRenderedCents": 210
+  },
+  "campaign": {
+    "name": "Verano sin colas",
+    "productId": 6,
+    "page": "/campanas/verano-sin-colas",
+    "publicResource": "/assets/verano-demo.js",
+    "exposedAccountId": "user-demo-pera"
+  },
+  "virtualFiles": {
+    "public/albaran-203.txt": {
+      "orderId": 203,
+      "ownerId": "user-alba",
+      "content": "ALBARAN DEMO 203 · Alba · sin datos reales"
+    },
+    "public/albaran-204.txt": {
+      "orderId": 204,
+      "ownerId": "user-bruno",
+      "content": "ALBARAN DEMO 204 · Bruno · sin datos reales"
+    },
+    "reservado/nota-mercurio.txt": {
+      "content": "NOTA DE PRUEBAS: etiquetas de Mercurio; solo árbol virtual"
+    }
+  },
+  "exports": {
+    "publicCopy": {
+      "path": "/exports/muestra-publicada.csv",
+      "rows": [
+        {
+          "orderId": 203,
+          "displayName": "Alba",
+          "sample": "DEMO"
+        }
+      ]
+    },
+    "supportOriginal": {
+      "path": "/api/support/exports/muestra-soporte.csv",
+      "requires": "supportAccess",
+      "rows": [
+        {
+          "orderId": 203,
+          "displayName": "Alba"
+        },
+        {
+          "orderId": 204,
+          "displayName": "Bruno"
+        },
+        {
+          "orderId": 205,
+          "displayName": "demo.pera"
+        }
+      ]
+    }
+  },
+  "logistics": {
+    "initialState": "prepared",
+    "nextState": "shipped",
+    "algorithm": "HMAC-SHA256",
+    "signingKeySource": "runtime-generated-demo-service-only",
+    "correlateUnsignedWithVisitor": false
+  },
+  "search": {
+    "vulnerableSQL": "SELECT id,name FROM products WHERE searchKey = '${q}'",
+    "trueInput": "' OR 1=1 -- ",
+    "falseInput": "' OR 1=2 -- ",
+    "normalInput": "pera",
+    "correctedSQL": "SELECT id,name FROM products WHERE searchKey = ?"
+  },
+  "uploadPolicy": {
+    "maxBytes": 1048576,
+    "format": "PNG decoded and re-encoded",
+    "storage": "outside-public-tree",
+    "execution": "never"
+  },
+  "transfer": {
+    "products": [
+      {
+        "id": 11,
+        "name": "Naranja de la reapertura",
+        "priceCents": 180
+      },
+      {
+        "id": 12,
+        "name": "Pera de la reapertura",
+        "priceCents": 210
+      }
+    ],
+    "orders": [
+      {
+        "id": 303,
+        "ownerId": "user-alba"
+      },
+      {
+        "id": 304,
+        "ownerId": "user-bruno"
+      }
+    ]
+  },
+  "snapshotPolicy": {
+    "pedagogicalFixtures": "Fresh authorized exercise data, not the incident database at10:00. Owners and entity relationships remain canonical.",
+    "historicalReproductionBase": "day-0T08:49:00 before synthetic visitor activity",
+    "historicalRecords": "Immutable records distinct from present reproduction events",
+    "mainWorldPatches": "Append-only committed corrections, never reversed by a practice copy."
+  }
+}

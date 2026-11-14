@@ -1,0 +1,56 @@
+# Los 50 expedientes
+
+Las 50 fichas están diseñadas y escritas. Los escenarios 01–20 son funcionales y sus recorridos se han probado en Chromium; 21–50 siguen pendientes de implementación. Las soluciones se guardan separadas y la API filtra el contenido por estado y ayuda solicitada.
+
+| Capítulo | Acto | Ficha de lectura | JSON editable | Escenario previsto | Solución separada |
+|---|---|---|---|---|---|
+| 01 | 1 | [La ficha equivocada](expediente-01.md) | [Texto editable](../content/es/chapters/chapter-01.json) | [Plan](../scenarios/chapter-01/plan.json) | [Profesor](../content/es/instructor/chapter-01.json) |
+| 02 | 1 | [El precio fantasma](expediente-02.md) | [Texto editable](../content/es/chapters/chapter-02.json) | [Plan](../scenarios/chapter-02/plan.json) | [Profesor](../content/es/instructor/chapter-02.json) |
+| 03 | 1 | [Lo que llegó de verdad](expediente-03.md) | [Texto editable](../content/es/chapters/chapter-03.json) | [Plan](../scenarios/chapter-03/plan.json) | [Profesor](../content/es/instructor/chapter-03.json) |
+| 04 | 1 | [Una página, dos capas](expediente-04.md) | [Texto editable](../content/es/chapters/chapter-04.json) | [Plan](../scenarios/chapter-04/plan.json) | [Profesor](../content/es/instructor/chapter-04.json) |
+| 05 | 1 | [La primera prueba útil](expediente-05.md) | [Texto editable](../content/es/chapters/chapter-05.json) | [Plan](../scenarios/chapter-05/plan.json) | [Profesor](../content/es/instructor/chapter-05.json) |
+| 06 | 2 | [La promoción retirada](expediente-06.md) | [Texto editable](../content/es/chapters/chapter-06.json) | [Plan](../scenarios/chapter-06/plan.json) | [Profesor](../content/es/instructor/chapter-06.json) |
+| 07 | 2 | [Una cuenta que seguía viva](expediente-07.md) | [Texto editable](../content/es/chapters/chapter-07.json) | [Plan](../scenarios/chapter-07/plan.json) | [Profesor](../content/es/instructor/chapter-07.json) |
+| 08 | 2 | [Cómo recuerda la tienda quién eres](expediente-08.md) | [Texto editable](../content/es/chapters/chapter-08.json) | [Plan](../scenarios/chapter-08/plan.json) | [Profesor](../content/es/instructor/chapter-08.json) |
+| 09 | 2 | [Cerrar la puerta](expediente-09.md) | [Texto editable](../content/es/chapters/chapter-09.json) | [Plan](../scenarios/chapter-09/plan.json) | [Profesor](../content/es/instructor/chapter-09.json) |
+| 10 | 2 | [Ese pedido no es mío](expediente-10.md) | [Texto editable](../content/es/chapters/chapter-10.json) | [Plan](../scenarios/chapter-10/plan.json) | [Profesor](../content/es/instructor/chapter-10.json) |
+| 11 | 3 | [Repetir sin volver a empezar](expediente-11.md) | [Texto editable](../content/es/chapters/chapter-11.json) | [Plan](../scenarios/chapter-11/plan.json) | [Profesor](../content/es/instructor/chapter-11.json) |
+| 12 | 3 | [El contenido del sobre](expediente-12.md) | [Texto editable](../content/es/chapters/chapter-12.json) | [Plan](../scenarios/chapter-12/plan.json) | [Profesor](../content/es/instructor/chapter-12.json) |
+| 13 | 3 | [Un permiso que nadie te dio](expediente-13.md) | [Texto editable](../content/es/chapters/chapter-13.json) | [Plan](../scenarios/chapter-13/plan.json) | [Profesor](../content/es/instructor/chapter-13.json) |
+| 14 | 3 | [Una respuesta que cuenta demasiado](expediente-14.md) | [Texto editable](../content/es/chapters/chapter-14.json) | [Plan](../scenarios/chapter-14/plan.json) | [Profesor](../content/es/instructor/chapter-14.json) |
+| 15 | 3 | [Corregido, pero comprobado](expediente-15.md) | [Texto editable](../content/es/chapters/chapter-15.json) | [Plan](../scenarios/chapter-15/plan.json) | [Profesor](../content/es/instructor/chapter-15.json) |
+| 16 | 4 | [El botón no es la regla](expediente-16.md) | [Texto editable](../content/es/chapters/chapter-16.json) | [Plan](../scenarios/chapter-16/plan.json) | [Profesor](../content/es/instructor/chapter-16.json) |
+| 17 | 4 | [¿Texto o formato?](expediente-17.md) | [Texto editable](../content/es/chapters/chapter-17.json) | [Plan](../scenarios/chapter-17/plan.json) | [Profesor](../content/es/instructor/chapter-17.json) |
+| 18 | 4 | [El camino del mensaje](expediente-18.md) | [Texto editable](../content/es/chapters/chapter-18.json) | [Plan](../scenarios/chapter-18/plan.json) | [Profesor](../content/es/instructor/chapter-18.json) |
+| 19 | 4 | [Una acción que la página no esperaba](expediente-19.md) | [Texto editable](../content/es/chapters/chapter-19.json) | [Plan](../scenarios/chapter-19/plan.json) | [Profesor](../content/es/instructor/chapter-19.json) |
+| 20 | 4 | [La reseña que permaneció](expediente-20.md) | [Texto editable](../content/es/chapters/chapter-20.json) | [Plan](../scenarios/chapter-20/plan.json) | [Profesor](../content/es/instructor/chapter-20.json) |
+| 21 | 5 | [La libreta del almacén](expediente-21.md) | [Texto editable](../content/es/chapters/chapter-21.json) | [Plan](../scenarios/chapter-21/plan.json) | [Profesor](../content/es/instructor/chapter-21.json) |
+| 22 | 5 | [Una comilla fuera de sitio](expediente-22.md) | [Texto editable](../content/es/chapters/chapter-22.json) | [Plan](../scenarios/chapter-22/plan.json) | [Profesor](../content/es/instructor/chapter-22.json) |
+| 23 | 5 | [Dos preguntas, dos respuestas](expediente-23.md) | [Texto editable](../content/es/chapters/chapter-23.json) | [Plan](../scenarios/chapter-23/plan.json) | [Profesor](../content/es/instructor/chapter-23.json) |
+| 24 | 5 | [Datos que vuelven a ser datos](expediente-24.md) | [Texto editable](../content/es/chapters/chapter-24.json) | [Plan](../scenarios/chapter-24/plan.json) | [Profesor](../content/es/instructor/chapter-24.json) |
+| 25 | 5 | [Lo sabemos, lo suponemos](expediente-25.md) | [Texto editable](../content/es/chapters/chapter-25.json) | [Plan](../scenarios/chapter-25/plan.json) | [Profesor](../content/es/instructor/chapter-25.json) |
+| 26 | 6 | [Un correo que revela demasiado](expediente-26.md) | [Texto editable](../content/es/chapters/chapter-26.json) | [Plan](../scenarios/chapter-26/plan.json) | [Profesor](../content/es/instructor/chapter-26.json) |
+| 27 | 6 | [Un enlace con destinatario](expediente-27.md) | [Texto editable](../content/es/chapters/chapter-27.json) | [Plan](../scenarios/chapter-27/plan.json) | [Profesor](../content/es/instructor/chapter-27.json) |
+| 28 | 6 | [Un enlace para una sola vez](expediente-28.md) | [Texto editable](../content/es/chapters/chapter-28.json) | [Plan](../scenarios/chapter-28/plan.json) | [Profesor](../content/es/instructor/chapter-28.json) |
+| 29 | 6 | [El reloj del enlace](expediente-29.md) | [Texto editable](../content/es/chapters/chapter-29.json) | [Plan](../scenarios/chapter-29/plan.json) | [Profesor](../content/es/instructor/chapter-29.json) |
+| 30 | 6 | [La sesión que se quedó dentro](expediente-30.md) | [Texto editable](../content/es/chapters/chapter-30.json) | [Plan](../scenarios/chapter-30/plan.json) | [Profesor](../content/es/instructor/chapter-30.json) |
+| 31 | 7 | [La letra pequeña del cupón](expediente-31.md) | [Texto editable](../content/es/chapters/chapter-31.json) | [Plan](../scenarios/chapter-31/plan.json) | [Profesor](../content/es/instructor/chapter-31.json) |
+| 32 | 7 | [¿Quién decide el precio?](expediente-32.md) | [Texto editable](../content/es/chapters/chapter-32.json) | [Plan](../scenarios/chapter-32/plan.json) | [Profesor](../content/es/instructor/chapter-32.json) |
+| 33 | 7 | [El descuento que volvió](expediente-33.md) | [Texto editable](../content/es/chapters/chapter-33.json) | [Plan](../scenarios/chapter-33/plan.json) | [Profesor](../content/es/instructor/chapter-33.json) |
+| 34 | 7 | [Un pedido que saltó un paso](expediente-34.md) | [Texto editable](../content/es/chapters/chapter-34.json) | [Plan](../scenarios/chapter-34/plan.json) | [Profesor](../content/es/instructor/chapter-34.json) |
+| 35 | 7 | [La última botella](expediente-35.md) | [Texto editable](../content/es/chapters/chapter-35.json) | [Plan](../scenarios/chapter-35/plan.json) | [Profesor](../content/es/instructor/chapter-35.json) |
+| 36 | 8 | [Seguir la ruta del albarán](expediente-36.md) | [Texto editable](../content/es/chapters/chapter-36.json) | [Plan](../scenarios/chapter-36/plan.json) | [Profesor](../content/es/instructor/chapter-36.json) |
+| 37 | 8 | [Fuera de la carpeta](expediente-37.md) | [Texto editable](../content/es/chapters/chapter-37.json) | [Plan](../scenarios/chapter-37/plan.json) | [Profesor](../content/es/instructor/chapter-37.json) |
+| 38 | 8 | [El nombre no demuestra el contenido](expediente-38.md) | [Texto editable](../content/es/chapters/chapter-38.json) | [Plan](../scenarios/chapter-38/plan.json) | [Profesor](../content/es/instructor/chapter-38.json) |
+| 39 | 8 | [Descargar o interpretar](expediente-39.md) | [Texto editable](../content/es/chapters/chapter-39.json) | [Plan](../scenarios/chapter-39/plan.json) | [Profesor](../content/es/instructor/chapter-39.json) |
+| 40 | 8 | [La caja de exportaciones](expediente-40.md) | [Texto editable](../content/es/chapters/chapter-40.json) | [Plan](../scenarios/chapter-40/plan.json) | [Profesor](../content/es/instructor/chapter-40.json) |
+| 41 | 9 | [Dos ventanas, dos orígenes](expediente-41.md) | [Texto editable](../content/es/chapters/chapter-41.json) | [Plan](../scenarios/chapter-41/plan.json) | [Profesor](../content/es/instructor/chapter-41.json) |
+| 42 | 9 | [Una acción desde otra página](expediente-42.md) | [Texto editable](../content/es/chapters/chapter-42.json) | [Plan](../scenarios/chapter-42/plan.json) | [Profesor](../content/es/instructor/chapter-42.json) |
+| 43 | 9 | [La tienda visita por ti](expediente-43.md) | [Texto editable](../content/es/chapters/chapter-43.json) | [Plan](../scenarios/chapter-43/plan.json) | [Profesor](../content/es/instructor/chapter-43.json) |
+| 44 | 9 | [Un destino con dos lecturas](expediente-44.md) | [Texto editable](../content/es/chapters/chapter-44.json) | [Plan](../scenarios/chapter-44/plan.json) | [Profesor](../content/es/instructor/chapter-44.json) |
+| 45 | 9 | [El mensaje sin firma](expediente-45.md) | [Texto editable](../content/es/chapters/chapter-45.json) | [Plan](../scenarios/chapter-45/plan.json) | [Profesor](../content/es/instructor/chapter-45.json) |
+| 46 | 10 | [El hilo entre las peticiones](expediente-46.md) | [Texto editable](../content/es/chapters/chapter-46.json) | [Plan](../scenarios/chapter-46/plan.json) | [Profesor](../content/es/instructor/chapter-46.json) |
+| 47 | 10 | [Cómo pudo encadenarse](expediente-47.md) | [Texto editable](../content/es/chapters/chapter-47.json) | [Plan](../scenarios/chapter-47/plan.json) | [Profesor](../content/es/instructor/chapter-47.json) |
+| 48 | 10 | [Qué arreglamos primero](expediente-48.md) | [Texto editable](../content/es/chapters/chapter-48.json) | [Plan](../scenarios/chapter-48/plan.json) | [Profesor](../content/es/instructor/chapter-48.json) |
+| 49 | 10 | [Que no vuelva con la próxima oferta](expediente-49.md) | [Texto editable](../content/es/chapters/chapter-49.json) | [Plan](../scenarios/chapter-49/plan.json) | [Profesor](../content/es/instructor/chapter-49.json) |
+| 50 | 10 | [La reapertura](expediente-50.md) | [Texto editable](../content/es/chapters/chapter-50.json) | [Plan](../scenarios/chapter-50/plan.json) | [Profesor](../content/es/instructor/chapter-50.json) |

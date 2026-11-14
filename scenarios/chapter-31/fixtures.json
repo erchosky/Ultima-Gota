@@ -1,0 +1,15 @@
+{
+  "id": "chapter-31/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "ruleRef": "campaign-v1.coupon",
+    "boundarySubtotals": [
+      1999,
+      2000,
+      2009
+    ]
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

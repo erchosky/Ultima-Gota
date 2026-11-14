@@ -1,0 +1,139 @@
+{
+  "id": "UG-46",
+  "campaignCaseId": "UG-001",
+  "act": 10,
+  "title": "El hilo entre las peticiones",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 46 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-07",
+    "UG-08",
+    "UG-09",
+    "UG-10",
+    "UG-25",
+    "UG-33",
+    "UG-45"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    },
+    {
+      "skillId": "S09",
+      "introducedIn": "UG-09",
+      "observableUse": "comparar el acceso a un mismo recurso antes y después de cerrar sesión durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    },
+    {
+      "skillId": "S25",
+      "introducedIn": "UG-25",
+      "observableUse": "ordenar evidencias por tiempo y separar hechos, hipótesis y preguntas abiertas durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    },
+    {
+      "skillId": "S33",
+      "introducedIn": "UG-33",
+      "observableUse": "verificar que un reintento de una operación no aplica dos veces el mismo efecto durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    },
+    {
+      "skillId": "S45",
+      "introducedIn": "UG-45",
+      "observableUse": "comprobar autenticidad e integridad de un mensaje firmado por el servicio ficticio durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/correlation"
+    }
+  ],
+  "newSkill": {
+    "id": "S46",
+    "action": "correlacionar eventos con identificadores de petición, sesión y operación, reconociendo sus límites."
+  },
+  "narrativeEntry": "Tenemos registros de acceso, perfil, pedidos y logística que se solapan en el reloj. Para unirlos necesitamos algo más que cercanía temporal. Cada petición tiene una referencia; algunas comparten sesión y otras un identificador de operación. La mesa conserva el origen de cada registro y señala dónde falta una relación. Filtra el conjunto y reconstruye una secuencia respaldada. Busca también el reintento legítimo que no debemos mezclar con visitante-17. Una dirección de laboratorio o un nombre de archivo no identifica a una persona. Al cerrar este caso podrás abrir una copia histórica aislada para reproducir las ramas que la evidencia permite investigar.",
+  "whyItMatters": "Lara entrega registros de accesos, perfiles, pedidos y Mercurio con eventos que se solapan.",
+  "learningObjective": "filtrar un conjunto manejable y enlazar los registros de la misma operación sin identificar personas solo por una IP.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-46/v1"
+  ],
+  "allowedAccounts": [
+    "reviewer"
+  ],
+  "predictionQuestion": "¿Dos eventos cercanos en el tiempo pertenecen necesariamente a la misma operación?",
+  "guidedSteps": [
+    "Correlaciona por referencias estables y conserva los huecos.",
+    "Filtra registros por sessionRef, requestId y operationId.",
+    "Une acceso, perfil y pedido; contrasta Mercurio por separado.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H46-1",
+    "H46-2",
+    "H46-3",
+    "H46-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-46",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /classroom/correlation",
+    "observation": "reconstruir al menos una secuencia correcta y excluir una coincidencia temporal engañosa."
+  },
+  "debrief": "conservar procedencia y reloj de cada evidencia. Se desbloquea una copia histórica aislada para reproducir la cadena inicial.",
+  "understandingCheck": {
+    "question": "¿Qué permite afirmar un sessionRef compartido?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-46",
+    "label": "Grafo parcial y autorización de copia histórica",
+    "recipient": "UG-47"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-46/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-45"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "story": "Campaña vacía → ficha real → evidencia verificada → comprensión → corrección → cuaderno y recuperación.",
+  "checks": [],
+  "errors": [],
+  "screenshots": [],
+  "engines": [],
+  "limitations": [
+    "Simulación de desarrollador; no sustituye una prueba con persona principiante.",
+    "DevTools no se puede detectar desde la web: el test observa peticiones y reproduce una edición DOM local.",
+    "Docker no se ha ejecutado en esta máquina."
+  ],
+  "passed": false,
+  "failure": "browserType.launch: Failed to launch the browser process.\nBrowser logs:\n\n<launching> /Users/erchosky/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/d3/y5rb0p5n4bjbhghz1rk7s6fh0000gn/T/playwright_firefoxdev_profile-jyyNX2 -juggler-pipe -silent\n<launched> pid=15676\n[pid=15676][err] *** You are running in headless mode.\n[pid=15676][err] Could not find profile folder.\n[pid=15676] <process did exit: exitCode=1, signal=null>\n[pid=15676] starting temporary directories cleanup\nCall log:\n  - <launching> /Users/erchosky/Library/Caches/ms-playwright/firefox-1555/firefox/Nightly.app/Contents/MacOS/firefox -no-remote -headless -profile /var/folders/d3/y5rb0p5n4bjbhghz1rk7s6fh0000gn/T/playwright_firefoxdev_profile-jyyNX2 -juggler-pipe -silent\n  - <launched> pid=15676\n  - [pid=15676][err] *** You are running in headless mode.\n  - [pid=15676][err] Could not find profile folder.\n  - [pid=15676] <process did exit: exitCode=1, signal=null>\n  - [pid=15676] starting temporary directories cleanup\n  - [pid=15676] <gracefully close start>\n  - [pid=15676] <kill>\n  - [pid=15676] <skipped force kill spawnedProcess.killed=false processClosed=true>\n  - [pid=15676] finished temporary directories cleanup\n  - [pid=15676] <gracefully close end>\n\n    at <anonymous> (/Users/erchosky/Documents/Claude/Intento de historia OWASP/tests/learning-flows/act-one.ts:13:76)"
+}

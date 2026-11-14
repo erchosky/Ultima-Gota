@@ -1,0 +1,233 @@
+[
+  {
+    "id": "direccion",
+    "introducedIn": "UG-01",
+    "term": "Dirección o URL",
+    "definition": "Texto de la barra del navegador que indica qué recurso se pide.",
+    "example": "/producto?id=2"
+  },
+  {
+    "id": "parametro",
+    "introducedIn": "UG-01",
+    "term": "Parámetro",
+    "definition": "Dato nombrado en una dirección para concretar una consulta.",
+    "example": "id=2 elige el producto 2."
+  },
+  {
+    "id": "peticion",
+    "introducedIn": "UG-02",
+    "term": "Petición",
+    "definition": "Mensaje que envía el navegador para pedir un recurso o realizar una acción.",
+    "example": "GET /api/products?id=2"
+  },
+  {
+    "id": "metodo",
+    "introducedIn": "UG-02",
+    "term": "Método HTTP",
+    "definition": "Palabra que indica el tipo de petición; aquí primero la observamos.",
+    "example": "GET pide los datos de pera."
+  },
+  {
+    "id": "respuesta",
+    "introducedIn": "UG-03",
+    "term": "Respuesta",
+    "definition": "Datos y estado que devuelve el servicio a una petición.",
+    "example": "priceCents:210"
+  },
+  {
+    "id": "json",
+    "introducedIn": "UG-03",
+    "term": "JSON",
+    "definition": "Datos organizados mediante nombres, valores y listas.",
+    "example": "{\"id\":2,\"priceCents\":210}"
+  },
+  {
+    "id": "inspector",
+    "introducedIn": "UG-04",
+    "term": "Inspector de elementos",
+    "definition": "Herramienta que permite localizar la estructura presentada en la página.",
+    "example": "Editar un nombre local y recargar."
+  },
+  {
+    "id": "evidencia",
+    "introducedIn": "UG-05",
+    "term": "Evidencia",
+    "definition": "Registro con fuente y pasos que permite justificar una observación concreta.",
+    "example": "Esperado210; recibido210; visible240."
+  },
+  {
+    "id": "javascript",
+    "introducedIn": "UG-06",
+    "term": "JavaScript",
+    "definition": "Lenguaje que el navegador utiliza para algunas acciones de una página.",
+    "example": "Archivo público verano-demo.js."
+  },
+  {
+    "id": "autenticacion",
+    "introducedIn": "UG-07",
+    "term": "Autenticación",
+    "definition": "Comprobar con qué cuenta se establece el acceso.",
+    "example": "demo.pera inicia una sesión."
+  },
+  {
+    "id": "cookie",
+    "introducedIn": "UG-08",
+    "term": "Cookie",
+    "definition": "Dato conservado y enviado por el navegador según host y atributos.",
+    "example": "ug_store identifica la sesión de tienda."
+  },
+  {
+    "id": "sesion",
+    "introducedIn": "UG-08",
+    "term": "Sesión",
+    "definition": "Relación temporal del servidor que reconoce una identidad entre peticiones.",
+    "example": "Perfil de demo.pera tras abrir otra ficha."
+  },
+  {
+    "id": "autorizacion",
+    "introducedIn": "UG-10",
+    "term": "Autorización",
+    "definition": "Decidir qué puede hacer una cuenta sobre un recurso.",
+    "example": "Alba puede leer203; no204."
+  },
+  {
+    "id": "idor",
+    "introducedIn": "UG-10",
+    "term": "IDOR",
+    "definition": "Acceso indebido a un objeto al cambiar su referencia cuando falta comprobar permiso.",
+    "example": "Alba recibe204 en copia vulnerable."
+  },
+  {
+    "id": "cuerpo",
+    "introducedIn": "UG-12",
+    "term": "Cuerpo de petición",
+    "definition": "Datos enviados dentro del mensaje, además de dirección y método.",
+    "example": "notificationPreference:daily"
+  },
+  {
+    "id": "asignacion-masiva",
+    "introducedIn": "UG-13",
+    "term": "Asignación masiva",
+    "definition": "Copiar campos enviados por cliente a un objeto sin limitar cuáles son editables.",
+    "example": "Perfil acepta supportAccess indebidamente."
+  },
+  {
+    "id": "html",
+    "introducedIn": "UG-17",
+    "term": "HTML",
+    "definition": "Marcado que organiza elementos y presentación de una página.",
+    "example": "strong destaca PERA; no demuestra JavaScript."
+  },
+  {
+    "id": "xss",
+    "introducedIn": "UG-19",
+    "term": "XSS",
+    "definition": "Ejecución de JavaScript causada por entrada no confiable en una página.",
+    "example": "Marca local reproducida en navegador aislado."
+  },
+  {
+    "id": "fila",
+    "introducedIn": "UG-21",
+    "term": "Fila y columna",
+    "definition": "Una fila representa un registro; una columna un tipo de dato de cada registro.",
+    "example": "Fila producto2; columna priceCents."
+  },
+  {
+    "id": "select",
+    "introducedIn": "UG-21",
+    "term": "SELECT",
+    "definition": "Consulta que selecciona columnas y filas según una condición.",
+    "example": "SELECT id,name FROM products WHERE id <= 2"
+  },
+  {
+    "id": "inyeccion-sql",
+    "introducedIn": "UG-23",
+    "term": "Inyección SQL",
+    "definition": "Entrada que altera la lógica de una consulta al mezclarse con instrucciones.",
+    "example": "Condición verdadera/falsa cambia filas."
+  },
+  {
+    "id": "parametrizacion",
+    "introducedIn": "UG-24",
+    "term": "Parametrización",
+    "definition": "Separación entre instrucción de consulta y valores de entrada.",
+    "example": "searchKey = ?"
+  },
+  {
+    "id": "token",
+    "introducedIn": "UG-27",
+    "term": "Token de recuperación",
+    "definition": "Valor que autoriza una acción limitada para una cuenta.",
+    "example": "Enlace de Alba, no contraseña universal."
+  },
+  {
+    "id": "idempotencia",
+    "introducedIn": "UG-33",
+    "term": "Idempotencia",
+    "definition": "Repetir la misma operación no duplica su efecto.",
+    "example": "op-mercurio-7 aplica un descuento."
+  },
+  {
+    "id": "carrera",
+    "introducedIn": "UG-35",
+    "term": "Condición de carrera",
+    "definition": "Resultado incorrecto al solaparse comprobaciones y actualizaciones.",
+    "example": "Dos reservas leen stock1."
+  },
+  {
+    "id": "ruta",
+    "introducedIn": "UG-36",
+    "term": "Ruta de archivo",
+    "definition": "Ubicación dentro de un árbol de carpetas.",
+    "example": "public/albaran-203.txt"
+  },
+  {
+    "id": "cabecera",
+    "introducedIn": "UG-39",
+    "term": "Cabecera de respuesta",
+    "definition": "Dato de control que acompaña al cuerpo de una respuesta.",
+    "example": "Content-Disposition: attachment"
+  },
+  {
+    "id": "origen",
+    "introducedIn": "UG-41",
+    "term": "Origen",
+    "definition": "Combinación de esquema, host y puerto.",
+    "example": "http://127.0.0.1:4311"
+  },
+  {
+    "id": "cors",
+    "introducedIn": "UG-41",
+    "term": "CORS",
+    "definition": "Política que permite o impide leer respuestas desde otro origen en un navegador.",
+    "example": "Recepción no equivale a lectura."
+  },
+  {
+    "id": "csrf",
+    "introducedIn": "UG-42",
+    "term": "CSRF",
+    "definition": "Operación indebida iniciada desde otra página aprovechando una sesión.",
+    "example": "Formulario auxiliar cambia preferencia."
+  },
+  {
+    "id": "ssrf",
+    "introducedIn": "UG-43",
+    "term": "SSRF",
+    "definition": "Solicitud del servidor dirigida por entrada hacia un destino indebido para su función.",
+    "example": "Previsualización consulta intranet ficticia."
+  },
+  {
+    "id": "firma",
+    "introducedIn": "UG-45",
+    "term": "Firma de mensaje",
+    "definition": "Valor que ayuda a comprobar autenticidad e integridad con el secreto del servicio.",
+    "example": "HMAC del cuerpo exacto; no evita reintentos."
+  },
+  {
+    "id": "regresion",
+    "introducedIn": "UG-49",
+    "term": "Regresión",
+    "definition": "Reaparición de un comportamiento incorrecto tras un cambio.",
+    "example": "Suite detecta propiedad rota en copia sembrada."
+  }
+]

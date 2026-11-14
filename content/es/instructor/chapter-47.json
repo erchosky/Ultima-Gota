@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-47",
+  "solution": "Recupera demo.pera del archivo, crea sesión y consulta204 como cliente. En otra rama verifica exportación soporte denegada, envía supportAccess:true y vuelve a exportación. Enlaza cada salto con evento nuevo.",
+  "expectedTechnicalResult": "Archivo→login y dos ramas reales; IDOR funciona sin soporte, exportación requiere capacidad; mundo principal conserva parches.",
+  "understandingAnswer": "Demuestra posibilidad técnica; el uso histórico necesita sus registros independientes.",
+  "feedbackOnIncorrect": "Demuestra posibilidad técnica; el uso histórico necesita sus registros independientes. Vuelve a comparar las fuentes y repite la observación: Comprueba recurso de soporte antes y después del cambio de capacidades.",
+  "patch": "Revocar credenciales, restringir campos, comprobar propiedad y autorización de exportación; controles independientes.",
+  "positiveTest": "Clientes consultan pedidos propios y soporte autorizado su exportación.",
+  "negativeTest": "Cadena histórica no alcanza datos privados en mundo corregido.",
+  "commonMistakes": [
+    "Llamar lineal a ambas ramas o confundir muestra pública del40 con exportación soporte.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

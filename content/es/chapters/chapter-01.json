@@ -1,0 +1,92 @@
+{
+  "id": "UG-01",
+  "campaignCaseId": "UG-001",
+  "act": 1,
+  "title": "La ficha equivocada",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 01 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [],
+  "reusedSkills": [],
+  "newSkill": {
+    "id": "S01",
+    "action": "reconocer y modificar un parámetro `id` en una dirección."
+  },
+  "narrativeEntry": "Hola. Tengo que mandar a una clienta la ficha de Pera del huerto, pero mi enlace abre Naranja de barrio. Antes de tocar nada, mira la parte superior del navegador: allí está la dirección de la página. Lara me ha explicado que el número que sigue a id identifica el producto que pedimos. Trabajamos en una copia de la tienda y estas fichas son públicas. No hace falta entrar en una cuenta. Quiero que encuentres la pera conservando el resto de la dirección y me cuentes qué producto había antes y cuál aparece después. Te dejo las referencias conocidas: naranja, 1; pera, 2.",
+  "whyItMatters": "Sam ha recibido un enlace al zumo de pera que abre el de naranja. Necesita enviar a un cliente la ficha correcta.",
+  "learningObjective": "abrir una ficha, localizar el identificador y cambiarlo por el de otro producto conocido. Enseña dónde escribir la dirección y qué parte conservar.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-01/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "Si cambias solo id=1 por id=2, ¿qué ficha esperas recibir?",
+  "guidedSteps": [
+    "Una dirección puede contener un número que selecciona un producto. Cambiarlo no altera el producto guardado.",
+    "Mira la barra de direcciones de la pestaña de la tienda, después de producto?.",
+    "Localiza id=1 y compara ese número con la lista de Sam.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H01-1",
+    "H01-2",
+    "H01-3",
+    "H01-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-01",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/products?id=2",
+    "observation": "la petición solicita el segundo producto y la ficha muestra su identidad. Cambiar únicamente un texto visible no cuenta."
+  },
+  "debrief": "identificar productos por número es un funcionamiento normal. Sam entrega una lista de referencias; una presenta un precio extraño.",
+  "understandingCheck": {
+    "question": "¿Consultar otra ficha pública demuestra por sí solo un fallo de permisos?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-01",
+    "label": "Lista de referencias de Sam",
+    "recipient": "UG-02"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-01/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": []
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

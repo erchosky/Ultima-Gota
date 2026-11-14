@@ -1,0 +1,55 @@
+{
+  "story": "Transición15→16, límites de servidor, HTML/literal, recorrido, ejecución DOM y reseña almacenada entre sesiones.",
+  "checks": [
+    "Transición15→16 conserva quince expedientes y controles principales",
+    "Formulario limita cero; petición modificada lo guarda y una consulta nueva confirma901 sin cobro",
+    "Corrección16 repite uso legítimo y caso negativo en contexto separado",
+    "Expediente16 completa evidencia y comprensión",
+    "Mismo dato persiste: texto literal frente a strong, sin marca; comprobación axe sin violaciones detectadas",
+    "Corrección17 repite uso legítimo y caso negativo en contexto separado",
+    "Expediente17 completa evidencia y comprensión",
+    "Marca única viaja desde parámetro decodificado hasta #mensaje; fragmento público coincide con ejecución",
+    "Cliente original de la skill ejecutado sobre la página y el marco del18",
+    "Corrección18 repite uso legítimo y caso negativo en contexto separado",
+    "Expediente18 completa evidencia y comprensión",
+    "Marca manual en el DOM no acredita el recorrido ni completa evidencia",
+    "Muestra explicada ejecuta manejador local; marco opaco impide leer cookies y documento padre",
+    "Corrección19 repite uso legítimo y caso negativo en contexto separado",
+    "Expediente19 completa evidencia y comprensión",
+    "Reseña persistida por Alba se recibe y ejecuta como Bruno con otra cookie de sesión",
+    "Marco y muestras legibles en móvil sin desbordamiento horizontal",
+    "Corrección20 repite uso legítimo y caso negativo en contexto separado",
+    "Expediente20 completa evidencia y comprensión",
+    "Reinicio conserva veinte expedientes e informes y exporta contenido4",
+    "Recuperación por interfaz conserva evidencia histórica y correcciones sin nuevos logros"
+  ],
+  "errors": [],
+  "expectedResponses": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "externalRequests": [],
+  "screenshots": [
+    "reports/browser-act-four/16-cero-persistido.png",
+    "reports/browser-act-four/17-literal-formato.png",
+    "reports/browser-act-four/18-recorrido.png",
+    "reports/browser-act-four/19-ejecucion-aislada.png",
+    "reports/browser-act-four/20-otra-sesion.png",
+    "reports/browser-act-four/20-movil.png",
+    "reports/browser-act-four/20-cierre-acto.png",
+    "reports/browser-act-four/cuaderno-cuatro-actos.png"
+  ],
+  "passed": true,
+  "limitations": [
+    "Prueba automatizada; pendiente persona principiante y lector de pantalla.",
+    "Recinto local acotado, sin aislamiento Docker acreditado.",
+    "Firefox, Safari y Kali pendientes."
+  ],
+  "engine": "Chromium",
+  "browserVersion": "156.0.8078.4"
+}

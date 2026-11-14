@@ -1,0 +1,53 @@
+{
+  "id": "chapter-24",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-24/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /api/search?q=",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Tres pruebas en ambas versiones; corregida conserva búsqueda y no cambia lógica con la pareja.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Bloquear toda búsqueda o filtrar solo una palabra.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Consulta parametrizada, sin concatenación del valor a SQL.",
+    "positive": "Pera devuelve id2 y texto con comilla se maneja como dato.",
+    "negative": "Entradas de lógica no amplían resultados.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-24/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-23"
+    ]
+  }
+}

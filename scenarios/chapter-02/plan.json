@@ -1,0 +1,54 @@
+{
+  "id": "chapter-02",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-02/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /api/products?id=2",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Consulta reciente de producto 2 y anotación de URL exacta, método GET e ID 2 contrastados con el evento del servidor.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-one.ts#validate"
+  },
+  "falsePositiveChecks": [
+    "Anotar una petición de imagen o usar un registro de una ejecución anterior.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "No se diagnostica todavía la causa del precio. Se conserva la petición correcta para leerla.",
+    "positive": "El evento de datos corresponde al producto 2.",
+    "negative": "La URL de una imagen no se acredita como consulta de producto.",
+    "execution": "tested-correct-behaviour"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-02/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-01"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-06",
+  "solution": "Abre /campanas/verano-sin-colas y su /assets/verano-demo.js desde Red. Busca demo y registra las credenciales de laboratorio junto a la URL, ocultando la contraseña en el cuaderno.",
+  "expectedTechnicalResult": "GET reciente del recurso autorizado y valores de demo.pera contrastados con fixtures; evidencia indica procedencia pública.",
+  "understandingAnswer": "Demuestra exposición de esas credenciales; su vigencia necesita una prueba posterior autorizada.",
+  "feedbackOnIncorrect": "Demuestra exposición de esas credenciales; su vigencia necesita una prueba posterior autorizada. Vuelve a comparar las fuentes y repite la observación: En el recurso público, usa buscar y escribe demo; conserva dirección y fragmento mínimo.",
+  "patch": "Retirar credenciales de recursos públicos y revocar la cuenta tras comprobarla en copia. El 07 usa una copia de práctica identificada.",
+  "positiveTest": "La página de campaña sigue cargando sin credenciales en su recurso corregido.",
+  "negativeTest": "El bundle corregido no contiene los valores de acceso.",
+  "commonMistakes": [
+    "Credencial adivinada sin recurso o leer archivos de profesor como parte del reto.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-two"
+}

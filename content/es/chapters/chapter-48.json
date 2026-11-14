@@ -1,0 +1,118 @@
+{
+  "id": "UG-48",
+  "campaignCaseId": "UG-001",
+  "act": 10,
+  "title": "Qué arreglamos primero",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 48 después de las 10:00 (sin duración impuesta)",
+  "sender": "Mara",
+  "prerequisites": [
+    "UG-15",
+    "UG-25",
+    "UG-31",
+    "UG-47"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/priorities"
+    },
+    {
+      "skillId": "S25",
+      "introducedIn": "UG-25",
+      "observableUse": "ordenar evidencias por tiempo y separar hechos, hipótesis y preguntas abiertas durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/priorities"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/priorities"
+    },
+    {
+      "skillId": "S47",
+      "introducedIn": "UG-47",
+      "observableUse": "construir y verificar un recorrido de ataque con sus dependencias y posibles ramas durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/priorities"
+    }
+  ],
+  "newSkill": {
+    "id": "S48",
+    "action": "priorizar una corrección justificando impacto, condiciones de explotación y efecto sobre la cadena."
+  },
+  "narrativeEntry": "Necesito ordenar el trabajo sin dejar a la tienda sin vender. Algunas medidas contienen el acceso hoy y otras eliminan la causa de fondo. Tus pruebas permiten valorar impacto, requisitos y ramas de la cadena. Te doy un conjunto pequeño de medidas para que propongas un orden y expliques una dependencia. No hay una única lista aceptable: podemos contener primero la cuenta expuesta o cerrar primero un acceso privado si justificamos qué riesgo queda mientras tanto. No aceptaremos que ocultar un enlace sustituya permisos ni que una medida cosmética cierre el incidente. La revisión final comprobará las decisiones aplicadas y conservará pendientes explícitos.",
+  "whyItMatters": "la tienda tiene recursos limitados y necesita un orden de trabajo que reduzca el riesgo sin romper las ventas.",
+  "learningObjective": "ordenar un pequeño conjunto de medidas, distinguir contención temporal y corrección de raíz y explicar una dependencia.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-48/v1"
+  ],
+  "allowedAccounts": [
+    "reviewer"
+  ],
+  "predictionQuestion": "¿Dos órdenes distintos pueden ser defendibles si ambos contienen la cadena y conservan ventas?",
+  "guidedSteps": [
+    "Prioriza efecto demostrado y condiciones, distinguiendo contención y causa.",
+    "Usa tarjetas de medidas enlazadas a evidencias del47.",
+    "Ordena y asigna evidencia, tipo de medida y dependencia a cada decisión.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H48-1",
+    "H48-2",
+    "H48-3",
+    "H48-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-48",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /classroom/priorities",
+    "observation": "se acepta más de un orden razonable si cumple restricciones y la justificación está respaldada. No exijas adivinar una única lista editorial."
+  },
+  "debrief": "aplica las medidas elegidas a la copia de revisión y prepara su comprobación conjunta.",
+  "understandingCheck": {
+    "question": "¿Qué vuelve defendible el orden elegido?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-48",
+    "label": "Plan de medidas con criterios y dependencias",
+    "recipient": "UG-49"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-48/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-47"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "chapter-40/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "publicExportCopy": true,
+    "supportOriginalProtected": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

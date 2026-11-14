@@ -1,0 +1,12 @@
+{
+  "id": "chapter-18/v1",
+  "inherits": "campaign-v1",
+  "status": "seeded-and-tested-integration-and-chromium",
+  "settings": {
+    "source": "query.mensaje",
+    "destination": "#mensaje",
+    "sink": "innerHTML"
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

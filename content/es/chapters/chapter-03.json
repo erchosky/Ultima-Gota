@@ -1,0 +1,110 @@
+{
+  "id": "UG-03",
+  "campaignCaseId": "UG-001",
+  "act": 1,
+  "title": "Lo que llegó de verdad",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 03 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-01",
+    "UG-02"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/products?id=2"
+    }
+  ],
+  "newSkill": {
+    "id": "S03",
+    "action": "localizar un campo concreto dentro de una respuesta JSON."
+  },
+  "narrativeEntry": "Gracias por localizar la petición. Ahora necesito separar lo que envió la tienda de lo que dibujó la página. Al seleccionar esa fila verás una sección llamada Respuesta. Su contenido usa JSON: una forma de ordenar datos con nombres y valores. Por ejemplo, id identifica el producto y priceCents indica su precio en céntimos. Cien céntimos son un euro. No tienes que escribir código ni modificar nada. Busca el nombre, el identificador y el precio del producto 2. Después compara ese precio con la hoja de Sam y con la cifra que sigue apareciendo en la ficha. Conserva los tres valores con sus fuentes.",
+  "whyItMatters": "Nico necesita saber si el servidor envió el precio incorrecto o si la página está mostrando mal el dato.",
+  "learningObjective": "leer la respuesta y encontrar `id`, nombre y precio. Presenta JSON como datos organizados, con un ejemplo pequeño y un glosario contextual.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-03/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿El precio que ves en la ficha tiene que coincidir necesariamente con el recibido?",
+  "guidedSteps": [
+    "Distingue el dato recibido de la forma de presentarlo; los céntimos necesitan conversión.",
+    "En la petición del producto 2, abre Respuesta y localiza priceCents.",
+    "Compara id, name y priceCents con el título y el precio de la ficha.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H03-1",
+    "H03-2",
+    "H03-3",
+    "H03-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-03",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/products?id=2",
+    "observation": "comparar el precio recibido con el visible y adjuntar la diferencia concreta. No basta con abrir cualquier respuesta."
+  },
+  "debrief": "distinguir datos recibidos y presentación. La respuesta menciona una antigua campaña de verano.",
+  "understandingCheck": {
+    "question": "¿En qué capa apunta la diferencia observada de 210 frente a 240 céntimos?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-03",
+    "label": "Comparación de precios y referencia a Verano sin colas",
+    "recipient": "UG-04"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-03/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-02"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

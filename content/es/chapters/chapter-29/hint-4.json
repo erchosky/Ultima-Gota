@@ -1,0 +1,6 @@
+{
+  "id": "H29-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Con snapshots equivalentes y tokens sin usar, intenta a +599, +600 y +601 segundos. En corregida solo +599 funciona; registra expiresAt y now en cada copia."
+}

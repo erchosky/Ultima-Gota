@@ -1,0 +1,6 @@
+{
+  "id": "H08-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "En una sesión limpia comprueba ausencia de ug_store, entra con demo.pera y consulta /api/me. Localiza ug_store en Almacenamiento y su envío en Red; anota HttpOnly y la identidad, no el valor."
+}

@@ -1,0 +1,6 @@
+{
+  "id": "H19-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "En la copia vulnerable usa la muestra de imagen con onerror que establece data-demo en #marca. Pide reproducción aislada desde la URL; compara con textContent corregido. Abre la demostración LESSON-19 para leer cada fragmento y copiar la muestra ya explicada con el nonce de tu ejecución."
+}

@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-30",
+  "solution": "Abre sesiones A y B de Alba; realiza recuperación y consulta /api/me con A antigua. Compara rechazo en corregida y acceso nuevo con clave recién establecida.",
+  "expectedTechnicalResult": "Sesión antigua sigue válida en vulnerable; corregida invalida A/B y nuevo login legítimo funciona.",
+  "understandingAnswer": "Para demostrar revocación de lo previo sin bloquear la cuenta recuperada.",
+  "feedbackOnIncorrect": "Para demostrar revocación de lo previo sin bloquear la cuenta recuperada. Vuelve a comparar las fuentes y repite la observación: Tras recuperar la cuenta vuelve a pedir perfil desde la sesión anterior.",
+  "patch": "Incrementar versión de sesiones de cuenta al completar recuperación de seguridad.",
+  "positiveTest": "Login nuevo con clave actual funciona.",
+  "negativeTest": "Sesión anterior no obtiene perfil privado.",
+  "commonMistakes": [
+    "Cerrar a mano la sesión antigua antes de comprobarla.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "UG-13",
+  "campaignCaseId": "UG-001",
+  "act": 3,
+  "title": "Un permiso que nadie te dio",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 13 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-03",
+    "UG-10",
+    "UG-12"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/profile; GET /api/support/summary"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/profile; GET /api/support/summary"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/profile; GET /api/support/summary"
+    }
+  ],
+  "newSkill": {
+    "id": "S13",
+    "action": "comprobar si el servidor acepta un campo interno que el cliente no debe controlar."
+  },
+  "narrativeEntry": "El perfil devuelve también capacidades internas. No son preferencias personales: deciden qué funciones puede usar una cuenta. En una copia histórica aparece un cambio de capacidades a las 08:54, pero todavía debemos entender el mecanismo. Nico ha preparado una actualización de perfil vulnerable y un recurso ficticio reservado a soporte. Vamos a comprobar si enviar un campo adicional puede cambiar una autorización que el cliente no debería decidir. La cuenta comenzará como cliente, igual que antes. Primero registra la denegación inicial y después contrasta el efecto de la actualización. No confundas el nombre que muestra el perfil con un permiso realmente utilizado por el servidor.",
+  "whyItMatters": "el historial de la cuenta de pruebas muestra un cambio inesperado en sus capacidades de soporte.",
+  "learningObjective": "en la copia del escenario, añadir a la actualización de perfil un campo interno de capacidad de soporte y comprobar su efecto en un recurso ficticio restringido.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-13/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Una cuenta cliente debería poder concederse una capacidad interna editando su perfil?",
+  "guidedSteps": [
+    "El servidor debe distinguir preferencias y capacidades internas.",
+    "Compara la actualización del perfil con la comprobación del recurso de soporte.",
+    "Prueba el campo de capacidad explicado por Nico y vuelve al recurso restringido.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H13-1",
+    "H13-2",
+    "H13-3",
+    "H13-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-13",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "PATCH /api/profile; GET /api/support/summary",
+    "observation": "se demuestra un cambio real de autorización causado por ese campo, sin acceso al sistema anfitrión."
+  },
+  "debrief": "explicar asignación masiva y listas explícitas de campos permitidos. La capacidad obtenida aparece en los registros históricos de las 08:54. Extracto histórico entregado por Nico: a las 08:54 una sesión obtuvo supportAccess mediante una actualización de perfil. Este registro no identifica a una persona ni convierte tu reproducción actual en aquel evento.",
+  "understandingCheck": {
+    "question": "¿Por qué una lista de campos permitidos evita este cambio?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-13",
+    "label": "Extracto histórico de cambio a las 08:54",
+    "recipient": "UG-14"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-13/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-12"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-three-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

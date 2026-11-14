@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-44",
+  "solution": "Prueba retorno legítimo a4311/tienda y retorno a4312/tienda. El filtro vulnerable por palabra acepta ambos; el analizador corregido permite solo origen4311 y rechaza el auxiliar.",
+  "expectedTechnicalResult": "Location vulnerable navega al auxiliar local no autorizado; corregida rechaza ese origen y conserva retorno tienda.",
+  "understandingAnswer": "El origen resultante de analizar la URL y el destino efectivo permitido.",
+  "feedbackOnIncorrect": "El origen resultante de analizar la URL y el destino efectivo permitido. Vuelve a comparar las fuentes y repite la observación: Usa los dos ejemplos locales entregados, variando origen y ruta.",
+  "patch": "Analizador URL con base fija y lista exacta de orígenes y rutas de retorno previstas.",
+  "positiveTest": "Retorno a tienda autorizada funciona.",
+  "negativeTest": "Retorno al auxiliar se rechaza aunque contenga tienda.",
+  "commonMistakes": [
+    "Elegir un sitio externo o juzgar el destino solo por texto del enlace.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

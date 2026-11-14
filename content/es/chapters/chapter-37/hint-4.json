@@ -1,0 +1,6 @@
+{
+  "id": "H37-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "En vulnerable solicita ../reservado/nota-mercurio.txt desde public. En corregida verifica rechazo y descarga pública legítima. Ninguna ruta se resolverá sobre el sistema real."
+}

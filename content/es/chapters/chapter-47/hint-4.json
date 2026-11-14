@@ -1,0 +1,6 @@
+{
+  "id": "H47-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Recupera demo.pera del archivo, crea sesión y consulta204 como cliente. En otra rama verifica exportación soporte denegada, envía supportAccess:true y vuelve a exportación. Enlaza cada salto con evento nuevo."
+}

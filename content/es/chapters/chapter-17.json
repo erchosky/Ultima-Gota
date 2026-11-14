@@ -1,0 +1,117 @@
+{
+  "id": "UG-17",
+  "campaignCaseId": "UG-001",
+  "act": 4,
+  "title": "¿Texto o formato?",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 17 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-04",
+    "UG-12",
+    "UG-16"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S04",
+      "introducedIn": "UG-04",
+      "observableUse": "localizar un elemento de la página con el inspector de elementos durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/practice/descriptions"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/practice/descriptions"
+    },
+    {
+      "skillId": "S16",
+      "introducedIn": "UG-16",
+      "observableUse": "comprobar si una regla de entrada se valida también en el servidor durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/practice/descriptions"
+    }
+  ],
+  "newSkill": {
+    "id": "S17",
+    "action": "distinguir texto mostrado literalmente de HTML interpretado."
+  },
+  "narrativeEntry": "Hay dos campos de descripción en nuestra ficha de pruebas. Uno muestra lo escrito tal cual; el otro interpreta unas etiquetas como formato. Vamos a comparar ambos con el mismo marcador inocuo. Una etiqueta HTML organiza o presenta contenido de la página; por ejemplo, puede hacer que una palabra se vea destacada. Eso no significa necesariamente ejecutar instrucciones JavaScript. Conserva el texto enviado y observa cómo lo representa cada campo. Puedes recargar para comprobar que no estás mirando una edición local del inspector. Antes de probar consecuencias mayores necesitamos describir con precisión si vemos texto literal o una estructura de página interpretada.",
+  "whyItMatters": "una descripción de producto altera su aspecto al incluir caracteres de marcado.",
+  "learningObjective": "usar un marcador de formato inocuo y comparar dos campos: uno que lo trata como texto y otro como marcado.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-17/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Ver una palabra en negrita demuestra que se ejecutó JavaScript?",
+  "guidedSteps": [
+    "Formato interpretado y ejecución son efectos distintos.",
+    "Compara los dos campos de la ficha de pruebas.",
+    "Envía el mismo marcador de formato a ambos.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H17-1",
+    "H17-2",
+    "H17-3",
+    "H17-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-17",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "PATCH /api/practice/descriptions",
+    "observation": "documentar el efecto y el dato recibido, sin afirmar ejecución de JavaScript."
+  },
+  "debrief": "interpretar HTML no demuestra automáticamente XSS. Lara pide seguir el recorrido del dato antes de probar más.",
+  "understandingCheck": {
+    "question": "¿Qué demuestra la etiqueta interpretada?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-17",
+    "label": "Marcador de formato y referencia al mensaje de campaña",
+    "recipient": "UG-18"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-17/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-16"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-four-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

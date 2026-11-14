@@ -1,0 +1,36 @@
+{
+  "chapterId": "UG-23",
+  "solution": "En esta consulta didáctica usa la pareja exacta de la guía: comilla, OR 1=1 y comentario frente a comilla, OR 1=2 y comentario. Compara conjuntos de productos y repite.",
+  "expectedTechnicalResult": "Consulta vulnerable SQLite ejecutada realmente; pareja verdadera devuelve seis productos y falsa ninguno, con eventos del run.",
+  "understandingAnswer": "La entrada ha alterado la lógica de selección de la consulta en esta copia.",
+  "feedbackOnIncorrect": "La entrada ha alterado la lógica de selección de la consulta en esta copia. Vuelve a comparar las fuentes y repite la observación: Mantén la estructura y cambia solo 1=1 por 1=2.",
+  "patch": "Sustituir interpolación por parámetro SQL; la entrada ocupa un valor.",
+  "positiveTest": "Búsqueda pera sigue encontrando producto 2.",
+  "negativeTest": "Pareja de entradas no altera condiciones en versión parametrizada.",
+  "commonMistakes": [
+    "Un error de sintaxis, respuesta de otra ejecución o solo una condición.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented",
+  "exactPair": {
+    "vulnerableQuery": "SELECT id,name FROM products WHERE searchKey = '${q}'",
+    "trueInput": "' OR 1=1 -- ",
+    "falseInput": "' OR 1=2 -- ",
+    "trueResultIds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "falseResultIds": [],
+    "legitimateInput": "pera"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "id": "chapter-30/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "tokenAccountBinding": true,
+    "singleUse": true,
+    "expiryEnforced": true,
+    "revokePriorSessions": false,
+    "browserContexts": 2
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

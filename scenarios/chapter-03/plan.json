@@ -1,0 +1,54 @@
+{
+  "id": "chapter-03",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-03/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /api/products?id=2",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Petición actual id=2; JSON priceCents=210; alumno registra recibido 210, visible 240 y esperado 210 con unidad céntimos.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-one.ts#validate"
+  },
+  "falsePositiveChecks": [
+    "Leer el JSON de otro producto o afirmar que el servidor envió 240.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "La corrección de presentación se aplicará en el 05 tras reunir una reproducción.",
+    "positive": "Respuesta de producto 2 mantiene priceCents=210.",
+    "negative": "Una respuesta de producto 1 no sustituye esta evidencia.",
+    "execution": "tested-correct-behaviour"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-03/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-02"
+    ]
+  }
+}

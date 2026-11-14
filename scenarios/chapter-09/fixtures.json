@@ -1,0 +1,11 @@
+{
+  "id": "chapter-09/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "demoAccountActiveInCopy": true,
+    "logoutRevokesSession": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

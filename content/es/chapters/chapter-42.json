@@ -1,0 +1,139 @@
+{
+  "id": "UG-42",
+  "campaignCaseId": "UG-001",
+  "act": 9,
+  "title": "Una acción desde otra página",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 42 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-08",
+    "UG-11",
+    "UG-12",
+    "UG-13",
+    "UG-14",
+    "UG-15",
+    "UG-41"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    },
+    {
+      "skillId": "S13",
+      "introducedIn": "UG-13",
+      "observableUse": "comprobar si el servidor acepta un campo interno que el cliente no debe controlar durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    },
+    {
+      "skillId": "S14",
+      "introducedIn": "UG-14",
+      "observableUse": "interpretar una tabla pequeña de estados HTTP y distinguir un error útil de una filtración interna durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    },
+    {
+      "skillId": "S41",
+      "introducedIn": "UG-41",
+      "observableUse": "reconocer un origen como combinación de esquema, nombre y puerto y comprobar una política CORS concreta durante la prueba de este expediente.",
+      "practiceContext": "POST /api/preferences desde auxiliar"
+    }
+  ],
+  "newSkill": {
+    "id": "S42",
+    "action": "verificar la autenticidad de una operación iniciada desde otro origen en un escenario CSRF."
+  },
+  "narrativeEntry": "La página auxiliar contiene un formulario que puede enviarse a la tienda. Queremos saber si una cuenta con sesión abierta podría sufrir un cambio de preferencia iniciado desde ese otro origen. Las cookies pertenecen al host y no se separan solo por puerto. Usaremos dos orígenes del mismo sitio local para observar el envío real sin desactivar protecciones del navegador. Antes de probarlo, la mesa mostrará esquema, host, puerto y cookie esperada. No anticipes éxito: si el navegador no envía lo necesario, el diagnóstico debe explicarlo. Después compararemos el control de autenticidad con una operación legítima iniciada dentro de la tienda.",
+  "whyItMatters": "la página del aula puede provocar una operación en la tienda mientras una cuenta de pruebas tiene sesión abierta.",
+  "learningObjective": "utilizar un formulario local preparado con una acción inocua sobre la cuenta de pruebas. Elige una topología local compatible con el comportamiento de cookies del navegador y documéntala.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-42/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Puede una página de otro puerto iniciar una operación con la sesión de la tienda?",
+  "guidedSteps": [
+    "Tener sesión no demuestra que la acción la haya iniciado la página autorizada.",
+    "Mira formulario del auxiliar, cookie ug_store y Origin de la petición.",
+    "Prueba un cambio inocuo de preferencia con y sin control de autenticidad.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H42-1",
+    "H42-2",
+    "H42-3",
+    "H42-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-42",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/preferences desde auxiliar",
+    "observation": "reproducir la operación indebida en la configuración vulnerable y su bloqueo en la corregida, conservando la operación iniciada legítimamente en la tienda."
+  },
+  "debrief": "explica token, cookies y verificación de origen según lo implementado. No inventes un éxito si el navegador impide el envío.",
+  "understandingCheck": {
+    "question": "¿Por qué no basta con que exista una sesión válida?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-42",
+    "label": "Comparación de componentes que inician acciones",
+    "recipient": "UG-43"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-42/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-41"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

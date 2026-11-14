@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "title": "APRENDER A MIRAR",
+    "chapters": [
+      "UG-01",
+      "UG-02",
+      "UG-03",
+      "UG-04",
+      "UG-05"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "LO QUE LA PROMOCIÓN DEJÓ ATRÁS",
+    "chapters": [
+      "UG-06",
+      "UG-07",
+      "UG-08",
+      "UG-09",
+      "UG-10"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "LO QUE EL SERVIDOR ACEPTA",
+    "chapters": [
+      "UG-11",
+      "UG-12",
+      "UG-13",
+      "UG-14",
+      "UG-15"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "CUANDO EL TEXTO SE CONVIERTE EN ACCIÓN",
+    "chapters": [
+      "UG-16",
+      "UG-17",
+      "UG-18",
+      "UG-19",
+      "UG-20"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "PREGUNTARLE BIEN A LOS DATOS",
+    "chapters": [
+      "UG-21",
+      "UG-22",
+      "UG-23",
+      "UG-24",
+      "UG-25"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "RECUPERAR SIN REGALAR ACCESO",
+    "chapters": [
+      "UG-26",
+      "UG-27",
+      "UG-28",
+      "UG-29",
+      "UG-30"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "LAS REGLAS DEL NEGOCIO",
+    "chapters": [
+      "UG-31",
+      "UG-32",
+      "UG-33",
+      "UG-34",
+      "UG-35"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "ARCHIVOS QUE NO DEBÍAN SALIR",
+    "chapters": [
+      "UG-36",
+      "UG-37",
+      "UG-38",
+      "UG-39",
+      "UG-40"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "EN QUIÉN CONFÍA CADA COMPONENTE",
+    "chapters": [
+      "UG-41",
+      "UG-42",
+      "UG-43",
+      "UG-44",
+      "UG-45"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "CERRAR UN CASO CON PRUEBAS",
+    "chapters": [
+      "UG-46",
+      "UG-47",
+      "UG-48",
+      "UG-49",
+      "UG-50"
+    ]
+  }
+]

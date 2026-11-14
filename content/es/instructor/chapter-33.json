@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-33",
+  "solution": "Con subtotal2000 y PRIMERBRINDIS reenvía op-mercurio-7: vulnerable aplica400 en total; corregida mantiene200 y una aplicación. Comprueba también otra operación de la misma cuenta.",
+  "expectedTechnicalResult": "Mismo operationId produce doble efecto vulnerable, único efecto corregido; otro ID no elude límite por cuenta.",
+  "understandingAnswer": "Puede ser una recuperación legítima de entrega; los registros lo distinguen del actor sintético.",
+  "feedbackOnIncorrect": "Puede ser una recuperación legítima de entrega; los registros lo distinguen del actor sintético. Vuelve a comparar las fuentes y repite la observación: Reenvía exactamente la operación de cupón aceptada.",
+  "patch": "Clave única de operación y consumo del cupón por cuenta en una transacción.",
+  "positiveTest": "Primera aplicación produce descuento200.",
+  "negativeTest": "Reintento y nuevo ID de cuenta consumida no duplican descuento.",
+  "commonMistakes": [
+    "Dos IDs distintos presentados como un mismo reintento.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

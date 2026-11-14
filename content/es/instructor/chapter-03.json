@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-03",
+  "solution": "Recarga producto 2, abre su respuesta y anota id=2, Pera del huerto y 210 céntimos. Compáralos con 2,40 € visibles y 2,10 € de la hoja.",
+  "expectedTechnicalResult": "Petición actual id=2; JSON priceCents=210; alumno registra recibido 210, visible 240 y esperado 210 con unidad céntimos.",
+  "understandingAnswer": "En la presentación de esta ficha: el dato recibido coincide con la hoja, pero la cifra visible difiere.",
+  "feedbackOnIncorrect": "En la presentación de esta ficha: el dato recibido coincide con la hoja, pero la cifra visible difiere. Vuelve a comparar las fuentes y repite la observación: Compara id, name y priceCents con el título y el precio de la ficha.",
+  "patch": "La corrección de presentación se aplicará en el 05 tras reunir una reproducción.",
+  "positiveTest": "Respuesta de producto 2 mantiene priceCents=210.",
+  "negativeTest": "Una respuesta de producto 1 no sustituye esta evidencia.",
+  "commonMistakes": [
+    "Leer el JSON de otro producto o afirmar que el servidor envió 240.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-one"
+}

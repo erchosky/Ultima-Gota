@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-28",
+  "solution": "Usa token de Alba una vez con DEMO-cambio-1! y repite con DEMO-cambio-2!. Contrasta acceso y número de cambios en vulnerable y corregida.",
+  "expectedTechnicalResult": "Vulnerable registra dos cambios con mismo token; corregida solo uno y permite el primer acceso legítimo.",
+  "understandingAnswer": "El consumo atómico del token tras un primer uso correcto.",
+  "feedbackOnIncorrect": "El consumo atómico del token tras un primer uso correcto. Vuelve a comparar las fuentes y repite la observación: Tras el primer uso repite con otro valor de contraseña ficticia.",
+  "patch": "Marcar token consumido en la misma transacción que cambia la contraseña.",
+  "positiveTest": "Primer uso funciona para su destinatario.",
+  "negativeTest": "Segundo uso no vuelve a cambiar contraseña.",
+  "commonMistakes": [
+    "Usar dos tokens distintos o confundir expiración con consumo.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

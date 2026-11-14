@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-15",
+  "solution": "En corregida verifica Alba203 permitido y Alba204 sin datos; después daily permitido y supportAccess rechazado sin cambio. Contrasta con la copia vulnerable del caso.",
+  "expectedTechnicalResult": "Cuatro pruebas corregidas y comparación vulnerable; propietario y capacidades persistidas correctos.",
+  "understandingAnswer": "Porque rechazar el abuso no demuestra que el uso autorizado siga funcionando.",
+  "feedbackOnIncorrect": "Porque rechazar el abuso no demuestra que el uso autorizado siga funcionando. Vuelve a comparar las fuentes y repite la observación: Forma una pareja permitida/denegada por cada control.",
+  "patch": "Consolidar controles de propiedad y lista de campos permitidos en mundo principal.",
+  "positiveTest": "Alba203 y preferencia daily funcionan.",
+  "negativeTest": "Alba204 y escalado de capacidades quedan denegados.",
+  "commonMistakes": [
+    "Solo comprobar rechazo o confiar en una insignia de corregido.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-three"
+}

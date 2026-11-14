@@ -1,0 +1,6 @@
+{
+  "id": "H41-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Con sesión de tienda, ejecuta lectura desde auxiliar4312 a tienda4311. Contrasta Allow-Origin exacto y credenciales con ausencia de permiso. Registra recepción y resultado de lectura en navegador."
+}

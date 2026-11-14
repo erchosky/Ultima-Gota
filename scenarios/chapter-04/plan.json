@@ -1,0 +1,54 @@
+{
+  "id": "chapter-04",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-04/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /api/products?id=2",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Alumno declara edición local y restauración; consulta nueva confirma id y nombre originales y referencia pública de campaña. No se afirma detectar el uso del inspector.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-one.ts#validate"
+  },
+  "falsePositiveChecks": [
+    "Aceptar un texto del DOM como prueba de persistencia o fingir telemetría de DevTools.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "No se corrige la herramienta ni se trata su edición como fallo. La discrepancia de precio sigue pendiente del 05.",
+    "positive": "Recarga devuelve nombre original.",
+    "negative": "Edición local no cambia la fila de producto persistida.",
+    "execution": "tested-correct-behaviour"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-04/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-03"
+    ]
+  }
+}

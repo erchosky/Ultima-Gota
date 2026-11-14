@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-04",
+  "solution": "Cambia el texto del nombre a Pera de prueba en el inspector. Recarga: el nombre original vuelve y la respuesta conserva id=2. Localiza el enlace de campaña en la ficha.",
+  "expectedTechnicalResult": "Alumno declara edición local y restauración; consulta nueva confirma id y nombre originales y referencia pública de campaña. No se afirma detectar el uso del inspector.",
+  "understandingAnswer": "La página vuelve a construirse con los datos recibidos; aquella edición era local.",
+  "feedbackOnIncorrect": "La página vuelve a construirse con los datos recibidos; aquella edición era local. Vuelve a comparar las fuentes y repite la observación: Edita solo su texto con una marca inocua, anótala y recarga.",
+  "patch": "No se corrige la herramienta ni se trata su edición como fallo. La discrepancia de precio sigue pendiente del 05.",
+  "positiveTest": "Recarga devuelve nombre original.",
+  "negativeTest": "Edición local no cambia la fila de producto persistida.",
+  "commonMistakes": [
+    "Aceptar un texto del DOM como prueba de persistencia o fingir telemetría de DevTools.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-one"
+}

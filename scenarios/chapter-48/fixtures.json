@@ -1,0 +1,16 @@
+{
+  "id": "chapter-48/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "requiredControls": [
+      "credential-containment",
+      "ownership",
+      "profile-allowlist",
+      "export-authorization"
+    ],
+    "freeOrder": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

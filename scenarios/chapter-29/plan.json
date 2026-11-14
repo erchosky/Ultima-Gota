@@ -1,0 +1,53 @@
+{
+  "id": "chapter-29",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-29/v1",
+    "accounts": [
+      "Alba"
+    ],
+    "resource": "POST /api/recovery/complete; reloj virtual",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Tres copias con token no consumido prueban frontera; corregida acepta599, deniega600/601, vulnerable acepta expirado.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Usar el token ya consumido del caso28 o cambiar reloj del sistema.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Verificar now < expiresAt en servidor con reloj del escenario.",
+    "positive": "Token a599 segundos permite recuperación.",
+    "negative": "Token a600 y601 no la permite.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-29/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-28"
+    ]
+  }
+}

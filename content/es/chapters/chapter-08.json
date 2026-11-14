@@ -1,0 +1,110 @@
+{
+  "id": "UG-08",
+  "campaignCaseId": "UG-001",
+  "act": 2,
+  "title": "Cómo recuerda la tienda quién eres",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 08 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-02",
+    "UG-07"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/login; GET /api/me"
+    },
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "POST /api/login; GET /api/me"
+    }
+  ],
+  "newSkill": {
+    "id": "S08",
+    "action": "localizar la cookie o mecanismo de sesión que usa esta implementación."
+  },
+  "narrativeEntry": "Has abierto otra ficha y la tienda sigue recordando demo.pera. No has escrito la contraseña otra vez. La aplicación ha creado una sesión: una relación temporal que permite reconocer peticiones posteriores. En esta copia se identifica mediante una cookie, un pequeño dato que el navegador conserva y envía al host correspondiente. La cookie de sesión no es la contraseña. Vamos a observar cuándo aparece y cómo acompaña una consulta de perfil. Como está marcada HttpOnly, no intentaremos leerla desde código de la página. Usaremos Almacenamiento y las cabeceras de Red, sin copiar su valor completo a las notas.",
+  "whyItMatters": "el jugador abre otra ficha y la tienda continúa reconociendo la cuenta de pruebas.",
+  "learningObjective": "identificar su nombre, cuándo aparece y en qué peticiones se utiliza. Explica que una sesión no es la contraseña. Si se eligen cookies HttpOnly, enséñalas en la herramienta correcta; no prometas leerlas con JavaScript.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-08/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Tendrá el navegador la cookie de esta sesión antes de iniciar el acceso?",
+  "guidedSteps": [
+    "Compara el estado anterior y posterior al acceso, sin confundir sesión y contraseña.",
+    "Mira Cookies en Almacenamiento para el host de la tienda y Cabeceras en la petición de perfil.",
+    "Anota nombre y atributos de la cookie y vincula la petición al usuario devuelto.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H08-1",
+    "H08-2",
+    "H08-3",
+    "H08-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-08",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/login; GET /api/me",
+    "observation": "comparar el estado anterior y posterior al acceso y vincularlo con la identidad del servidor."
+  },
+  "debrief": "la sesión explica la continuidad entre páginas y prepara una comprobación de cierre de sesión.",
+  "understandingCheck": {
+    "question": "¿Para qué sirve la cookie de sesión en este flujo?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-08",
+    "label": "Ficha de sesión sin valor secreto",
+    "recipient": "UG-09"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-08/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-07"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-two-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

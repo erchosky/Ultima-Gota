@@ -1,0 +1,6 @@
+{
+  "id": "H16-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Envía quantity=0 en la copia vulnerable y consulta el pedido. En corregida verifica rechazo de 0 y aceptación de 1, sin cobro real."
+}

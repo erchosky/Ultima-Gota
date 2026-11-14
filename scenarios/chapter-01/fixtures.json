@@ -1,0 +1,12 @@
+{
+  "id": "chapter-01/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "productId": 1,
+    "targetProductId": 2,
+    "legacyPriceRendering": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

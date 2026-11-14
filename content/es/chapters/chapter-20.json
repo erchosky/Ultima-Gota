@@ -1,0 +1,125 @@
+{
+  "id": "UG-20",
+  "campaignCaseId": "UG-001",
+  "act": 4,
+  "title": "La reseña que permaneció",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 20 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-12",
+    "UG-17",
+    "UG-18",
+    "UG-19"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reviews; GET /api/reviews?productId=2"
+    },
+    {
+      "skillId": "S17",
+      "introducedIn": "UG-17",
+      "observableUse": "distinguir texto mostrado literalmente de HTML interpretado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reviews; GET /api/reviews?productId=2"
+    },
+    {
+      "skillId": "S18",
+      "introducedIn": "UG-18",
+      "observableUse": "seguir el recorrido de un dato controlable hasta el lugar donde se inserta en la página durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reviews; GET /api/reviews?productId=2"
+    },
+    {
+      "skillId": "S19",
+      "introducedIn": "UG-19",
+      "observableUse": "demostrar ejecución de JavaScript provocada por una entrada no confiable durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reviews; GET /api/reviews?productId=2"
+    }
+  ],
+  "newSkill": {
+    "id": "S20",
+    "action": "comprobar si una entrada peligrosa se almacena y afecta a otra sesión de laboratorio."
+  },
+  "narrativeEntry": "La reseña de pruebas sigue apareciendo después de recargar. Quiero saber si otra persona recibiría también su contenido, no solo quien la escribió. Disponemos de dos usuarios ficticios y una copia separada de la tienda. Guarda la muestra inocua que ya entiendes y abre la reseña desde la segunda sesión. El efecto seguirá limitado a la marca local de demostración. La mesa reproducirá la carga desde lo almacenado, sin reutilizar el navegador que envió el texto. Después probaremos la presentación corregida. Nada de esto demuestra que una reseña se utilizara durante el incidente; es una revisión nueva de una función relacionada.",
+  "whyItMatters": "Vera recibe una reseña de pruebas con contenido que se conserva al recargar.",
+  "learningObjective": "guardar la reseña y abrirla con un segundo usuario ficticio. El efecto se limita a la marca de demostración.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-20/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno"
+  ],
+  "predictionQuestion": "¿Podría una entrada guardada afectar a una sesión que nunca la envió?",
+  "guidedSteps": [
+    "Comprueba persistencia y recepción desde otra sesión.",
+    "Revisa la reseña almacenada en la ficha del producto 2.",
+    "Guarda la muestra y carga el producto como el segundo usuario.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H20-1",
+    "H20-2",
+    "H20-3",
+    "H20-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-20",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/reviews; GET /api/reviews?productId=2",
+    "observation": "la ejecución se reproduce al cargar el contenido almacenado en la otra sesión y desaparece con la corrección adecuada."
+  },
+  "debrief": "comparar el origen del dato en los dos tipos de XSS, sin atribuirlos al incidente histórico. El equipo amplía la revisión al buscador del catálogo.",
+  "understandingCheck": {
+    "question": "¿Qué cambia respecto al caso del mensaje de dirección?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-20",
+    "label": "Informe de reseña y encargo del buscador",
+    "recipient": "UG-21"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-20/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-19"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-four-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

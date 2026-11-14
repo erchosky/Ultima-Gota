@@ -1,0 +1,6 @@
+{
+  "id": "H32-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Envía producto2, quantity2 y unitPriceCents=1. Lee total persistido: vulnerable2 frente a corregida420 céntimos. Repite compra normal a210."
+}

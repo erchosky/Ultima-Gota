@@ -1,0 +1,6 @@
+{
+  "id": "H02-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Pulsa Ctrl+Mayús+E (Cmd+Opción+E en macOS), recarga /producto?id=2 y selecciona /api/products?id=2. Copia URL y método de Cabeceras."
+}

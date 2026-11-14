@@ -1,0 +1,6 @@
+{
+  "id": "H24-1",
+  "level": 1,
+  "type": "concept",
+  "text": "Separar instrucción y valor evita interpretar el valor como SQL."
+}

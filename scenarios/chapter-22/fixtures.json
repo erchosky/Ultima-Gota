@@ -1,0 +1,15 @@
+{
+  "id": "chapter-22/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "inputSequence": [
+      "pera",
+      "pera'",
+      "pera",
+      "pera'"
+    ]
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

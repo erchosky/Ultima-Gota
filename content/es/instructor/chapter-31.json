@@ -1,0 +1,53 @@
+{
+  "chapterId": "UG-31",
+  "solution": "Prueba 1999 y2000 céntimos, cuenta sin uso/con uso y reloj antes/en día1 00:00. Para subtotal2009 verifica descuento200. No añadas restricciones de producto.",
+  "expectedTechnicalResult": "Tabla cubre mínimo1999/2000, uso previo, expiración exacta y redondeo con resultados esperados correctos.",
+  "understandingAnswer": "Porque un fallo de negocio se demuestra frente a una regla explícita.",
+  "feedbackOnIncorrect": "Porque un fallo de negocio se demuestra frente a una regla explícita. Vuelve a comparar las fuentes y repite la observación: Forma casos para mínimo, cuenta, fecha y redondeo.",
+  "patch": "Centralizar regla y reutilizarla en correo, interfaz, servidor y pruebas.",
+  "positiveTest": "Cuenta sin uso con subtotal2000 antes del vencimiento obtiene200.",
+  "negativeTest": "1999, uso previo o plazo vencido deniegan cupón.",
+  "commonMistakes": [
+    "Inventar una condición o probar solo el caso válido.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented",
+  "expectedCases": [
+    {
+      "subtotalCents": 1999,
+      "used": false,
+      "when": "before-expiry",
+      "discountCents": 0
+    },
+    {
+      "subtotalCents": 2000,
+      "used": false,
+      "when": "before-expiry",
+      "discountCents": 200
+    },
+    {
+      "subtotalCents": 2000,
+      "used": true,
+      "when": "before-expiry",
+      "discountCents": 0
+    },
+    {
+      "subtotalCents": 2000,
+      "used": false,
+      "when": "at-expiry",
+      "discountCents": 0
+    },
+    {
+      "subtotalCents": 2009,
+      "used": false,
+      "when": "before-expiry",
+      "discountCents": 200
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "id": "UG-38",
+  "campaignCaseId": "UG-001",
+  "act": 8,
+  "title": "El nombre no demuestra el contenido",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 38 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-11",
+    "UG-12",
+    "UG-16",
+    "UG-37"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/labels"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "POST /api/labels"
+    },
+    {
+      "skillId": "S16",
+      "introducedIn": "UG-16",
+      "observableUse": "comprobar si una regla de entrada se valida también en el servidor durante la prueba de este expediente.",
+      "practiceContext": "POST /api/labels"
+    }
+  ],
+  "newSkill": {
+    "id": "S38",
+    "action": "contrastar extensión, tipo declarado y contenido de un archivo inocuo."
+  },
+  "narrativeEntry": "Los proveedores suben etiquetas de botellas y el formulario acepta nombres terminados en png. Un nombre no demuestra qué hay dentro de un archivo. Hemos preparado tres muestras inocuas: una imagen real, un texto renombrado y una imagen con tipo declarado diferente. La guía explica extensión, tipo enviado y contenido antes de comparar. No necesitas crear archivos ni ejecutar ninguno. Observa qué acepta realmente el servidor, no solo lo que permite elegir el formulario. La versión corregida tendrá que limitar tamaño y formato, generar un nombre propio y almacenar fuera de la publicación directa, conservando la subida legítima de una etiqueta.",
+  "whyItMatters": "los proveedores suben etiquetas y el formulario decide qué acepta por el nombre del archivo.",
+  "learningObjective": "usar archivos de demostración proporcionados con combinaciones conocidas de nombre y contenido, sin ejecutables ni malware.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-38/v1"
+  ],
+  "allowedAccounts": [
+    "proveedor.mercurio"
+  ],
+  "predictionQuestion": "¿Renombrar un texto a etiqueta.png lo convierte en una imagen?",
+  "guidedSteps": [
+    "Nombre, tipo declarado y bytes son señales distintas.",
+    "Usa las muestras suministradas y observa la petición de subida.",
+    "Compara combinaciones conocidas sin ejecutar contenido.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H38-1",
+    "H38-2",
+    "H38-3",
+    "H38-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-38",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/labels",
+    "observation": "demostrar qué criterio aplica realmente el servidor y que la versión corregida valida el formato previsto con límites de tamaño y almacenamiento."
+  },
+  "debrief": "ningún indicador aislado garantiza que un archivo sea adecuado. La revisión continúa con la forma de servirlo al navegador.",
+  "understandingCheck": {
+    "question": "¿Qué debe comprobarse además de la extensión?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-38",
+    "label": "Matriz de muestras y referencia de descarga",
+    "recipient": "UG-39"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-38/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-37"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

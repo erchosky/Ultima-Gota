@@ -1,0 +1,54 @@
+{
+  "id": "chapter-07",
+  "version": 1,
+  "kind": "implemented-plan",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-07/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "POST /api/login; GET /api/me",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Sesión creada realmente para user-demo-pera y consulta /api/me con ese mismo identificador de sesión.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium",
+    "implementationRef": "services/scenario-runner/act-two.ts#validateActTwo"
+  },
+  "falsePositiveChecks": [
+    "Una bienvenida editada o un perfil de Alba en otra sesión.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Desactivar la cuenta expuesta en el mundo principal; conservar una copia autorizada para las lecciones de sesión.",
+    "positive": "Una cuenta ficticia activa autorizada puede entrar.",
+    "negative": "La credencial revocada no permite crear sesión en el mundo corregido.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-07/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-06"
+    ]
+  }
+}

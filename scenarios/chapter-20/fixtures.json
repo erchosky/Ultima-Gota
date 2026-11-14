@@ -1,0 +1,13 @@
+{
+  "id": "chapter-20/v1",
+  "inherits": "campaign-v1",
+  "status": "seeded-and-tested-integration-and-chromium",
+  "settings": {
+    "reviewProductId": 2,
+    "storage": "scenario-sqlite",
+    "sink": "innerHTML",
+    "secondIdentity": "Bruno"
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

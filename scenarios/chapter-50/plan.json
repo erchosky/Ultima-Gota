@@ -1,0 +1,55 @@
+{
+  "id": "chapter-50",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-50/v1",
+    "accounts": [
+      "Alba",
+      "Bruno",
+      "demo.pera"
+    ],
+    "resource": "Escenario de transferencia: catálogo11/12, pedidos303/304",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Investigación nueva con productos11/12 y pedidos303/304 mantiene propietarios; privacidad, ventas y regresión comprobadas; informes estructurados citan fuentes y límites.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Copiar IDs203/204, culpar a Ivo o afirmar seguridad absoluta.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Aplicar conjunto de controles del escenario nuevo y conservar lista de pendientes revisable.",
+    "positive": "Alba303, Bruno304 y compra válida funcionan.",
+    "negative": "Acceso cruzado, precio manipulado y cupón repetido quedan bloqueados.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-50/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-49"
+    ]
+  }
+}

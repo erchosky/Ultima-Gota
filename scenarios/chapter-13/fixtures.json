@@ -1,0 +1,12 @@
+{
+  "id": "chapter-13/v1",
+  "inherits": "campaign-v1",
+  "status": "seeded-and-tested-integration-and-chromium",
+  "settings": {
+    "demoAccountActiveInCopy": true,
+    "initialSupportAccess": false,
+    "profileFieldAllowlist": false
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

@@ -1,0 +1,15 @@
+{
+  "id": "chapter-43/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "fixedDestinations": [
+      "catalog:4400/imagen",
+      "intranet:4400/estado"
+    ],
+    "businessAllowlist": false,
+    "independentLabEgressGuard": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

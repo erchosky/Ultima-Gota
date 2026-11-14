@@ -1,0 +1,6 @@
+{
+  "id": "H12-3",
+  "level": 3,
+  "type": "action",
+  "text": "Cambia solo notificationPreference conservando el JSON válido."
+}

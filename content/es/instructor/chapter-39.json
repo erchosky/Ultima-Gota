@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-39",
+  "solution": "Carga la muestra HTML inocua inline como text/html y después como attachment con tipo fijo de descarga en origen auxiliar. Compara cabeceras y comportamiento en contexto limpio.",
+  "expectedTechnicalResult": "Misma muestra/hash, cabeceras registradas y navegador distingue interpretación de descarga en configuración concreta.",
+  "understandingAnswer": "Que esta combinación de tipo, disposición y origen produce el tratamiento observado para esta muestra.",
+  "feedbackOnIncorrect": "Que esta combinación de tipo, disposición y origen produce el tratamiento observado para esta muestra. Vuelve a comparar las fuentes y repite la observación: Observa tipo, disposición y origen junto al efecto visible.",
+  "patch": "Origen auxiliar sin cookies del aula, attachment, tipo previsto y nosniff como defensa complementaria.",
+  "positiveTest": "Descarga autorizada mantiene bytes de la muestra.",
+  "negativeTest": "Contenido de etiqueta no se interpreta como página de tienda.",
+  "commonMistakes": [
+    "Atribuir toda protección a nosniff o afirmar ejecución JavaScript inexistente.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

@@ -1,0 +1,54 @@
+{
+  "id": "chapter-33",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-33/v1",
+    "accounts": [
+      "demo.pera",
+      "proveedor.mercurio"
+    ],
+    "resource": "POST /api/coupon/apply",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Mismo operationId produce doble efecto vulnerable, único efecto corregido; otro ID no elude límite por cuenta.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Dos IDs distintos presentados como un mismo reintento.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Clave única de operación y consumo del cupón por cuenta en una transacción.",
+    "positive": "Primera aplicación produce descuento200.",
+    "negative": "Reintento y nuevo ID de cuenta consumida no duplican descuento.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-33/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-32"
+    ]
+  }
+}

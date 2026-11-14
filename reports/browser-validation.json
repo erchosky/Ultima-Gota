@@ -1,0 +1,50 @@
+{
+  "story": "Campaña vacía → ficha real → evidencia verificada → comprensión → corrección → cuaderno y recuperación.",
+  "checks": [
+    "Inicio legible y análisis axe sin infracciones",
+    "Enlace de salto accesible por teclado",
+    "Cookies de escritorio y tienda separadas por host real",
+    "Evidencia incorrecta muestra el motivo junto al botón, conserva lo escrito y explica el bloqueo",
+    "Expediente1: petición→evidencia→comprensión→logro",
+    "Pista solicitada explícitamente y sin penalizar",
+    "Expediente2: petición→evidencia→comprensión→logro",
+    "Expediente3: petición→evidencia→comprensión→logro",
+    "Edición local revierte al recargar sin cambiar datos del servidor",
+    "Expediente4: petición→evidencia→comprensión→logro",
+    "Corrección real contrastada por evaluador y sesión independiente de alumno",
+    "Expediente5: petición→evidencia→comprensión→logro",
+    "Reinicio real de ambos servicios conserva cinco logros y notas",
+    "Diálogo nativo: foco interior, Escape y retorno de foco",
+    "Campaña nueva y recuperación histórica desde la interfaz sin notificaciones duplicadas",
+    "Lectura móvil390px sin desbordamiento horizontal",
+    "Inicio también renderiza en Chromium"
+  ],
+  "errors": [],
+  "screenshots": [
+    "reports/browser/01-escritorio.png",
+    "reports/browser/01-tienda.png",
+    "reports/browser/04-edicion-local.png",
+    "reports/browser/05-tienda-corregida.png",
+    "reports/browser/05-cierre-acto.png",
+    "reports/browser/cuaderno.png",
+    "reports/browser/movil.png",
+    "reports/browser/chromium-escritorio.png"
+  ],
+  "engines": [
+    {
+      "name": "Chromium",
+      "version": "156.0.8078.4"
+    },
+    {
+      "name": "Chromium-secondary-context",
+      "version": "156.0.8078.4"
+    }
+  ],
+  "limitations": [
+    "Simulación de desarrollador; no sustituye una prueba con persona principiante.",
+    "DevTools no se puede detectar desde la web: el test observa peticiones y reproduce una edición DOM local.",
+    "Docker no se ha ejecutado en esta máquina.",
+    "Firefox instalado no arranca en macOS: Could not find profile folder. Recorrido completo probado en Chromium."
+  ],
+  "passed": true
+}

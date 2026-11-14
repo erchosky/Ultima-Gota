@@ -1,0 +1,112 @@
+{
+  "id": "UG-35",
+  "campaignCaseId": "UG-001",
+  "act": 7,
+  "title": "La última botella",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 35 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-11",
+    "UG-31",
+    "UG-34"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reservations"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reservations"
+    },
+    {
+      "skillId": "S34",
+      "introducedIn": "UG-34",
+      "observableUse": "verificar que una transición entre estados de un pedido está permitida durante la prueba de este expediente.",
+      "practiceContext": "POST /api/reservations"
+    }
+  ],
+  "newSkill": {
+    "id": "S35",
+    "action": "comparar solicitudes secuenciales y dos solicitudes concurrentes."
+  },
+  "narrativeEntry": "Solo queda una botella de Mango del puerto. Dos reservas de laboratorio casi simultáneas terminaron aceptadas. Si las hacemos una detrás de otra, la segunda debería ver el stock actualizado; al solaparse podrían leer ambas la misma unidad antes de descontarla. La mesa ofrece un lanzador de dos solicitudes, limitado a este producto y a esta copia. Mostrará lectura, comprobación y actualización para que puedas comparar el orden. No es una herramienta para generar carga. Probaremos primero reservas secuenciales y después concurrentes, restaurando la misma unidad entre pruebas. La corrección tendrá que permitir exactamente una reserva y dejar un stock coherente.",
+  "whyItMatters": "dos reservas ficticias se hicieron casi al mismo tiempo sobre una única unidad.",
+  "learningObjective": "usar un lanzador didáctico limitado a dos peticiones al propio escenario. Visualiza el orden de lectura, comprobación y actualización.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-35/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno"
+  ],
+  "predictionQuestion": "¿Pueden dos solicitudes leer el mismo stock si se comprueba antes de actualizar?",
+  "guidedSteps": [
+    "El orden de lectura y escritura puede romper una condición.",
+    "Usa el lanzador acotado a dos reservas del producto4.",
+    "Compara dos peticiones secuenciales con dos solapadas desde stock1.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H35-1",
+    "H35-2",
+    "H35-3",
+    "H35-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-35",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/reservations",
+    "observation": "reproducir la sobreventa en condiciones controladas y demostrar que una corrección transaccional acepta una sola reserva."
+  },
+  "debrief": "explicar condición de carrera sin exigir generar carga masiva. Un albarán de las reservas abre la revisión de archivos.",
+  "understandingCheck": {
+    "question": "¿Qué protege la operación atómica?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-35",
+    "label": "Albarán de reserva y árbol de documentos",
+    "recipient": "UG-36"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-35/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-34"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

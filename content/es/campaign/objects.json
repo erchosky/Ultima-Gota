@@ -1,0 +1,550 @@
+[
+  {
+    "id": "OBJ-01",
+    "label": "Lista de referencias de Sam",
+    "originChapter": "UG-01",
+    "evidenceId": "EV-01",
+    "usedIn": [
+      "UG-02"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-01 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-02",
+    "label": "Referencia de petición de producto 2",
+    "originChapter": "UG-02",
+    "evidenceId": "EV-02",
+    "usedIn": [
+      "UG-03"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-02 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-03",
+    "label": "Comparación de precios y referencia a Verano sin colas",
+    "originChapter": "UG-03",
+    "evidenceId": "EV-03",
+    "usedIn": [
+      "UG-04"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-03 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-04",
+    "label": "Enlace público a /campanas/verano-sin-colas",
+    "originChapter": "UG-04",
+    "evidenceId": "EV-04",
+    "usedIn": [
+      "UG-05"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-04 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-05",
+    "label": "Autorización de Mara para revisar la campaña antigua",
+    "originChapter": "UG-05",
+    "evidenceId": "EV-05",
+    "usedIn": [
+      "UG-06"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-05 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-06",
+    "label": "Credenciales ficticias de demo.pera con procedencia",
+    "originChapter": "UG-06",
+    "evidenceId": "EV-06",
+    "usedIn": [
+      "UG-07"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-06 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-07",
+    "label": "Identidad autenticada demo.pera",
+    "originChapter": "UG-07",
+    "evidenceId": "EV-07",
+    "usedIn": [
+      "UG-08"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-07 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-08",
+    "label": "Ficha de sesión sin valor secreto",
+    "originChapter": "UG-08",
+    "evidenceId": "EV-08",
+    "usedIn": [
+      "UG-09"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-08 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-09",
+    "label": "Comparación antes/después y cuentas autorizadas Alba/Bruno",
+    "originChapter": "UG-09",
+    "evidenceId": "EV-09",
+    "usedIn": [
+      "UG-10"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-09 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-10",
+    "label": "Muestra mínima del acceso cruzado y referencia Mercurio",
+    "originChapter": "UG-10",
+    "evidenceId": "EV-10",
+    "usedIn": [
+      "UG-11"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-10 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-11",
+    "label": "Petición reproducible para Nico",
+    "originChapter": "UG-11",
+    "evidenceId": "EV-11",
+    "usedIn": [
+      "UG-12"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-11 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-12",
+    "label": "Perfil con preferencia e información de capacidades",
+    "originChapter": "UG-12",
+    "evidenceId": "EV-12",
+    "usedIn": [
+      "UG-13"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-12 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-13",
+    "label": "Extracto histórico de cambio a las 08:54",
+    "originChapter": "UG-13",
+    "evidenceId": "EV-13",
+    "usedIn": [
+      "UG-14"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-13 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-14",
+    "label": "Tabla de respuestas para la corrección",
+    "originChapter": "UG-14",
+    "evidenceId": "EV-14",
+    "usedIn": [
+      "UG-15"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-14 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-15",
+    "label": "Acta de correcciones y descripción de producto con formato",
+    "originChapter": "UG-15",
+    "evidenceId": "EV-15",
+    "usedIn": [
+      "UG-16"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-15 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-16",
+    "label": "Comparación de reglas y campo de descripción",
+    "originChapter": "UG-16",
+    "evidenceId": "EV-16",
+    "usedIn": [
+      "UG-17"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-16 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-17",
+    "label": "Marcador de formato y referencia al mensaje de campaña",
+    "originChapter": "UG-17",
+    "evidenceId": "EV-17",
+    "usedIn": [
+      "UG-18"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-17 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-18",
+    "label": "Mapa del recorrido del mensaje",
+    "originChapter": "UG-18",
+    "evidenceId": "EV-18",
+    "usedIn": [
+      "UG-19"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-18 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-19",
+    "label": "Prueba local de ejecución y encargo de reseña",
+    "originChapter": "UG-19",
+    "evidenceId": "EV-19",
+    "usedIn": [
+      "UG-20"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-19 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-20",
+    "label": "Informe de reseña y encargo del buscador",
+    "originChapter": "UG-20",
+    "evidenceId": "EV-20",
+    "usedIn": [
+      "UG-21"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-20 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-21",
+    "label": "Tabla del catálogo y búsqueda con comilla",
+    "originChapter": "UG-21",
+    "evidenceId": "EV-21",
+    "usedIn": [
+      "UG-22"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-21 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-22",
+    "label": "Pareja mínima para contrastar la consulta",
+    "originChapter": "UG-22",
+    "evidenceId": "EV-22",
+    "usedIn": [
+      "UG-23"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-22 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-23",
+    "label": "Prueba contrastada de alteración de lógica",
+    "originChapter": "UG-23",
+    "evidenceId": "EV-23",
+    "usedIn": [
+      "UG-24"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-23 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-24",
+    "label": "Resultados de corrección del buscador",
+    "originChapter": "UG-24",
+    "evidenceId": "EV-24",
+    "usedIn": [
+      "UG-25"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-24 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-25",
+    "label": "Línea temporal parcial y autorización de recuperación",
+    "originChapter": "UG-25",
+    "evidenceId": "EV-25",
+    "usedIn": [
+      "UG-26"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-25 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-26",
+    "label": "Acceso autorizado al buzón ficticio",
+    "originChapter": "UG-26",
+    "evidenceId": "EV-26",
+    "usedIn": [
+      "UG-27"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-26 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-27",
+    "label": "Ficha de autorización token-destinatario",
+    "originChapter": "UG-27",
+    "evidenceId": "EV-27",
+    "usedIn": [
+      "UG-28"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-27 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-28",
+    "label": "Registro de consumo y plazo del token",
+    "originChapter": "UG-28",
+    "evidenceId": "EV-28",
+    "usedIn": [
+      "UG-29"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-28 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-29",
+    "label": "Tabla de frontera temporal",
+    "originChapter": "UG-29",
+    "evidenceId": "EV-29",
+    "usedIn": [
+      "UG-30"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-29 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-30",
+    "label": "Política de revocación y aviso de descuentos",
+    "originChapter": "UG-30",
+    "evidenceId": "EV-30",
+    "usedIn": [
+      "UG-31"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-30 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-31",
+    "label": "Tabla de reglas de PRIMERBRINDIS",
+    "originChapter": "UG-31",
+    "evidenceId": "EV-31",
+    "usedIn": [
+      "UG-32"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-31 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-32",
+    "label": "Factura de prueba y referencia de operación",
+    "originChapter": "UG-32",
+    "evidenceId": "EV-32",
+    "usedIn": [
+      "UG-33"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-32 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-33",
+    "label": "Registro del reintento legítimo de las 09:15",
+    "originChapter": "UG-33",
+    "evidenceId": "EV-33",
+    "usedIn": [
+      "UG-34"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-33 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-34",
+    "label": "Diagrama de estados y aviso de última unidad",
+    "originChapter": "UG-34",
+    "evidenceId": "EV-34",
+    "usedIn": [
+      "UG-35"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-34 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-35",
+    "label": "Albarán de reserva y árbol de documentos",
+    "originChapter": "UG-35",
+    "evidenceId": "EV-35",
+    "usedIn": [
+      "UG-36"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-35 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-36",
+    "label": "Mapa del almacén virtual",
+    "originChapter": "UG-36",
+    "evidenceId": "EV-36",
+    "usedIn": [
+      "UG-37"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-36 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-37",
+    "label": "Nota sintética y formulario de etiquetas",
+    "originChapter": "UG-37",
+    "evidenceId": "EV-37",
+    "usedIn": [
+      "UG-38"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-37 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-38",
+    "label": "Matriz de muestras y referencia de descarga",
+    "originChapter": "UG-38",
+    "evidenceId": "EV-38",
+    "usedIn": [
+      "UG-39"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-38 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-39",
+    "label": "Cabeceras y referencia de exportación antigua",
+    "originChapter": "UG-39",
+    "evidenceId": "EV-39",
+    "usedIn": [
+      "UG-40"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-39 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-40",
+    "label": "Muestra mínima y mapa de servicios de Mercurio",
+    "originChapter": "UG-40",
+    "evidenceId": "EV-40",
+    "usedIn": [
+      "UG-41"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-40 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-41",
+    "label": "Mapa de orígenes y formulario externo ficticio",
+    "originChapter": "UG-41",
+    "evidenceId": "EV-41",
+    "usedIn": [
+      "UG-42"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-41 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-42",
+    "label": "Comparación de componentes que inician acciones",
+    "originChapter": "UG-42",
+    "evidenceId": "EV-42",
+    "usedIn": [
+      "UG-43"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-42 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-43",
+    "label": "Traza servidor→intranet y enlace de seguimiento",
+    "originChapter": "UG-43",
+    "evidenceId": "EV-43",
+    "usedIn": [
+      "UG-44"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-43 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-44",
+    "label": "Destino real y aviso logístico",
+    "originChapter": "UG-44",
+    "evidenceId": "EV-44",
+    "usedIn": [
+      "UG-45"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-44 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-45",
+    "label": "Registro no autenticado de las 09:10, sin atribución personal",
+    "originChapter": "UG-45",
+    "evidenceId": "EV-45",
+    "usedIn": [
+      "UG-46"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-45 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-46",
+    "label": "Grafo parcial y autorización de copia histórica",
+    "originChapter": "UG-46",
+    "evidenceId": "EV-46",
+    "usedIn": [
+      "UG-47"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-46 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-47",
+    "label": "Grafo de dependencias e impactos demostrados",
+    "originChapter": "UG-47",
+    "evidenceId": "EV-47",
+    "usedIn": [
+      "UG-48"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-47 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Referencia a credencial oculta por defecto."
+  },
+  {
+    "id": "OBJ-48",
+    "label": "Plan de medidas con criterios y dependencias",
+    "originChapter": "UG-48",
+    "evidenceId": "EV-48",
+    "usedIn": [
+      "UG-49"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-48 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-49",
+    "label": "Suite ejecutable declarativa y resultados de regresión",
+    "originChapter": "UG-49",
+    "evidenceId": "EV-49",
+    "usedIn": [
+      "UG-50"
+    ],
+    "recovery": "Regenerar desde checkpoint UG-49 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  },
+  {
+    "id": "OBJ-50",
+    "label": "Acta de reapertura, informes y archivo de prácticas",
+    "originChapter": "UG-50",
+    "evidenceId": "EV-50",
+    "usedIn": [],
+    "recovery": "Regenerar desde checkpoint UG-50 completado de la misma campaña/generación; no avanzar otro capítulo.",
+    "secretPolicy": "Muestra ficticia mínima; sin secretos de servicio."
+  }
+]

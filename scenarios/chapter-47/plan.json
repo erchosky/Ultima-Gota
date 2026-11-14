@@ -1,0 +1,53 @@
+{
+  "id": "chapter-47",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "historical-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-47/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "Copia histórica: campaña, login, perfil, pedidos y soporte",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Archivo→login y dos ramas reales; IDOR funciona sin soporte, exportación requiere capacidad; mundo principal conserva parches.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Llamar lineal a ambas ramas o confundir muestra pública del40 con exportación soporte.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Revocar credenciales, restringir campos, comprobar propiedad y autorización de exportación; controles independientes.",
+    "positive": "Clientes consultan pedidos propios y soporte autorizado su exportación.",
+    "negative": "Cadena histórica no alcanza datos privados en mundo corregido.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-47/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-46"
+    ]
+  }
+}

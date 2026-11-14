@@ -1,0 +1,53 @@
+{
+  "id": "chapter-18",
+  "version": 1,
+  "kind": "implemented-scenario",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy-and-opaque-sandbox-frame",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-18/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "GET /campanas/mensaje?mensaje=MARCA-PERA",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation-and-isolated-browser",
+    "contract": "Consulta con marcador único del run; mapa correcto parámetro mensaje→decodificación→#mensaje/innerHTML reproducido en navegador.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium"
+  },
+  "falsePositiveChecks": [
+    "Nombrar cualquier función sin vincular el marcador observado.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Cambiar a textContent para este mensaje que solo necesita texto.",
+    "positive": "Mensaje normal conserva su contenido legible.",
+    "negative": "Marcado se muestra como texto y no crea elementos.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-18/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-17"
+    ]
+  }
+}

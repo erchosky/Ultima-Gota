@@ -1,0 +1,6 @@
+{
+  "id": "H05-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Registra producto 2, esperado 210, recibido 210 y visible 240 céntimos; repite la carga. Prueba el renderizado corregido y verifica también producto 1. Concluye fallo de presentación."
+}

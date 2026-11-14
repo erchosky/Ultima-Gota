@@ -1,0 +1,11 @@
+{
+  "id": "chapter-16/v1",
+  "inherits": "campaign-v1",
+  "status": "seeded-and-tested-integration-and-chromium",
+  "settings": {
+    "serverQuantityValidation": false,
+    "paymentsEnabled": false
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-36",
+  "solution": "Como Alba descarga /public/albaran-203.txt en el árbol de práctica. Registra ruta, documentId y propietario; compara con una descarga de Bruno denegada por propiedad.",
+  "expectedTechnicalResult": "Consulta real del documento correcto y relación ruta/documentId/orderId/ownerId; control de acceso cruzado.",
+  "understandingAnswer": "La ruta expresa ubicación en un árbol; el identificador nombra un objeto de negocio.",
+  "feedbackOnIncorrect": "La ruta expresa ubicación en un árbol; el identificador nombra un objeto de negocio. Vuelve a comparar las fuentes y repite la observación: Relaciona pedido203, propietarioAlba y ruta de su albarán.",
+  "patch": "Mantener catálogo de documentos con propiedad y no derivar permiso del nombre.",
+  "positiveTest": "Alba descarga su albarán203.",
+  "negativeTest": "Alba no descarga documento204 de Bruno.",
+  "commonMistakes": [
+    "Afirmar recorrido de rutas solo por ver barras en un parámetro.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

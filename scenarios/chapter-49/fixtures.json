@@ -1,0 +1,15 @@
+{
+  "id": "chapter-49/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "regression": "orderOwnershipCheck:false",
+    "copies": [
+      "corrected",
+      "seeded-regression"
+    ],
+    "suiteFormat": "declarative-no-code"
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

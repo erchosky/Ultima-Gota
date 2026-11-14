@@ -1,0 +1,156 @@
+{
+  "id": "UG-49",
+  "campaignCaseId": "UG-001",
+  "act": 10,
+  "title": "Que no vuelva con la próxima oferta",
+  "location": "Copias corregida y regresión",
+  "narrativeTime": "día 0 · hito 49 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-15",
+    "UG-24",
+    "UG-31",
+    "UG-32",
+    "UG-33",
+    "UG-34",
+    "UG-35",
+    "UG-47",
+    "UG-48"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S24",
+      "introducedIn": "UG-24",
+      "observableUse": "comprobar que una consulta parametrizada trata la entrada como un valor durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S32",
+      "introducedIn": "UG-32",
+      "observableUse": "comprobar que el servidor calcula el precio a partir de sus datos autorizados durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S33",
+      "introducedIn": "UG-33",
+      "observableUse": "verificar que un reintento de una operación no aplica dos veces el mismo efecto durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S34",
+      "introducedIn": "UG-34",
+      "observableUse": "verificar que una transición entre estados de un pedido está permitida durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S35",
+      "introducedIn": "UG-35",
+      "observableUse": "comparar solicitudes secuenciales y dos solicitudes concurrentes durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S47",
+      "introducedIn": "UG-47",
+      "observableUse": "construir y verificar un recorrido de ataque con sus dependencias y posibles ramas durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    },
+    {
+      "skillId": "S48",
+      "introducedIn": "UG-48",
+      "observableUse": "priorizar una corrección justificando impacto, condiciones de explotación y efecto sobre la cadena durante la prueba de este expediente.",
+      "practiceContext": "POST /classroom/regression-suites"
+    }
+  ],
+  "newSkill": {
+    "id": "S49",
+    "action": "convertir pruebas manuales conocidas en una comprobación de regresión repetible."
+  },
+  "narrativeEntry": "La próxima oferta puede cambiar código y volver a introducir algo que ya corregimos. Vamos a convertir tus pruebas en una comprobación repetible. El constructor pide identidad, acción, resultado esperado y dato que debe permanecer protegido; no exige escribir un programa desde cero. Probaremos la suite en dos copias etiquetadas. Una contiene una regresión sembrada y debe fallar por el motivo correcto. La otra conserva las correcciones y debe superar los casos positivos y negativos. Guarda la definición y sus resultados. Que todos esos casos pasen no demuestra ausencia de cualquier fallo: indica exactamente qué comportamientos quedarán vigilados cuando vuelva a cambiar la tienda.",
+  "whyItMatters": "Nico teme que una promoción futura reintroduzca los fallos ya corregidos.",
+  "learningObjective": "usar un constructor sencillo de casos: identidad, acción, resultado esperado y dato que debe permanecer protegido. Genera una suite ejecutable del proyecto, sin exigir al alumno programarla desde cero.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-49/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno",
+    "demo.pera",
+    "almacen.sam"
+  ],
+  "predictionQuestion": "¿Una suite que nunca detecta la regresión sembrada demuestra que cubre ese fallo?",
+  "guidedSteps": [
+    "Una comprobación útil debe fallar ante el defecto que pretende detectar.",
+    "Usa el constructor limitado de casos y las copias corregida/regresión.",
+    "Define identidad, objeto, resultado y campo protegido por cada prueba.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H49-1",
+    "H49-2",
+    "H49-3",
+    "H49-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-49",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /classroom/regression-suites",
+    "observation": "la suite detecta una regresión sembrada en una copia aislada y pasa sobre la versión corregida manteniendo los usos legítimos."
+  },
+  "debrief": "una suite cubre los casos definidos, no demuestra ausencia de cualquier fallo. Sus resultados acompañan al informe final.",
+  "understandingCheck": {
+    "question": "¿Qué demuestra que toda la suite pase?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-49",
+    "label": "Suite ejecutable declarativa y resultados de regresión",
+    "recipient": "UG-50"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-49/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-48"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "status": "acts-one-two-loopback-tested-locally-docker-and-multi-origin-pending",
+  "bindAddress": "127.0.0.1",
+  "origins": {
+    "classroom": "http://localhost:4310",
+    "storefront": "http://127.0.0.1:4311",
+    "auxiliary": "http://127.0.0.1:4312"
+  },
+  "publishedPorts": [
+    {
+      "bind": "127.0.0.1",
+      "host": 4310,
+      "container": 4310
+    },
+    {
+      "bind": "127.0.0.1",
+      "host": 4311,
+      "container": 4311
+    },
+    {
+      "bind": "127.0.0.1",
+      "host": 4312,
+      "container": 4312
+    }
+  ],
+  "internalOnly": [
+    "scenario-runner",
+    "mock-intranet",
+    "browser-evaluator"
+  ],
+  "cookies": {
+    "classroom": {
+      "name": "ug_classroom",
+      "host": "localhost",
+      "httpOnly": true,
+      "sameSite": "Strict",
+      "domain": null
+    },
+    "storefront": {
+      "name": "ug_store",
+      "host": "127.0.0.1",
+      "httpOnly": true,
+      "sameSite": "Lax",
+      "domain": null
+    },
+    "laboratory": {
+      "name": "ug_lab",
+      "host": "127.0.0.1",
+      "httpOnly": true,
+      "sameSite": "Lax",
+      "domain": null,
+      "purpose": "Practice-copy context, not account authentication"
+    }
+  },
+  "externalRequestsAllowed": false,
+  "requiresCustomDNS": false,
+  "activePublishedPorts": [
+    4310,
+    4311
+  ],
+  "localControlPort": 4313,
+  "inactiveUntilFutureActs": [
+    "auxiliary",
+    "mock-intranet",
+    "historical-browser-evaluator"
+  ]
+}

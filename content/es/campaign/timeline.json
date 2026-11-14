@@ -1,0 +1,112 @@
+{
+  "caseId": "UG-001",
+  "events": [
+    {
+      "id": "HIST-00",
+      "time": "before-day-0",
+      "type": "public-file",
+      "fact": "Archivo de campaña distribuye credenciales ficticias.",
+      "requestId": "resource-verano",
+      "sessionRef": null,
+      "actorRef": null,
+      "revealIn": "UG-06"
+    },
+    {
+      "id": "HIST-01",
+      "time": "day-0T08:50:00",
+      "type": "download",
+      "fact": "visitante-17 descarga archivo público; no identidad personal.",
+      "requestId": "req-h01",
+      "sessionRef": null,
+      "actorRef": "visitor-17",
+      "revealIn": "UG-25"
+    },
+    {
+      "id": "HIST-02",
+      "time": "day-0T08:52:00",
+      "type": "login",
+      "fact": "Sesión usa cuenta demo.pera.",
+      "requestId": "req-h02",
+      "sessionRef": "hist-session-17",
+      "actorRef": "visitor-17",
+      "revealIn": "UG-25"
+    },
+    {
+      "id": "HIST-03",
+      "time": "day-0T08:54:00",
+      "type": "profile",
+      "fact": "La sesión obtiene supportAccess mediante actualización de perfil.",
+      "requestId": "req-h03",
+      "sessionRef": "hist-session-17",
+      "actorRef": "visitor-17",
+      "revealIn": "UG-13"
+    },
+    {
+      "id": "HIST-04",
+      "time": "day-0T08:55:00",
+      "type": "foreign-order",
+      "fact": "La sesión consulta pedido204 de Bruno.",
+      "requestId": "req-h04",
+      "sessionRef": "hist-session-17",
+      "actorRef": "visitor-17",
+      "revealIn": "UG-46"
+    },
+    {
+      "id": "HIST-05",
+      "time": "day-0T08:55:30",
+      "type": "independent-report",
+      "fact": "Alba comprueba pedido204 con su propia sesión; origina queja.",
+      "requestId": "req-h05",
+      "sessionRef": "hist-alba",
+      "actorRef": "alba-synthetic",
+      "revealIn": "UG-10"
+    },
+    {
+      "id": "HIST-06",
+      "time": "day-0T09:05:00",
+      "type": "support-export",
+      "fact": "La sesión accede solo a muestra-soporte.csv de tres filas.",
+      "requestId": "req-h06",
+      "sessionRef": "hist-session-17",
+      "actorRef": "visitor-17",
+      "revealIn": "UG-46"
+    },
+    {
+      "id": "HIST-07",
+      "time": "day-0T09:10:00",
+      "type": "unsigned-logistics",
+      "fact": "Mensaje sin autenticidad verificada cambia205 de preparado a enviado.",
+      "requestId": "req-h07",
+      "sessionRef": null,
+      "actorRef": null,
+      "revealIn": "UG-45"
+    },
+    {
+      "id": "HIST-08",
+      "time": "day-0T09:15:00",
+      "type": "legitimate-retry",
+      "fact": "Mercurio reintenta op-mercurio-7 y duplica descuento de205.",
+      "requestId": "req-h08",
+      "sessionRef": null,
+      "actorRef": "mercurio-service",
+      "revealIn": "UG-33",
+      "operationId": "op-mercurio-7"
+    },
+    {
+      "id": "HIST-09",
+      "time": "day-0T10:00:00",
+      "type": "review-start",
+      "fact": "Comienza revisión autorizada en copia.",
+      "requestId": "review-start",
+      "sessionRef": null,
+      "actorRef": null,
+      "revealIn": "UG-01"
+    }
+  ],
+  "historicalPreconditions": [
+    "Pedido205 pasa legítimamente a preparado a las09:08 en evento operativo independiente.",
+    "Primera recepción de op-mercurio-7 a las09:14 aplica un descuento de200 sobre2000; el reintento09:15 vuelve a aplicar200 en versión antigua.",
+    "La queja independiente de Alba no comparte hist-session-17.",
+    "El receptor logístico no conserva una relación demostrable entre req-h07 y visitante-17."
+  ]
+}

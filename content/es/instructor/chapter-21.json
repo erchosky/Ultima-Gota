@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-21",
+  "solution": "Selecciona la consulta SELECT id,name FROM products WHERE id <= 2 y predice 1 y 2. Ejecuta desde la mesa y contrasta esas dos filas con las fichas.",
+  "expectedTechnicalResult": "Predicción estructurada y consulta real acotada devuelven exactamente productos 1 y 2.",
+  "understandingAnswer": "Filtra qué filas se incluyen en el resultado.",
+  "feedbackOnIncorrect": "Filtra qué filas se incluyen en el resultado. Vuelve a comparar las fuentes y repite la observación: Predice los identificadores antes de ejecutar la consulta preparada.",
+  "patch": "No hay fallo; mantener vistas didácticas de consultas fijas.",
+  "positiveTest": "Consulta preparada devuelve filas 1 y 2.",
+  "negativeTest": "Mesa no acepta SQL arbitrario.",
+  "commonMistakes": [
+    "Elegir filas sin ejecutar la comprobación o pedir otras tablas.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

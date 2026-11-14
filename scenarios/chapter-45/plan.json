@@ -1,0 +1,53 @@
+{
+  "id": "chapter-45",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-45/v1",
+    "accounts": [
+      "proveedor.mercurio"
+    ],
+    "resource": "POST /api/logistics/webhook",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Tres mensajes reales por versión con preestado preparado; resultado de autenticidad y transición persistida contrastados.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Rechazo causado solo por estado incompatible o fabricar firma en cliente.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "HMAC-SHA256 servidor sobre bytes del cuerpo, comparación segura y control de operación separado.",
+    "positive": "Mensaje firmado legítimo pasa a enviado.",
+    "negative": "Alterado o sin firma no cambia el pedido corregido.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-45/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-44"
+    ]
+  }
+}

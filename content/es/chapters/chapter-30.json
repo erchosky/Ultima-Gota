@@ -1,0 +1,132 @@
+{
+  "id": "UG-30",
+  "campaignCaseId": "UG-001",
+  "act": 6,
+  "title": "La sesión que se quedó dentro",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 30 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-08",
+    "UG-09",
+    "UG-11",
+    "UG-27",
+    "UG-28",
+    "UG-29"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S09",
+      "introducedIn": "UG-09",
+      "observableUse": "comparar el acceso a un mismo recurso antes y después de cerrar sesión durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S27",
+      "introducedIn": "UG-27",
+      "observableUse": "comprobar que un token de recuperación está vinculado a una cuenta concreta durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S28",
+      "introducedIn": "UG-28",
+      "observableUse": "comprobar que una autorización de recuperación deja de servir tras usarse durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S29",
+      "introducedIn": "UG-29",
+      "observableUse": "verificar la caducidad de un token con un reloj virtual del escenario durante la prueba de este expediente.",
+      "practiceContext": "GET /api/me; POST /api/recovery/complete"
+    }
+  ],
+  "newSkill": {
+    "id": "S30",
+    "action": "comprobar la revocación de sesiones previas después de una recuperación de seguridad."
+  },
+  "narrativeEntry": "Hemos definido una política para recuperaciones de seguridad: cambiar la contraseña debe revocar todas las sesiones previas de la cuenta. No todas las aplicaciones eligen la misma política, por eso la dejamos escrita antes de probarla. Abre dos sesiones independientes de Alba. Desde el flujo autorizado de recuperación cambia su contraseña; después consulta el perfil con la sesión que estaba abierta antes. Conserva las identidades y referencias, sin copiar los valores secretos de cookies. Un acceso nuevo con la contraseña nueva debe funcionar. Si la sesión antigua sigue dentro en la copia vulnerable, tendremos una prueba de revocación incompleta, aunque el cambio de contraseña haya sido correcto.",
+  "whyItMatters": "una cuenta ha cambiado su contraseña tras el incidente, pero podría conservar una sesión anterior.",
+  "learningObjective": "mantener dos sesiones de prueba, recuperar la cuenta desde una y consultar un recurso desde la anterior.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-30/v1"
+  ],
+  "allowedAccounts": [
+    "Alba"
+  ],
+  "predictionQuestion": "¿Cambiar una contraseña invalida automáticamente cualquier sesión ya creada?",
+  "guidedSteps": [
+    "La política de revocación debe ejecutarse expresamente.",
+    "Prepara dos contextos de navegador con Alba.",
+    "Tras recuperar la cuenta vuelve a pedir perfil desde la sesión anterior.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H30-1",
+    "H30-2",
+    "H30-3",
+    "H30-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-30",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/me; POST /api/recovery/complete",
+    "observation": "la política del caso exige revocación: la versión corregida invalida la sesión antigua y permite un nuevo acceso legítimo."
+  },
+  "debrief": "explica que la política debe ser explícita. La revisión de accesos termina y Sam trae un problema de descuentos duplicados.",
+  "understandingCheck": {
+    "question": "¿Por qué comprobamos un acceso nuevo además del antiguo?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-30",
+    "label": "Política de revocación y aviso de descuentos",
+    "recipient": "UG-31"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-30/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-29"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

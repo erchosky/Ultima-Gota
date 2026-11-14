@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-01",
+  "solution": "Abre /producto?id=1, selecciona la barra de direcciones, cambia únicamente 1 por 2 y pulsa Intro. Anota el nombre recibido.",
+  "expectedTechnicalResult": "Dos consultas nuevas de productos 1 y 2; respuesta de 2 con id=2 y nombre Pera del huerto; observación del alumno coincide.",
+  "understandingAnswer": "No. El identificador selecciona un producto público; todavía no hemos comprobado permisos.",
+  "feedbackOnIncorrect": "No. El identificador selecciona un producto público; todavía no hemos comprobado permisos. Vuelve a comparar las fuentes y repite la observación: Localiza id=1 y compara ese número con la lista de Sam.",
+  "patch": "No hay vulnerabilidad que corregir. Conservar selección por ID y respuesta coherente.",
+  "positiveTest": "Consultar producto 2 devuelve pera.",
+  "negativeTest": "Consultar ID inexistente no devuelve datos de otro producto.",
+  "commonMistakes": [
+    "Renombrar el título en pantalla sin solicitar producto 2.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-one"
+}

@@ -1,0 +1,120 @@
+{
+  "id": "UG-14",
+  "campaignCaseId": "UG-001",
+  "act": 3,
+  "title": "Una respuesta que cuenta demasiado",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 14 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-03",
+    "UG-11",
+    "UG-12",
+    "UG-13"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/support/summary; POST /api/integration/preview; GET /api/products?id=999; GET /api/legacy/support"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/support/summary; POST /api/integration/preview; GET /api/products?id=999; GET /api/legacy/support"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "GET /api/support/summary; POST /api/integration/preview; GET /api/products?id=999; GET /api/legacy/support"
+    }
+  ],
+  "newSkill": {
+    "id": "S14",
+    "action": "interpretar una tabla pequeña de estados HTTP y distinguir un error útil de una filtración interna."
+  },
+  "narrativeEntry": "Los mensajes de error que recibe soporte no son fáciles de comparar. Algunas respuestas dicen poco y otra muestra información interna de Mercurio. Vamos a preparar una tabla pequeña con peticiones válidas, sin sesión, sin permiso y con datos mal formados. Cada respuesta tiene un estado HTTP, un número que orienta sobre el resultado, y un cuerpo que puede aportar detalles. Lara te dará una referencia para 200, 400, 401, 403 y 404. No decidas solo por el número: una aplicación puede responder 200 con un mensaje de denegación. Busca qué contenido realmente aparece y qué información no necesitaba conocer quien hizo la consulta.",
+  "whyItMatters": "soporte recibe errores confusos y algunos mensajes revelan detalles de la integración.",
+  "learningObjective": "comparar solicitudes válidas, sin sesión, sin permiso y con formato incorrecto. Introduce 200, 400, 401, 403 y 404 con sus límites; no deduzcas autorización solo por el número.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-14/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous",
+    "demo.pera",
+    "soporte.vera"
+  ],
+  "predictionQuestion": "¿Un estado 200 garantiza que una operación privada se haya permitido?",
+  "guidedSteps": [
+    "Código y contenido son observaciones distintas.",
+    "Compara seis respuestas reales en la mesa: hay cinco códigos distintos porque dos casos devuelven200.",
+    "Compara estado, mensaje y presencia de detalles internos ficticios.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H14-1",
+    "H14-2",
+    "H14-3",
+    "H14-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-14",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/support/summary; POST /api/integration/preview; GET /api/products?id=999; GET /api/legacy/support",
+    "observation": "clasificar respuestas por código y contenido, identificando un mensaje que expone información ficticia innecesaria."
+  },
+  "debrief": "un 200 puede contener una denegación y un error no demuestra inyección. Nico prepara una corrección verificable.",
+  "understandingCheck": {
+    "question": "¿Qué demuestra el detalle interno que aparece en el error?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-14",
+    "label": "Tabla de respuestas para la corrección",
+    "recipient": "UG-15"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-14/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-13"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-three-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

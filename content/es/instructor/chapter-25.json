@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-25",
+  "solution": "Ordena archivo08:50, acceso08:52 y perfil08:54; clasifica la reproducción de pedidos como prueba actual y la atribución de SQLi al incidente como no respaldada. Conserva la incertidumbre sobre identidad.",
+  "expectedTechnicalResult": "Orden parcial correcto, procedencia de cada tarjeta y al menos una limitación; no atribuye SQLi/XSS históricos.",
+  "understandingAnswer": "Evidencia histórica que lo conecte; reproducir una posibilidad no demuestra su uso pasado.",
+  "feedbackOnIncorrect": "Evidencia histórica que lo conecte; reproducir una posibilidad no demuestra su uso pasado. Vuelve a comparar las fuentes y repite la observación: Ordena registros históricos y separa tus experimentos de revisión.",
+  "patch": "No aplica parche nuevo; corregir conclusiones que excedan sus fuentes.",
+  "positiveTest": "Registros con hora y fuente se conservan.",
+  "negativeTest": "Una IP o autor de código no se acepta como identidad personal.",
+  "commonMistakes": [
+    "Pegar todas las vulnerabilidades en la línea histórica.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

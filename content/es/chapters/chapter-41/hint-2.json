@@ -1,0 +1,6 @@
+{
+  "id": "H41-2",
+  "level": 2,
+  "type": "zone",
+  "text": "Compara 127.0.0.1:4311 con 127.0.0.1:4312 y las cabeceras CORS."
+}

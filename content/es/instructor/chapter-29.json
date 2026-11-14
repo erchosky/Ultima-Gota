@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-29",
+  "solution": "Con snapshots equivalentes y tokens sin usar, intenta a +599, +600 y +601 segundos. En corregida solo +599 funciona; registra expiresAt y now en cada copia.",
+  "expectedTechnicalResult": "Tres copias con token no consumido prueban frontera; corregida acepta599, deniega600/601, vulnerable acepta expirado.",
+  "understandingAnswer": "Para medir caducidad sin que el rechazo se explique por uso previo.",
+  "feedbackOnIncorrect": "Para medir caducidad sin que el rechazo se explique por uso previo. Vuelve a comparar las fuentes y repite la observación: Prueba justo antes, en el límite y después.",
+  "patch": "Verificar now < expiresAt en servidor con reloj del escenario.",
+  "positiveTest": "Token a599 segundos permite recuperación.",
+  "negativeTest": "Token a600 y601 no la permite.",
+  "commonMistakes": [
+    "Usar el token ya consumido del caso28 o cambiar reloj del sistema.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

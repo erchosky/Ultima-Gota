@@ -1,0 +1,6 @@
+{
+  "id": "H21-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Selecciona la consulta SELECT id,name FROM products WHERE id <= 2 y predice 1 y 2. Ejecuta desde la mesa y contrasta esas dos filas con las fichas."
+}

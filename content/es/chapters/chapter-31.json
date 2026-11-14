@@ -1,0 +1,126 @@
+{
+  "id": "UG-31",
+  "campaignCaseId": "UG-001",
+  "act": 7,
+  "title": "La letra pequeña del cupón",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 31 después de las 10:00 (sin duración impuesta)",
+  "sender": "Mara",
+  "prerequisites": [
+    "UG-02",
+    "UG-03",
+    "UG-04",
+    "UG-05",
+    "UG-15",
+    "UG-30"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/preview"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/preview"
+    },
+    {
+      "skillId": "S04",
+      "introducedIn": "UG-04",
+      "observableUse": "localizar un elemento de la página con el inspector de elementos durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/preview"
+    },
+    {
+      "skillId": "S05",
+      "introducedIn": "UG-05",
+      "observableUse": "registrar una evidencia reproducible separando esperado y observado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/preview"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/coupon/preview"
+    }
+  ],
+  "newSkill": {
+    "id": "S31",
+    "action": "convertir una regla de negocio escrita en condiciones comprobables."
+  },
+  "narrativeEntry": "Antes de revisar descuentos quiero que compartamos la misma regla. El cupón PRIMERBRINDIS ofrece un diez por ciento si el subtotal alcanza veinte euros, una vez por cuenta, y termina al comenzar el día uno. El descuento se calcula sobre el subtotal de productos antes de descuentos, en céntimos, con redondeo a la baja. No hemos acordado restricciones por sabor, barrio ni día de registro. Convierte estas condiciones en casos que podamos comprobar. La mesa preparará carritos ficticios a ambos lados del mínimo y del plazo. También necesitamos distinguir un primer uso de un intento posterior de la misma cuenta.",
+  "whyItMatters": "una promoción promete un uso por cuenta y un importe mínimo. Mara quiere saber qué significa cumplirla.",
+  "learningObjective": "construir una tabla pequeña con casos válidos e inválidos para un cupón de pruebas.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-31/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Un subtotal de 19,99 euros cumple el mínimo de veinte?",
+  "guidedSteps": [
+    "Cada condición escrita necesita al menos un caso que la distinga.",
+    "Consulta la ficha central de PRIMERBRINDIS en el cuaderno.",
+    "Forma casos para mínimo, cuenta, fecha y redondeo.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H31-1",
+    "H31-2",
+    "H31-3",
+    "H31-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-31",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/coupon/preview",
+    "observation": "cada condición declarada tiene una prueba observable y el alumno evita inventar restricciones que la promoción no contiene."
+  },
+  "debrief": "una anomalía de negocio depende de la regla acordada. El equipo está preparado para revisar quién decide el precio final.",
+  "understandingCheck": {
+    "question": "¿Por qué escribimos primero las condiciones?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-31",
+    "label": "Tabla de reglas de PRIMERBRINDIS",
+    "recipient": "UG-32"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-31/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-30"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "UG-41",
+  "campaignCaseId": "UG-001",
+  "act": 9,
+  "title": "Dos ventanas, dos orígenes",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 41 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-02",
+    "UG-03",
+    "UG-08",
+    "UG-40"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/provider-view desde auxiliar"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "GET /api/provider-view desde auxiliar"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "GET /api/provider-view desde auxiliar"
+    }
+  ],
+  "newSkill": {
+    "id": "S41",
+    "action": "reconocer un origen como combinación de esquema, nombre y puerto y comprobar una política CORS concreta."
+  },
+  "narrativeEntry": "La tienda y la página auxiliar de proveedores tienen direcciones parecidas, pero puertos distintos. Un origen se compone de esquema, host y puerto. El navegador compara esos datos para aplicar ciertas restricciones. Vamos a observar una lectura desde la página auxiliar hacia la tienda con una configuración CORS permitida y otra denegada. CORS es la política con la que el servidor indica al navegador qué origen puede leer una respuesta. No sustituye los permisos de la cuenta. Anota por separado si la petición llegó al servidor y si el código de la página pudo leer el contenido; son preguntas distintas.",
+  "whyItMatters": "la tienda y su panel de proveedores usan direcciones distintas del laboratorio.",
+  "learningObjective": "comparar una lectura entre dos orígenes de laboratorio con configuraciones permitida y denegada.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-41/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Que el servidor reciba una petición significa que otra página pueda leer su respuesta?",
+  "guidedSteps": [
+    "Enviar y leer son efectos distintos; origen incluye puerto.",
+    "Compara 127.0.0.1:4311 con 127.0.0.1:4312 y las cabeceras CORS.",
+    "Usa la lectura preparada desde el auxiliar con origen permitido y denegado.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H41-1",
+    "H41-2",
+    "H41-3",
+    "H41-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-41",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/provider-view desde auxiliar",
+    "observation": "observar si el navegador permite leer la respuesta. Distinguir enviar una petición de poder leerla y no presentar CORS como sustituto de autorización."
+  },
+  "debrief": "el navegador aplica ciertas restricciones; el servidor sigue necesitando permisos. Vera aporta una página externa ficticia del aula.",
+  "understandingCheck": {
+    "question": "¿CORS autoriza a una cuenta a leer pedidos ajenos?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-41",
+    "label": "Mapa de orígenes y formulario externo ficticio",
+    "recipient": "UG-42"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-41/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-40"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

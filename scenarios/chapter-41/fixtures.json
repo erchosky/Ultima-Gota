@@ -1,0 +1,15 @@
+{
+  "id": "chapter-41/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "sourceOrigin": "http://127.0.0.1:4312",
+    "targetOrigin": "http://127.0.0.1:4311",
+    "policies": [
+      "exact-origin",
+      "denied"
+    ]
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

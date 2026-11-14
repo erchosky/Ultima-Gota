@@ -1,0 +1,104 @@
+{
+  "id": "UG-28",
+  "campaignCaseId": "UG-001",
+  "act": 6,
+  "title": "Un enlace para una sola vez",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 28 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-11",
+    "UG-27"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    },
+    {
+      "skillId": "S27",
+      "introducedIn": "UG-27",
+      "observableUse": "comprobar que un token de recuperación está vinculado a una cuenta concreta durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete"
+    }
+  ],
+  "newSkill": {
+    "id": "S28",
+    "action": "comprobar que una autorización de recuperación deja de servir tras usarse."
+  },
+  "narrativeEntry": "El vínculo con el destinatario ya está comprobado. Ahora tenemos otra pregunta: qué ocurre si alguien vuelve a usar el mismo enlace después de completar una recuperación. Un token puede pertenecer a la cuenta correcta y aun así durar más de lo debido porque no se invalida al usarlo. Vamos a realizar una recuperación y repetirla con otra contraseña ficticia, manteniendo el mismo token y destinatario. Consulta el resultado real de ambos intentos. La copia de este caso conserva el vínculo corregido para que no confundamos dos fallos. El siguiente expediente se ocupará del paso del tiempo; hoy solo investigamos el consumo de la autorización.",
+  "whyItMatters": "un enlace utilizado continúa circulando en el buzón interno.",
+  "learningObjective": "utilizar una vez el enlace y repetir el mismo intento con un nuevo valor ficticio, observando las respuestas.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-28/v1"
+  ],
+  "allowedAccounts": [
+    "Alba"
+  ],
+  "predictionQuestion": "¿Un token ya utilizado debería aceptar otro cambio de contraseña?",
+  "guidedSteps": [
+    "Uso único y caducidad son propiedades independientes.",
+    "Revisa el mismo token en la petición de completar recuperación.",
+    "Tras el primer uso repite con otro valor de contraseña ficticia.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H28-1",
+    "H28-2",
+    "H28-3",
+    "H28-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-28",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/recovery/complete",
+    "observation": "demostrar reutilización indebida en la copia vulnerable y rechazo en la corregida, conservando el primer uso legítimo."
+  },
+  "debrief": "invalidar tras usar y caducar con el tiempo son propiedades diferentes. El siguiente caso comprueba la segunda.",
+  "understandingCheck": {
+    "question": "¿Qué propiedad bloquea la segunda utilización inmediata?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-28",
+    "label": "Registro de consumo y plazo del token",
+    "recipient": "UG-29"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-28/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-27"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

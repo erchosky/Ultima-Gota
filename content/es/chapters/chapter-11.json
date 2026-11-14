@@ -1,0 +1,110 @@
+{
+  "id": "UG-11",
+  "campaignCaseId": "UG-001",
+  "act": 3,
+  "title": "Repetir sin volver a empezar",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 11 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-02",
+    "UG-10"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "GET /api/orders?id=204"
+    }
+  ],
+  "newSkill": {
+    "id": "S11",
+    "action": "reenviar una petición real sin cambios desde la mesa del navegador."
+  },
+  "narrativeEntry": "Tu prueba del pedido ajeno permite localizar el control que falta. Para comparar versiones necesito repetir la misma petición sin volver a navegar por todas las pantallas. Hemos preparado una mesa que envía consultas reales desde el navegador y permite reenviar la última sin cambios. Conserva la sesión de Alba y comprueba que la dirección y el método siguen iguales. Cada ejecución tendrá una referencia nueva, aunque consulte el mismo objeto. Esa diferencia nos ayuda a distinguir una prueba repetida de una captura antigua. También puedes observar las dos filas en Red. La respuesta puede parecer idéntica; lo importante es que el servidor reciba otra consulta equivalente.",
+  "whyItMatters": "Nico necesita una reproducción exacta del acceso indebido para localizar el fallo.",
+  "learningObjective": "Repetir una consulta con la misma sesión y contrastar dos referencias nuevas; la mesa es el mecanismo probado sin consola.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-11/v1"
+  ],
+  "allowedAccounts": [
+    "Alba"
+  ],
+  "predictionQuestion": "¿Reenviar sin cambios produce otra petición o solo vuelve a enseñar la respuesta guardada?",
+  "guidedSteps": [
+    "Mismo contenido no significa mismo evento.",
+    "Abre la Mesa de peticiones como Alba y selecciona GET /api/orders?id=204.",
+    "Envía la consulta y pulsa Reenviar última sin cambios. Compara referencias, método y dirección.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H11-1",
+    "H11-2",
+    "H11-3",
+    "H11-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-11",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/orders?id=204",
+    "observation": "el servidor recibe una segunda petición equivalente, con un identificador de prueba distinto y la misma sesión."
+  },
+  "debrief": "una petición puede repetirse fuera del botón que la originó. Nico entrega un caso autorizado de actualización de perfil.",
+  "understandingCheck": {
+    "question": "¿Por qué conservamos dos referencias distintas?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-11",
+    "label": "Petición reproducible para Nico",
+    "recipient": "UG-12"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-11/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-10"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-three-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

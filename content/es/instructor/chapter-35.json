@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-35",
+  "solution": "Restablece stock1 entre corridas. Ejecuta secuencial y concurrente con barrera didáctica: vulnerable acepta dos; corregida acepta una mediante actualización atómica condicionada a stock positivo.",
+  "expectedTechnicalResult": "Eventos de dos solicitudes reales con barrera: secuencial1, concurrente vulnerable2, corregida1 y stock0.",
+  "understandingAnswer": "Que comprobar disponibilidad y reservar no queden separadas frente a otra solicitud.",
+  "feedbackOnIncorrect": "Que comprobar disponibilidad y reservar no queden separadas frente a otra solicitud. Vuelve a comparar las fuentes y repite la observación: Compara dos peticiones secuenciales con dos solapadas desde stock1.",
+  "patch": "Transacción o actualización condicionada atómica con comprobación de filas afectadas.",
+  "positiveTest": "Una reserva con stock1 se confirma.",
+  "negativeTest": "Segunda reserva concurrente se rechaza y nunca hay sobreventa.",
+  "commonMistakes": [
+    "Lanzar una solicitud o inferir carrera de un error genérico.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

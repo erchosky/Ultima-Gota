@@ -1,0 +1,117 @@
+{
+  "id": "UG-12",
+  "campaignCaseId": "UG-001",
+  "act": 3,
+  "title": "El contenido del sobre",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 12 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-02",
+    "UG-03",
+    "UG-11"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/profile; GET /api/me"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/profile; GET /api/me"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "PATCH /api/profile; GET /api/me"
+    }
+  ],
+  "newSkill": {
+    "id": "S12",
+    "action": "modificar un campo permitido en el cuerpo JSON de una petición."
+  },
+  "narrativeEntry": "La cuenta de pruebas permite elegir cómo recibir avisos del laboratorio. Vera seleccionó resumen diario, pero quiere confirmar qué se guarda. Vamos a mirar la petición de actualización de perfil. Además de dirección y método, tiene un cuerpo: los datos que envía dentro del mensaje. Está escrito en JSON, el formato que ya leíste al revisar precios. Te mostraré la estructura y el campo notificationPreference antes de editarlo. Cambia solo esa preferencia autorizada, reenvía y consulta el perfil otra vez. No tomes la respuesta del envío como única prueba: queremos ver que el valor permanece en una lectura posterior.",
+  "whyItMatters": "una preferencia del perfil no se guarda como se espera y es necesario reproducir el envío.",
+  "learningObjective": "cambiar una preferencia inocua de la cuenta de pruebas y reenviar conservando el resto de la estructura. Diferencia dirección, método y cuerpo con ejemplos visuales.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-12/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Cambiar una preferencia en el cuerpo bastará para verla guardada al consultar después?",
+  "guidedSteps": [
+    "Distingue datos enviados y estado persistido.",
+    "Selecciona PATCH del perfil y abre Editar y reenviar.",
+    "Cambia solo notificationPreference conservando el JSON válido.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H12-1",
+    "H12-2",
+    "H12-3",
+    "H12-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-12",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "PATCH /api/profile; GET /api/me",
+    "observation": "el servidor guarda la preferencia y una consulta posterior la devuelve."
+  },
+  "debrief": "manipular una petición autorizada no implica por sí mismo un fallo. La respuesta contiene también un campo interno de capacidades que requiere revisión.",
+  "understandingCheck": {
+    "question": "¿Modificar una petición autorizada demuestra por sí solo vulnerabilidad?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-12",
+    "label": "Perfil con preferencia e información de capacidades",
+    "recipient": "UG-13"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-12/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-11"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-three-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "chapterId": "UG-12",
+  "solution": "Envía notificationPreference con valor daily en PATCH /api/profile y consulta GET /api/me. Compara el valor persistido con el enviado.",
+  "expectedTechnicalResult": "PATCH permitido de demo.pera y GET posterior devuelven notificationPreference=daily.",
+  "understandingAnswer": "No; guardar una preferencia permitida es una función legítima.",
+  "feedbackOnIncorrect": "No; guardar una preferencia permitida es una función legítima. Vuelve a comparar las fuentes y repite la observación: Cambia solo notificationPreference conservando el JSON válido.",
+  "patch": "Lista de preferencias permitidas; conservar edición normal.",
+  "positiveTest": "daily persiste en perfil.",
+  "negativeTest": "Valor fuera del conjunto permitido no se guarda.",
+  "commonMistakes": [
+    "Editar la interfaz sin persistencia o JSON inválido.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-three",
+  "exampleRequest": {
+    "method": "PATCH",
+    "path": "/api/profile",
+    "body": {
+      "notificationPreference": "daily"
+    }
+  }
+}

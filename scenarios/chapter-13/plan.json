@@ -1,0 +1,53 @@
+{
+  "id": "chapter-13",
+  "version": 1,
+  "kind": "implemented-scenario",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-13/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "PATCH /api/profile; GET /api/support/summary",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Capacidad inicial false, PATCH la cambia a true y recurso soporte antes denegado resulta accesible en la misma sesión.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium"
+  },
+  "falsePositiveChecks": [
+    "Cambiar solo el alias a soporte o obtener un error.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Aceptar únicamente campos editables y autorizar capacidades en flujo administrativo separado.",
+    "positive": "Preferencia daily sigue guardándose.",
+    "negative": "supportAccess enviado por cliente no cambia permisos.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-13/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-12"
+    ]
+  }
+}

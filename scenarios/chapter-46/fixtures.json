@@ -1,0 +1,11 @@
+{
+  "id": "chapter-46/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "historicalSubset": "all",
+    "unknownUnsignedActor": true
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

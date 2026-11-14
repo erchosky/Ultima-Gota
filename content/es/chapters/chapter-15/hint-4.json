@@ -1,0 +1,6 @@
+{
+  "id": "H15-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "En corregida verifica Alba203 permitido y Alba204 sin datos; después daily permitido y supportAccess rechazado sin cambio. Contrasta con la copia vulnerable del caso."
+}

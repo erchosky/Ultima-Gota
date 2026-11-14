@@ -1,0 +1,53 @@
+{
+  "id": "chapter-37",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-37/v1",
+    "accounts": [
+      "demo.pera"
+    ],
+    "resource": "GET /api/virtual-files?path=",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Lectura virtual cruza public hacia reservado en vulnerable; corregida bloquea; guardián de árbol impide cualquier archivo real.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Un error de ruta o lectura del host para demostrar el caso.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Resolver sobre árbol virtual y exigir contención en public tras normalización; permisos por documento.",
+    "positive": "Documento público autorizado sigue accesible.",
+    "negative": "Rutas relativas equivalentes y absolutas fuera de public no lo son.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-37/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-36"
+    ]
+  }
+}

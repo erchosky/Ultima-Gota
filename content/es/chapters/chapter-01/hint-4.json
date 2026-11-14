@@ -1,0 +1,6 @@
+{
+  "id": "H01-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Abre /producto?id=1, selecciona la barra de direcciones, cambia únicamente 1 por 2 y pulsa Intro. Anota el nombre recibido."
+}

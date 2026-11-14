@@ -1,0 +1,29 @@
+{
+  "chapterId": "UG-20",
+  "solution": "Como Alba guarda la muestra explicada en reseña de pruebas. Carga esa reseña como Bruno en contexto limpio. Verifica marca y almacenamiento; en corregida no debe ejecutarse.",
+  "expectedTechnicalResult": "Reseña persistida por Alba y ejecutada al cargar como Bruno; navegador limpio, versión corregida impide ejecución.",
+  "understandingAnswer": "La entrada se almacena y se entrega después a otra sesión.",
+  "feedbackOnIncorrect": "La entrada se almacena y se entrega después a otra sesión. Vuelve a comparar las fuentes y repite la observación: Guarda la muestra y carga el producto como el segundo usuario.",
+  "patch": "Renderizar reseña como texto; política de formato solo si el producto la necesita.",
+  "positiveTest": "Reseña corriente persiste y puede leerse.",
+  "negativeTest": "Muestra almacenada no ejecuta en segunda sesión corregida.",
+  "commonMistakes": [
+    "Ejecutar solo en sesión emisora o enviar la marca como logro.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "implemented-and-tested-act-four",
+  "demonstrationPayload": "<img src=\"/demo/imagen-inexistente\" onerror=\"document.getElementById('marca').dataset.demo='DEMO-NONCE-DE-LA-EJECUCION'\">",
+  "payloadExplanation": [
+    "img intenta cargar una imagen del propio laboratorio que no existe.",
+    "onerror ejecuta el manejador al fallar esa carga.",
+    "El manejador escribe una marca local en el elemento de demostración.",
+    "El nonce es ficticio y pertenece al run actual; no sale información a otra red."
+  ],
+  "validationLimitation": "Reproducir desde la entrada en contexto limpio; la marca declarada por el alumno no acredita ejecución."
+}

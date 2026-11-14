@@ -1,0 +1,17 @@
+{
+  "id": "chapter-29/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "tokenAccountBinding": true,
+    "singleUse": true,
+    "expiryEnforced": false,
+    "clonedUnusedTokenTimes": [
+      599,
+      600,
+      601
+    ]
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

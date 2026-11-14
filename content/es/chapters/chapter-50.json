@@ -1,0 +1,225 @@
+{
+  "id": "UG-50",
+  "campaignCaseId": "UG-001",
+  "act": 10,
+  "title": "La reapertura",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 50 después de las 10:00 (sin duración impuesta)",
+  "sender": "Mara",
+  "prerequisites": [
+    "UG-01",
+    "UG-02",
+    "UG-03",
+    "UG-05",
+    "UG-07",
+    "UG-08",
+    "UG-10",
+    "UG-11",
+    "UG-12",
+    "UG-15",
+    "UG-25",
+    "UG-31",
+    "UG-32",
+    "UG-33",
+    "UG-34",
+    "UG-46",
+    "UG-47",
+    "UG-48",
+    "UG-49"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S02",
+      "introducedIn": "UG-02",
+      "observableUse": "localizar una petición concreta en la pestaña Red del navegador durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S03",
+      "introducedIn": "UG-03",
+      "observableUse": "localizar un campo concreto dentro de una respuesta JSON durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S05",
+      "introducedIn": "UG-05",
+      "observableUse": "registrar una evidencia reproducible separando esperado y observado durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S07",
+      "introducedIn": "UG-07",
+      "observableUse": "iniciar sesión y reconocer la identidad con la que se trabaja durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S08",
+      "introducedIn": "UG-08",
+      "observableUse": "localizar la cookie o mecanismo de sesión que usa esta implementación durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S10",
+      "introducedIn": "UG-10",
+      "observableUse": "comprobar autorización por objeto entre dos cuentas durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S25",
+      "introducedIn": "UG-25",
+      "observableUse": "ordenar evidencias por tiempo y separar hechos, hipótesis y preguntas abiertas durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S31",
+      "introducedIn": "UG-31",
+      "observableUse": "convertir una regla de negocio escrita en condiciones comprobables durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S32",
+      "introducedIn": "UG-32",
+      "observableUse": "comprobar que el servidor calcula el precio a partir de sus datos autorizados durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S33",
+      "introducedIn": "UG-33",
+      "observableUse": "verificar que un reintento de una operación no aplica dos veces el mismo efecto durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S34",
+      "introducedIn": "UG-34",
+      "observableUse": "verificar que una transición entre estados de un pedido está permitida durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S46",
+      "introducedIn": "UG-46",
+      "observableUse": "correlacionar eventos con identificadores de petición, sesión y operación, reconociendo sus límites durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S47",
+      "introducedIn": "UG-47",
+      "observableUse": "construir y verificar un recorrido de ataque con sus dependencias y posibles ramas durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S48",
+      "introducedIn": "UG-48",
+      "observableUse": "priorizar una corrección justificando impacto, condiciones de explotación y efecto sobre la cadena durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    },
+    {
+      "skillId": "S49",
+      "introducedIn": "UG-49",
+      "observableUse": "convertir pruebas manuales conocidas en una comprobación de regresión repetible durante la prueba de este expediente.",
+      "practiceContext": "Escenario de transferencia: catálogo11/12, pedidos303/304"
+    }
+  ],
+  "newSkill": {
+    "id": "S50",
+    "action": "comunicar una conclusión final con alcance, evidencias, correcciones verificadas y riesgo pendiente."
+  },
+  "narrativeEntry": "La nueva campaña está casi lista. Esta vez la revisión usa otros identificadores de productos y pedidos, pero no añade herramientas que no hayas aprendido. Decide qué comprobar, reúne pruebas y ejecuta la regresión correspondiente. Necesito un informe breve que pueda entender para decidir la reapertura y otro técnico que Nico pueda reproducir. Distingue lo ocurrido según los registros, los problemas encontrados en la revisión y las limitaciones que permanecen. No prometas seguridad absoluta ni identifiques a una persona sin evidencia. Reabriremos cuando los datos privados de este escenario queden protegidos y las operaciones legítimas funcionen, conservando las cuestiones pendientes junto a los resultados.",
+  "whyItMatters": "Mara prepara la nueva campaña de ventas y pide una revisión final y una explicación comprensible de lo ocurrido.",
+  "learningObjective": "resolver una investigación final con identificadores y productos nuevos, ejecutar las comprobaciones pertinentes y completar un informe breve para Mara y otro técnico para Nico.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-50/v1"
+  ],
+  "allowedAccounts": [
+    "Alba",
+    "Bruno",
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Qué pruebas y límites necesitarías explicar antes de recomendar reabrir?",
+  "guidedSteps": [
+    "Integra evidencias y alcance; no añadas una vulnerabilidad nueva.",
+    "Usa el escenario nuevo y las dos plantillas de informe.",
+    "Comprueba cuentas, propietarios, reglas y regresión con los identificadores entregados.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H50-1",
+    "H50-2",
+    "H50-3",
+    "H50-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-50",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "Escenario de transferencia: catálogo11/12, pedidos303/304",
+    "observation": "los datos privados ficticios quedan protegidos, los flujos legítimos funcionan y las conclusiones distinguen incidente probado, hallazgos de revisión y límites de la evidencia."
+  },
+  "debrief": "Lara reconoce la autonomía adquirida. Mara reabre la tienda con medidas comprobadas. Se conserva una lista honesta de cuestiones pendientes y el jugador puede volver a cualquier copia de práctica sin alterar el cierre de la campaña.",
+  "understandingCheck": {
+    "question": "¿Qué diferencia un cierre riguroso de una promesa de que nunca volverá a fallar?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-50",
+    "label": "Acta de reapertura, informes y archivo de prácticas",
+    "recipient": "Archivo de campaña"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-50/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-49"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

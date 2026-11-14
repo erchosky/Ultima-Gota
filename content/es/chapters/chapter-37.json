@@ -1,0 +1,104 @@
+{
+  "id": "UG-37",
+  "campaignCaseId": "UG-001",
+  "act": 8,
+  "title": "Fuera de la carpeta",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 37 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-15",
+    "UG-36"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "GET /api/virtual-files?path="
+    },
+    {
+      "skillId": "S36",
+      "introducedIn": "UG-36",
+      "observableUse": "distinguir un identificador de negocio de una ruta de archivo utilizada por un servicio durante la prueba de este expediente.",
+      "practiceContext": "GET /api/virtual-files?path="
+    }
+  ],
+  "newSkill": {
+    "id": "S37",
+    "action": "comprobar la normalización de rutas y el límite de un directorio autorizado."
+  },
+  "narrativeEntry": "Ya conocemos la carpeta pública del almacén ficticio. Ahora comprobaremos si una ruta relativa puede salir de esa carpeta y alcanzar un documento reservado del mismo árbol de pruebas. La guía explica qué significa subir al nivel anterior antes de pedir que construyas la ruta. El árbol vive dentro del ejercicio: no representa carpetas reales de tu ordenador y ninguna entrada se pasará al lector de archivos del sistema. Compara una descarga permitida con el intento de cruzar el límite y conserva la respuesta mínima necesaria. La corrección debe normalizar y comprobar el destino completo, no limitarse a borrar una secuencia de caracteres.",
+  "whyItMatters": "el servicio de documentos podría permitir salir de la carpeta pública del almacén.",
+  "learningObjective": "construir una ruta relativa dentro del almacén ficticio y acceder a un documento de pruebas que queda fuera de la carpeta permitida.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-37/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿Comprobar solo el comienzo de una ruta basta si después se normaliza?",
+  "guidedSteps": [
+    "Compara la ubicación final normalizada con la raíz autorizada.",
+    "Mira public y reservado en el árbol virtual.",
+    "Construye una ruta que suba un nivel dentro del árbol de pruebas.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H37-1",
+    "H37-2",
+    "H37-3",
+    "H37-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-37",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/virtual-files?path=",
+    "observation": "el acceso cruza ese límite en la versión vulnerable y queda bloqueado en la corregida. Nunca se permite alcanzar archivos reales del contenedor o anfitrión."
+  },
+  "debrief": "el fallo es de recorrido de rutas; eliminar una secuencia concreta no demuestra una solución completa. Aparece una función de subida de etiquetas.",
+  "understandingCheck": {
+    "question": "¿Por qué eliminar un único patrón no demuestra una solución completa?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-37",
+    "label": "Nota sintética y formulario de etiquetas",
+    "recipient": "UG-38"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-37/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-36"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "UG-39",
+  "campaignCaseId": "UG-001",
+  "act": 8,
+  "title": "Descargar o interpretar",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 39 después de las 10:00 (sin duración impuesta)",
+  "sender": "Nico",
+  "prerequisites": [
+    "UG-17",
+    "UG-36",
+    "UG-38"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S17",
+      "introducedIn": "UG-17",
+      "observableUse": "distinguir texto mostrado literalmente de HTML interpretado durante la prueba de este expediente.",
+      "practiceContext": "GET /api/labels/sample; GET auxiliar/download/sample"
+    },
+    {
+      "skillId": "S36",
+      "introducedIn": "UG-36",
+      "observableUse": "distinguir un identificador de negocio de una ruta de archivo utilizada por un servicio durante la prueba de este expediente.",
+      "practiceContext": "GET /api/labels/sample; GET auxiliar/download/sample"
+    },
+    {
+      "skillId": "S38",
+      "introducedIn": "UG-38",
+      "observableUse": "contrastar extensión, tipo declarado y contenido de un archivo inocuo durante la prueba de este expediente.",
+      "practiceContext": "GET /api/labels/sample; GET auxiliar/download/sample"
+    }
+  ],
+  "newSkill": {
+    "id": "S39",
+    "action": "interpretar las cabeceras de tipo de contenido y disposición de una descarga."
+  },
+  "narrativeEntry": "Aceptar una etiqueta y entregarla al navegador son dos fases distintas. Ahora tenemos un documento de marcado inocuo que no ejecuta instrucciones. Compararemos dos respuestas del mismo contenido: una se interpreta en pantalla y la otra se ofrece como descarga. Verás las cabeceras Content-Type y Content-Disposition, que indican tipo y disposición. También importa desde qué origen se sirve, porque no todo se resuelve con una sola cabecera. Guarda el contenido de referencia y el comportamiento observado en el navegador. No extrapoles este ejemplo a cualquier tipo de archivo: queremos documentar precisamente qué cambió en este contexto de laboratorio.",
+  "whyItMatters": "una etiqueta de demostración se abre en el navegador cuando debería descargarse como archivo.",
+  "learningObjective": "comparar dos respuestas para el mismo contenido inocuo y observar cómo cambia el tratamiento del navegador.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-39/v1"
+  ],
+  "allowedAccounts": [
+    "demo.pera"
+  ],
+  "predictionQuestion": "¿El mismo contenido puede descargarse o interpretarse según cómo se sirva?",
+  "guidedSteps": [
+    "Almacenamiento y entrega tienen controles diferentes.",
+    "Compara cabeceras de las dos rutas de descarga preparadas.",
+    "Observa tipo, disposición y origen junto al efecto visible.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H39-1",
+    "H39-2",
+    "H39-3",
+    "H39-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-39",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/labels/sample; GET auxiliar/download/sample",
+    "observation": "vincular las cabeceras y el contexto de origen con el comportamiento concreto. No atribuyas a una única cabecera la solución de todos los problemas de archivos."
+  },
+  "debrief": "almacenar y servir son fases distintas. Una referencia en los documentos apunta a una exportación antigua.",
+  "understandingCheck": {
+    "question": "¿Qué podemos afirmar sobre la descarga corregida?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-39",
+    "label": "Cabeceras y referencia de exportación antigua",
+    "recipient": "UG-40"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-39/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-38"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

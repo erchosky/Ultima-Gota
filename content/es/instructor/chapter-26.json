@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-26",
+  "solution": "Solicita recuperación para alba@ug.invalid y ausente@ug.invalid, con iguales condiciones. Compara status y mensaje en vulnerable; en corregida deben ser públicos equivalentes.",
+  "expectedTechnicalResult": "Dos solicitudes preparadas difieren en vulnerable y son equivalentes en corregida; evidencia no afirma toma de cuenta.",
+  "understandingAnswer": "La existencia de una cuenta concreta, sin demostrar acceso a ella.",
+  "feedbackOnIncorrect": "La existencia de una cuenta concreta, sin demostrar acceso a ella. Vuelve a comparar las fuentes y repite la observación: Usa las dos direcciones ficticias entregadas por Vera.",
+  "patch": "Respuesta pública uniforme; entrega solo en buzón interno del destinatario.",
+  "positiveTest": "Cuenta existente recibe mensaje interno.",
+  "negativeTest": "Cuenta inexistente no se distingue por mensaje público.",
+  "commonMistakes": [
+    "Cronometrar variaciones mínimas o probar direcciones no suministradas.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

@@ -1,0 +1,16 @@
+{
+  "id": "LESSON-19",
+  "chapterId": "UG-19",
+  "delivery": "Only when this chapter is unlocked and learner requests demonstration support.",
+  "title": "Una muestra, fragmento a fragmento",
+  "explanation": [
+    "Una etiqueta img intenta obtener una imagen. Usamos una ruta del propio laboratorio que no existe.",
+    "onerror es un manejador: JavaScript que el navegador ejecuta cuando falla la carga de esa imagen.",
+    "document.getElementById localiza un elemento de esta página por su identificador.",
+    "dataset.demo escribe un dato local de demostración; no envía información a otra dirección.",
+    "El laboratorio proporciona un nonce, una marca única de esta ejecución que se sustituye en el ejemplo."
+  ],
+  "sample": "<img src=\"/demo/imagen-inexistente\" onerror=\"document.getElementById('marca').dataset.demo='DEMO-NONCE-DE-LA-EJECUCION'\">",
+  "questionBeforeAction": "¿Debería el texto de un mensaje poder crear y ejecutar este manejador?",
+  "limits": "No basta con crear la marca manualmente: el evaluador debe repetir la entrada por su recorrido en un contexto limpio."
+}

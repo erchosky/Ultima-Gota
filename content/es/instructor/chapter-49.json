@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-49",
+  "solution": "Construye casos de pedido propio/ajeno, capacidad, búsqueda, cupón y transición. Ejecuta en corregida y regresión de propiedad sembrada: debe señalar acceso ajeno indebido y conservar resultados legítimos. Exporta suite declarativa.",
+  "expectedTechnicalResult": "Suite declarativa ejecutada por runner: pasa corregida y falla control de propietario en copia sembrada; no ejecuta código libre.",
+  "understandingAnswer": "Que pasan los casos definidos, sin garantizar ausencia de cualquier vulnerabilidad.",
+  "feedbackOnIncorrect": "Que pasan los casos definidos, sin garantizar ausencia de cualquier vulnerabilidad. Vuelve a comparar las fuentes y repite la observación: Define identidad, objeto, resultado y campo protegido por cada prueba.",
+  "patch": "Mantener suite versionada de casos autorizados y comparar resultados en cambios futuros.",
+  "positiveTest": "Todos los flujos legítimos definidos pasan.",
+  "negativeTest": "Regresión de propiedad provoca fallo específico.",
+  "commonMistakes": [
+    "Aceptar suite vacía, inspeccionar solo nombre de versión o ejecutar scripts arbitrarios.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

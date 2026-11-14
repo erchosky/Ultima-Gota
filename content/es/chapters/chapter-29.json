@@ -1,0 +1,111 @@
+{
+  "id": "UG-29",
+  "campaignCaseId": "UG-001",
+  "act": 6,
+  "title": "El reloj del enlace",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 29 después de las 10:00 (sin duración impuesta)",
+  "sender": "Vera",
+  "prerequisites": [
+    "UG-15",
+    "UG-27",
+    "UG-28"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S15",
+      "introducedIn": "UG-15",
+      "observableUse": "diseñar una pareja de pruebas: uso legítimo permitido y abuso denegado durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete; reloj virtual"
+    },
+    {
+      "skillId": "S27",
+      "introducedIn": "UG-27",
+      "observableUse": "comprobar que un token de recuperación está vinculado a una cuenta concreta durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete; reloj virtual"
+    },
+    {
+      "skillId": "S28",
+      "introducedIn": "UG-28",
+      "observableUse": "comprobar que una autorización de recuperación deja de servir tras usarse durante la prueba de este expediente.",
+      "practiceContext": "POST /api/recovery/complete; reloj virtual"
+    }
+  ],
+  "newSkill": {
+    "id": "S29",
+    "action": "verificar la caducidad de un token con un reloj virtual del escenario."
+  },
+  "narrativeEntry": "La autorización de recuperación tiene un plazo de diez minutos de reloj del escenario. No vamos a esperar ese tiempo ni cambiar la fecha del equipo. La mesa permite preparar copias equivalentes antes y después del límite, con tokens sin utilizar. Esto importa porque el caso anterior ya invalida un token consumido: reutilizarlo no nos permitiría saber si también caduca correctamente. Anota hora de emisión, hora límite y momento de cada intento. Probaremos también el instante exacto de vencimiento. Queremos una regla clara, no una impresión de que un enlace parecía demasiado viejo cuando lo abrió alguien.",
+  "whyItMatters": "una cuenta recibió un enlace hace demasiado tiempo, pero el formulario parece aceptarlo.",
+  "learningObjective": "repetir una recuperación antes y después de su plazo usando el control temporal del laboratorio. No cambies la fecha del sistema operativo ni hagas esperar minutos reales.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-29/v1"
+  ],
+  "allowedAccounts": [
+    "Alba"
+  ],
+  "predictionQuestion": "Si el límite es 600 segundos, ¿debe aceptarse un token exactamente a los 600?",
+  "guidedSteps": [
+    "Mantén token sin consumir para aislar la condición temporal.",
+    "Usa el reloj virtual de la mesa y copias equivalentes del token.",
+    "Prueba justo antes, en el límite y después.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H29-1",
+    "H29-2",
+    "H29-3",
+    "H29-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-29",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "POST /api/recovery/complete; reloj virtual",
+    "observation": "documentar el límite temporal y el comportamiento a ambos lados. El validador debe controlar las condiciones de frontera."
+  },
+  "debrief": "el tiempo es una condición de autorización. Vera pregunta por las sesiones que ya estaban abiertas.",
+  "understandingCheck": {
+    "question": "¿Por qué usamos copias con tokens sin consumir?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-29",
+    "label": "Tabla de frontera temporal",
+    "recipient": "UG-30"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-29/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-28"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

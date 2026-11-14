@@ -1,0 +1,6 @@
+{
+  "id": "H27-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Solicita enlaces de Alba y Bruno. En vulnerable combina token de Alba con accountId de Bruno y verifica el cambio mediante login. En corregida recházalo y permite el token de Bruno para Bruno."
+}

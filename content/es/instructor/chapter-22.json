@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-22",
+  "solution": "Ejecuta pera, pera con comilla, pera y pera con comilla. Registra las cuatro entradas y respuestas de la misma ejecución sin concluir extracción de datos.",
+  "expectedTechnicalResult": "Cuatro eventos alternados con diferencia estable de respuesta asociada a comilla; conclusión expresa hipótesis.",
+  "understandingAnswer": "Una diferencia reproducible compatible con construcción incorrecta; falta demostrar alteración de lógica.",
+  "feedbackOnIncorrect": "Una diferencia reproducible compatible con construcción incorrecta; falta demostrar alteración de lógica. Vuelve a comparar las fuentes y repite la observación: Compara pera con pera seguida de una comilla.",
+  "patch": "La parametrización se verificará en el 24; por ahora conservar hipótesis y reproducción.",
+  "positiveTest": "Búsqueda normal devuelve pera.",
+  "negativeTest": "Un error aislado no acredita inyección demostrada.",
+  "commonMistakes": [
+    "Un único error o atribuir acceso a contraseñas.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

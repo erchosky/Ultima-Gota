@@ -1,0 +1,53 @@
+{
+  "id": "chapter-26",
+  "version": 1,
+  "kind": "design-plan",
+  "implementation": "not-implemented",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-26/v1",
+    "accounts": [
+      "anonymous"
+    ],
+    "resource": "POST /api/recovery/request",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "planned-server-observation",
+    "contract": "Dos solicitudes preparadas difieren en vulnerable y son equivalentes en corregida; evidencia no afirma toma de cuenta.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "pending"
+  },
+  "falsePositiveChecks": [
+    "Cronometrar variaciones mínimas o probar direcciones no suministradas.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Respuesta pública uniforme; entrega solo en buzón interno del destinatario.",
+    "positive": "Cuenta existente recibe mensaje interno.",
+    "negative": "Cuenta inexistente no se distingue por mensaje público.",
+    "execution": "pending"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-26/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-25"
+    ]
+  }
+}

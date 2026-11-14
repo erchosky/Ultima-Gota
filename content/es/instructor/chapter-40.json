@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-40",
+  "solution": "Solicita /exports/muestra-publicada.csv sin sesión. En corregida debe estar ausente; soporte.vera conserva /api/support/exports/muestra-soporte.csv y cliente recibe denegación. Guarda solo muestra mínima.",
+  "expectedTechnicalResult": "Acceso anónimo a copia pública vulnerable; retirada corregida y exportación soporte permitida solo a rol autorizado.",
+  "understandingAnswer": "Acceso a ese recurso y contenido concreto, no descargas adicionales ni toda la base.",
+  "feedbackOnIncorrect": "Acceso a ese recurso y contenido concreto, no descargas adicionales ni toda la base. Vuelve a comparar las fuentes y repite la observación: Prueba sin sesión y compara con la descarga autorizada de soporte.",
+  "patch": "Excluir exportación del build público y servir versión interna por ruta autorizada.",
+  "positiveTest": "Soporte descarga muestra-soporte.",
+  "negativeTest": "Anónimo no obtiene copia pública ni exportación interna.",
+  "commonMistakes": [
+    "Equiparar esta copia pública al acceso histórico de soporte o afirmar extracción completa.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

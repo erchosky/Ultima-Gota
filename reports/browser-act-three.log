@@ -1,0 +1,19 @@
+npm notice run ultima-gota@0.4.0 test:browser:act-three
+npm notice run tsx tests/learning-flows/act-three.ts
+✓ Transición10→11 conserva diez expedientes y precio corregido
+✓ ReplayXHR nativo de Chromium (CDP) genera referencia nueva y conserva sesión Alba; menú visual no acreditado
+✓ Mesa envía y reenvía solicitudes XHR reales; referencias distintas, misma cuenta y sin fallos axe detectados
+✓ Expediente11 completa evidencia y comprensión
+✓ Edición JSON conserva estructura y daily reaparece en una consulta posterior
+✓ Expediente12 completa evidencia y comprensión
+✓ Campo interno cambia capacidad persistida y acceso real al recurso restringido
+✓ Corrección13 comprobada por navegador independiente
+✓ Expediente13 completa evidencia y comprensión
+✓ Seis casos reales distinguen cinco estados y200 permitido de200 denegado
+✓ Corrección14 comprobada por navegador independiente
+✓ Expediente14 completa evidencia y comprensión
+✓ Comparación manual separa copias; propio/preferencia permitidos, ajeno/capacidad denegados; mesa móvil sin desbordamiento
+✓ Corrección15 comprobada por navegador independiente
+✓ Expediente15 completa evidencia y comprensión
+✓ Reinicio conserva15 expedientes y controles; exportación3 no contiene contraseñas
+✓ Cuaderno conserva informes de las correcciones y permite lectura móvil

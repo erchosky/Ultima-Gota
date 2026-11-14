@@ -1,0 +1,118 @@
+{
+  "id": "UG-22",
+  "campaignCaseId": "UG-001",
+  "act": 5,
+  "title": "Una comilla fuera de sitio",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 22 después de las 10:00 (sin duración impuesta)",
+  "sender": "Sam",
+  "prerequisites": [
+    "UG-11",
+    "UG-12",
+    "UG-14",
+    "UG-21"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S11",
+      "introducedIn": "UG-11",
+      "observableUse": "reenviar una petición desde las herramientas del navegador durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    },
+    {
+      "skillId": "S12",
+      "introducedIn": "UG-12",
+      "observableUse": "modificar un campo permitido en el cuerpo JSON de una petición durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    },
+    {
+      "skillId": "S14",
+      "introducedIn": "UG-14",
+      "observableUse": "interpretar una tabla pequeña de estados HTTP y distinguir un error útil de una filtración interna durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    },
+    {
+      "skillId": "S21",
+      "introducedIn": "UG-21",
+      "observableUse": "leer una consulta SELECT sencilla como una selección de filas con una condición durante la prueba de este expediente.",
+      "practiceContext": "GET /api/search?q="
+    }
+  ],
+  "newSkill": {
+    "id": "S22",
+    "action": "aislar un carácter de entrada que cambia el comportamiento de una consulta vulnerable."
+  },
+  "narrativeEntry": "Al probar una búsqueda con una comilla obtuve un error que no aparece con pera. No sabemos todavía si el carácter cambia la consulta o si ocurrió otro problema. La tabla del caso anterior nos ayuda a describir lo que esperábamos encontrar. Vamos a comparar una entrada normal con una variación mínima, repitiendo ambas en la misma copia. Conserva la entrada exacta, el estado y el contenido de la respuesta. Un error será una observación que merece investigar, pero no nos autoriza a decir que accedimos a datos ajenos. Necesitamos aislar la diferencia antes de intentar una explicación más fuerte.",
+  "whyItMatters": "el buscador falla con un nombre de producto que contiene una comilla.",
+  "learningObjective": "comparar una búsqueda normal y otra con una variación mínima, repitiendo para descartar un fallo casual.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-22/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Un error al introducir una comilla demuestra por sí solo una inyección explotable?",
+  "guidedSteps": [
+    "Varía una sola cosa y repite para descartar un fallo casual.",
+    "Mira entrada y respuesta de /api/search en Red.",
+    "Compara pera con pera seguida de una comilla.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H22-1",
+    "H22-2",
+    "H22-3",
+    "H22-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-22",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /api/search?q=",
+    "observation": "registrar una diferencia reproducible compatible con una construcción incorrecta de la consulta."
+  },
+  "debrief": "un error sugiere una hipótesis; todavía no demuestra acceso a datos ajenos. Lara propone contrastarla con una condición controlada.",
+  "understandingCheck": {
+    "question": "¿Qué conclusión permite esta comparación?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-22",
+    "label": "Pareja mínima para contrastar la consulta",
+    "recipient": "UG-23"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-22/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-21"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": false,
+    "validatorTested": false,
+    "fullFlowVerified": false
+  }
+}

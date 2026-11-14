@@ -1,0 +1,31 @@
+{
+  "id": "chapter-50/v1",
+  "inherits": "campaign-v1",
+  "status": "design-data-not-executed",
+  "settings": {
+    "transferFixture": "campaign-v1.transfer",
+    "orderIds": [
+      303,
+      304
+    ],
+    "productIds": [
+      11,
+      12
+    ],
+    "novelVulnerability": false,
+    "transferVariants": {
+      "reviewCopy": {
+        "orderOwnershipCheck": false,
+        "acceptClientPrice": true,
+        "couponIdempotency": false
+      },
+      "correctedCopy": {
+        "orderOwnershipCheck": true,
+        "acceptClientPrice": false,
+        "couponIdempotency": true
+      }
+    }
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

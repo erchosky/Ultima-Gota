@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-43",
+  "solution": "Envía el destino fijo intranet:4400/estado a la previsualización vulnerable; registra solicitud real de tienda e información expuesta. En corregida deniega intranet y permite catalog:4400/imagen.",
+  "expectedTechnicalResult": "Servicio interno registra requestId originado por tienda, cuerpo expuesto vulnerable, destino denegado corregido; catálogo legítimo funciona.",
+  "understandingAnswer": "El servidor realiza una solicitud controlada por entrada que alcanza un destino indebido para la función.",
+  "feedbackOnIncorrect": "El servidor realiza una solicitud controlada por entrada que alcanza un destino indebido para la función. Vuelve a comparar las fuentes y repite la observación: Selecciona intranet y contrasta el registro de recepción.",
+  "patch": "Lista de destinos de negocio autorizados más guardián independiente de salida del recinto.",
+  "positiveTest": "Imagen del catálogo sintético sigue disponible.",
+  "negativeTest": "Intranet indebida y cualquier destino externo no se consultan en corregida.",
+  "commonMistakes": [
+    "Una respuesta simulada sin solicitud o cualquier destino ajeno al recinto.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

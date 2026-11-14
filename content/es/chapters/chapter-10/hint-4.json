@@ -1,0 +1,6 @@
+{
+  "id": "H10-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Entra como Alba, comprueba /api/me, abre /pedido?id=203 y cambia a 204. Conserva la respuesta con ownerId de Bruno y repite 204 como Bruno en otra sesión autorizada."
+}

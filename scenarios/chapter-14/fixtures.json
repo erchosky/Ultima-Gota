@@ -1,0 +1,18 @@
+{
+  "id": "chapter-14/v1",
+  "inherits": "campaign-v1",
+  "status": "seeded-and-tested-integration-and-chromium",
+  "settings": {
+    "responses": [
+      200,
+      400,
+      401,
+      403,
+      404
+    ],
+    "legacy200Denial": true,
+    "integrationError": "mercurio/catalog"
+  },
+  "sessionsAtReset": [],
+  "mainWorldPolicy": "Do not remove committed corrections. Prepare labeled practice copy for legacy vulnerable settings."
+}

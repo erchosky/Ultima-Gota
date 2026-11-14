@@ -1,0 +1,117 @@
+{
+  "id": "UG-18",
+  "campaignCaseId": "UG-001",
+  "act": 4,
+  "title": "El camino del mensaje",
+  "location": "Escritorio y copia autorizada de tienda",
+  "narrativeTime": "día 0 · hito 18 después de las 10:00 (sin duración impuesta)",
+  "sender": "Lara",
+  "prerequisites": [
+    "UG-01",
+    "UG-04",
+    "UG-17"
+  ],
+  "reusedSkills": [
+    {
+      "skillId": "S01",
+      "introducedIn": "UG-01",
+      "observableUse": "reconocer y modificar un parámetro `id` en una dirección durante la prueba de este expediente.",
+      "practiceContext": "GET /campanas/mensaje?mensaje=MARCA-PERA"
+    },
+    {
+      "skillId": "S04",
+      "introducedIn": "UG-04",
+      "observableUse": "localizar un elemento de la página con el inspector de elementos durante la prueba de este expediente.",
+      "practiceContext": "GET /campanas/mensaje?mensaje=MARCA-PERA"
+    },
+    {
+      "skillId": "S17",
+      "introducedIn": "UG-17",
+      "observableUse": "distinguir texto mostrado literalmente de HTML interpretado durante la prueba de este expediente.",
+      "practiceContext": "GET /campanas/mensaje?mensaje=MARCA-PERA"
+    }
+  ],
+  "newSkill": {
+    "id": "S18",
+    "action": "seguir el recorrido de un dato controlable hasta el lugar donde se inserta en la página."
+  },
+  "narrativeEntry": "La campaña de práctica muestra un mensaje que toma de su dirección. Quiero seguir el recorrido de una marca reconocible antes de intentar ninguna acción del navegador. Llamaremos entrada al lugar donde tú decides el dato y destino al lugar donde termina presentado. Una transformación es lo que ocurre entre ambos, por ejemplo decodificar una parte de la dirección. Abriremos un fragmento pequeño del código público preparado para esta lección. No necesitas leer toda la aplicación ni buscar el validador. Cambia una marca, identifica dónde aparece y relaciona esa observación con las líneas que reciben y colocan el mensaje en la página.",
+  "whyItMatters": "una página de la campaña muestra un mensaje tomado de su dirección.",
+  "learningObjective": "cambiar un marcador reconocible, observar dónde aparece y usar una vista guiada del fragmento relevante del código cliente. Explica entrada, transformación y destino.",
+  "scenarioVersion": 1,
+  "fixtures": [
+    "campaign-v1",
+    "chapter-18/v1"
+  ],
+  "allowedAccounts": [
+    "anonymous"
+  ],
+  "predictionQuestion": "¿Dónde esperas encontrar la marca que cambies en el parámetro mensaje?",
+  "guidedSteps": [
+    "Sigue un dato identificable desde su entrada hasta su destino.",
+    "Mira el parámetro mensaje y el fragmento público del mensaje de campaña.",
+    "Cambia la marca y localiza el elemento cuyo contenido varía.",
+    "Registra Esperaba… y He observado… con la petición de esta ejecución; solicita contrastar la evidencia."
+  ],
+  "hintIds": [
+    "H18-1",
+    "H18-2",
+    "H18-3",
+    "H18-4"
+  ],
+  "evidenceRequirements": {
+    "id": "EV-18",
+    "fields": [
+      "chapterId",
+      "campaignId",
+      "generation",
+      "runId",
+      "scenarioVersion",
+      "virtualTime",
+      "identity",
+      "resource",
+      "requestRefs",
+      "expected",
+      "observed",
+      "kind"
+    ],
+    "resource": "GET /campanas/mensaje?mensaje=MARCA-PERA",
+    "observation": "identificar el origen y el destino reales del marcador. No se exige comprender todo el archivo ni escribir JavaScript."
+  },
+  "debrief": "el destino elegido interpreta contenido. El siguiente caso comprobará una consecuencia concreta.",
+  "understandingCheck": {
+    "question": "¿Qué parte decide tratar la entrada como contenido de página?",
+    "responseType": "structured-choice-with-explanation"
+  },
+  "nextNarrativeArtifact": {
+    "id": "OBJ-18",
+    "label": "Mapa del recorrido del mensaje",
+    "recipient": "UG-19"
+  },
+  "checkpointPolicy": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-18/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-17"
+    ]
+  },
+  "implementation": {
+    "designed": true,
+    "contentWritten": true,
+    "functionalScenario": true,
+    "validatorTested": true,
+    "fullFlowVerified": true
+  },
+  "verificationScope": {
+    "browser": "Chromium",
+    "report": "reports/browser-act-four-validation.json",
+    "integration": "reports/integration.tap",
+    "beginnerHumanTest": false
+  }
+}

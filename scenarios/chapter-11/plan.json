@@ -1,0 +1,53 @@
+{
+  "id": "chapter-11",
+  "version": 1,
+  "kind": "implemented-scenario",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-11/v1",
+    "accounts": [
+      "Alba"
+    ],
+    "resource": "GET /api/orders?id=204",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Dos eventos distintos con mismo método, objeto y sesión Alba, dentro del run actual.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium"
+  },
+  "falsePositiveChecks": [
+    "Contar dos capturas de la misma respuesta.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "No hay fallo nuevo; mantener el reenvío como herramienta de reproducción.",
+    "positive": "Reenvío equivalente genera evento nuevo.",
+    "negative": "Un evento antiguo no acredita repetición.",
+    "execution": "tested-integration-and-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-11/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-10"
+    ]
+  }
+}

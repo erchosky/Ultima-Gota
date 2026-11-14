@@ -1,0 +1,6 @@
+{
+  "id": "H30-4",
+  "level": 4,
+  "type": "explicit-guide",
+  "text": "Abre sesiones A y B de Alba; realiza recuperación y consulta /api/me con A antigua. Compara rechazo en corregida y acceso nuevo con clave recién establecida."
+}

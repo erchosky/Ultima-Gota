@@ -1,0 +1,21 @@
+{
+  "chapterId": "UG-34",
+  "solution": "Con almacen.sam envía creado→enviado en la copia vulnerable; en corregida comprueba rechazo. Prepara un pedido y prueba preparado→enviado permitido, sin cambiar propietarios.",
+  "expectedTechnicalResult": "Salto persiste en vulnerable; corregida bloquea y permite preparado→enviado con almacén autorizado.",
+  "understandingAnswer": "Identidad autorizada, estado actual y transición permitida.",
+  "feedbackOnIncorrect": "Identidad autorizada, estado actual y transición permitida. Vuelve a comparar las fuentes y repite la observación: Compara salto con el paso preparado→enviado.",
+  "patch": "Máquina de estados con control de rol y precondiciones por transición.",
+  "positiveTest": "Almacén envía pedido preparado.",
+  "negativeTest": "Pedido creado no puede pasar directamente a enviado.",
+  "commonMistakes": [
+    "Leer el botón deshabilitado sin probar la ruta.",
+    "Usar evidencia de otra ejecución o identidad."
+  ],
+  "completionRequires": [
+    "predictionRecorded",
+    "technicalEvidenceVerified",
+    "understandingChecked",
+    "requiredPatchPairVerified"
+  ],
+  "runtimeStatus": "not-implemented"
+}

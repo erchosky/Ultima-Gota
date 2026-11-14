@@ -1,0 +1,55 @@
+{
+  "id": "chapter-14",
+  "version": 1,
+  "kind": "implemented-scenario",
+  "implementation": "functional",
+  "isolationProfile": "chapter-copy",
+  "initialState": {
+    "fixtureRef": "content/es/campaign/fixtures.json",
+    "overrideRef": "chapter-14/v1",
+    "accounts": [
+      "anonymous",
+      "demo.pera",
+      "soporte.vera"
+    ],
+    "resource": "GET /api/support/summary; POST /api/integration/preview; GET /api/products?id=999; GET /api/legacy/support",
+    "resetBeforeAttempt": true
+  },
+  "successValidator": {
+    "kind": "server-observation",
+    "contract": "Seis eventos reales, cinco códigos distintos,200 permitido y200 denegado; contenido interno ficticio observado.",
+    "mustMatch": [
+      "campaignId",
+      "generation",
+      "runId",
+      "identity",
+      "resource",
+      "scenarioVersion"
+    ],
+    "execution": "tested-integration-and-chromium"
+  },
+  "falsePositiveChecks": [
+    "Clasificar cualquier 500 como inyección.",
+    "Peticiones previas al run actual no se acreditan.",
+    "La afirmación cliente resuelto=true no concede logros."
+  ],
+  "patchVerification": {
+    "change": "Errores públicos mínimos con referencia de diagnóstico y detalles solo en registro interno ficticio.",
+    "positive": "Entrada válida devuelve resultado útil.",
+    "negative": "Entrada mal formada no filtra ruta ni traza.",
+    "execution": "tested-isolated-chromium"
+  },
+  "resetAndRecovery": {
+    "policy": "Restaurar solo escenario; conservar progreso y notas.",
+    "restore": "Reconstruir fixtures de chapter-14/v1 en nuevo runId; recuperar objetos de capítulos previos ya completados.",
+    "preserve": [
+      "notebook",
+      "achievements",
+      "mainWorldPatches",
+      "skillHistory"
+    ],
+    "requiredArtifacts": [
+      "OBJ-13"
+    ]
+  }
+}
