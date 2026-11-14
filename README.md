@@ -1,8 +1,12 @@
-# Última Gota: los 50 expedientes
+# Última Gota
 
-**Una web para aprender ciberseguridad desde cero investigando una historia.** Este proyecto no es una tienda real: es un laboratorio educativo local en español con una tienda ficticia, personajes, encargos y problemas preparados para aprender practicando.
+Un laboratorio local en español para aprender ciberseguridad investigando una historia. Una tienda ficticia, sus personajes y sus problemas conectan cada práctica con un caso concreto.
 
-> Si vas a pasar este proyecto a una IA, empieza por [LEEME-PARA-IA.md](LEEME-PARA-IA.md). El objetivo de esa revisión es enriquecer el lore, el sentido de la web y el aprendizaje. Las vulnerabilidades intencionadas son parte del material didáctico y deben conservarse en las copias de práctica.
+Hay 50 expedientes escritos y 20 capítulos implementados. Los capítulos 21–50 todavía necesitan escenarios ejecutables. Las vulnerabilidades de práctica forman parte del material didáctico; utiliza una copia local autorizada.
+
+[Qué es y para qué sirve](#qué-es-y-para-qué-sirve) · [Estado real de esta entrega](#estado-real-de-esta-entrega) · [Qué significa «mejorarlo» aquí](#qué-significa-mejorarlo-aquí) · [Personajes y continuidad](#personajes-y-continuidad) · [Instalar y arrancar](#instalar-y-arrancar) · [Dónde está cada cosa](#dónde-está-cada-cosa)
+
+---
 
 ## Qué es y para qué sirve
 
